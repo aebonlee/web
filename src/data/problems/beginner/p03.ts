@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p3: WebProblem = {
-  id: 'beginner-3', number: 3, title: '버튼 클릭 카운터', titleEn: 'Button Click Counter',
+  id: 'beginner-p03', number: 3, title: '버튼 클릭 카운터', titleEn: 'Button Click Counter',
   category: 'beginner', topic: 'javascript', difficulty: 'beginner',
   description: '버튼을 클릭할 때마다 숫자가 1씩 증가하는 카운터를 만드세요.',
   descriptionEn: 'Create a counter that increments by 1 each time a button is clicked.',

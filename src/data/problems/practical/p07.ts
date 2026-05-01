@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p7: WebProblem = {
-  id: 'practical-7', number: 7, title: '이커머스 상품 페이지', titleEn: 'E-Commerce Product Page',
+  id: 'practical-p07', number: 7, title: '이커머스 상품 페이지', titleEn: 'E-Commerce Product Page',
   category: 'practical', topic: 'html', difficulty: 'practical',
   description: '상품 이미지, 가격, 옵션 선택, 수량 조절, 장바구니 추가 기능이 있는 이커머스 상품 상세 페이지를 만드세요.',
   descriptionEn: 'Create an e-commerce product detail page with product image, price, option selection, quantity control, and add-to-cart functionality.',

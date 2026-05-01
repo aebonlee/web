@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p4: WebProblem = {
-  id: 'advanced-4', number: 4, title: '무한 스크롤', titleEn: 'Infinite Scroll',
+  id: 'advanced-p04', number: 4, title: '무한 스크롤', titleEn: 'Infinite Scroll',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'Intersection Observer API를 사용하여 무한 스크롤을 구현하세요. 스크롤이 하단에 도달하면 새로운 데이터가 자동으로 로드되어야 합니다.',
   descriptionEn: 'Implement infinite scroll using the Intersection Observer API. New data should auto-load when scrolling reaches the bottom.',

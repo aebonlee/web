@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p10: WebProblem = {
-  id: 'beginner-10', number: 10, title: '다크모드 토글', titleEn: 'Toggle Dark Mode',
+  id: 'beginner-p10', number: 10, title: '다크모드 토글', titleEn: 'Toggle Dark Mode',
   category: 'beginner', topic: 'javascript', difficulty: 'beginner',
   description: '버튼을 클릭하면 다크모드와 라이트모드를 전환하는 기능을 만드세요. 배경색과 글자색이 변경되어야 합니다.',
   descriptionEn: 'Create a toggle that switches between dark mode and light mode when clicked. Background and text colors should change.',

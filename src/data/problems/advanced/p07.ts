@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p7: WebProblem = {
-  id: 'advanced-7', number: 7, title: '웹 컴포넌트', titleEn: 'Web Components',
+  id: 'advanced-p07', number: 7, title: '웹 컴포넌트', titleEn: 'Web Components',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'Custom Elements API를 사용하여 재사용 가능한 웹 컴포넌트를 만드세요. Shadow DOM으로 스타일을 캡슐화하고, 속성(attributes)을 통해 설정할 수 있어야 합니다.',
   descriptionEn: 'Create reusable web components using the Custom Elements API. Encapsulate styles with Shadow DOM and make them configurable via attributes.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p9: WebProblem = {
-  id: 'beginner-9', number: 9, title: '타이포그래피 스타일', titleEn: 'Typography Styles',
+  id: 'beginner-p09', number: 9, title: '타이포그래피 스타일', titleEn: 'Typography Styles',
   category: 'beginner', topic: 'css', difficulty: 'beginner',
   description: 'CSS를 사용하여 다양한 타이포그래피 스타일을 적용한 텍스트 페이지를 만드세요. 제목, 본문, 인용문, 강조 등을 포함하세요.',
   descriptionEn: 'Create a text page with various typography styles using CSS. Include headings, body text, blockquotes, and emphasis.',

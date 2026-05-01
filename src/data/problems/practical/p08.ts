@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p8: WebProblem = {
-  id: 'practical-8', number: 8, title: 'API 대시보드', titleEn: 'API Dashboard',
+  id: 'practical-p08', number: 8, title: 'API 대시보드', titleEn: 'API Dashboard',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '여러 API 엔드포인트의 상태를 모니터링하는 대시보드를 만드세요. 상태 표시, 응답 시간, 자동 새로고침 기능을 포함하세요.',
   descriptionEn: 'Create a dashboard monitoring multiple API endpoint statuses. Include status indicators, response times, and auto-refresh functionality.',

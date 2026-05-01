@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p10: WebProblem = {
-  id: 'advanced-10', number: 10, title: '성능 최적화', titleEn: 'Performance Optimization',
+  id: 'advanced-p10', number: 10, title: '성능 최적화', titleEn: 'Performance Optimization',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'debounce, throttle, lazy loading, 메모이제이션 등 웹 성능 최적화 기법을 구현하고 시각적으로 비교하세요.',
   descriptionEn: 'Implement and visually compare web performance optimization techniques: debounce, throttle, lazy loading, and memoization.',

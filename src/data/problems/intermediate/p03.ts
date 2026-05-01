@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p3: WebProblem = {
-  id: 'intermediate-3', number: 3, title: 'Fetch API 데이터 표시', titleEn: 'Fetch API Data Display',
+  id: 'intermediate-p03', number: 3, title: 'Fetch API 데이터 표시', titleEn: 'Fetch API Data Display',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: 'Fetch API를 사용하여 외부 API에서 사용자 목록 데이터를 가져와 카드 형태로 화면에 표시하세요. 로딩 상태와 에러 처리도 포함하세요.',
   descriptionEn: 'Use the Fetch API to retrieve user list data from an external API and display it as cards. Include loading states and error handling.',

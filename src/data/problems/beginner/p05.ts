@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p5: WebProblem = {
-  id: 'beginner-5', number: 5, title: '이미지 갤러리', titleEn: 'Image Gallery',
+  id: 'beginner-p05', number: 5, title: '이미지 갤러리', titleEn: 'Image Gallery',
   category: 'beginner', topic: 'html', difficulty: 'beginner',
   description: 'HTML과 CSS를 사용하여 3열 이미지 갤러리를 만드세요. figure와 figcaption 태그를 활용하세요.',
   descriptionEn: 'Create a 3-column image gallery using HTML and CSS. Use figure and figcaption tags.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p1: WebProblem = {
-  id: 'intermediate-1', number: 1, title: '반응형 그리드 레이아웃', titleEn: 'Responsive Grid Layout',
+  id: 'intermediate-p01', number: 1, title: '반응형 그리드 레이아웃', titleEn: 'Responsive Grid Layout',
   category: 'intermediate', topic: 'css', difficulty: 'intermediate',
   description: 'CSS Grid를 사용하여 화면 크기에 따라 열 수가 자동으로 변경되는 반응형 카드 레이아웃을 만드세요. 데스크톱 3열, 태블릿 2열, 모바일 1열이어야 합니다.',
   descriptionEn: 'Create a responsive card layout using CSS Grid that automatically adjusts columns based on screen size. Desktop 3 columns, tablet 2, mobile 1.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p4: WebProblem = {
-  id: 'practical-4', number: 4, title: '블로그 포스트 에디터', titleEn: 'Blog Post Editor',
+  id: 'practical-p04', number: 4, title: '블로그 포스트 에디터', titleEn: 'Blog Post Editor',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '제목, 본문(마크다운 미리보기), 태그 추가 기능이 있는 블로그 포스트 에디터를 만드세요. 실시간 미리보기를 지원하세요.',
   descriptionEn: 'Create a blog post editor with title, body (markdown preview), and tag management. Support real-time preview.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p5: WebProblem = {
-  id: 'practical-5', number: 5, title: '퀴즈 앱', titleEn: 'Quiz App',
+  id: 'practical-p05', number: 5, title: '퀴즈 앱', titleEn: 'Quiz App',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '객관식 퀴즈 앱을 만드세요. 문제 번호, 진행률, 타이머, 정답 확인, 결과 화면을 포함하세요.',
   descriptionEn: 'Create a multiple-choice quiz app. Include question number, progress bar, timer, answer checking, and results screen.',

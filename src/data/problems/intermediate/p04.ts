@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p4: WebProblem = {
-  id: 'intermediate-4', number: 4, title: '탭 컴포넌트', titleEn: 'Tab Component',
+  id: 'intermediate-p04', number: 4, title: '탭 컴포넌트', titleEn: 'Tab Component',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: '여러 탭을 클릭하면 해당 콘텐츠가 표시되는 탭 컴포넌트를 만드세요. 활성화된 탭에 하이라이트 스타일을 적용하세요.',
   descriptionEn: 'Create a tab component that shows corresponding content when tabs are clicked. Apply highlight styles to the active tab.',

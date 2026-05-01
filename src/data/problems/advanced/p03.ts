@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p3: WebProblem = {
-  id: 'advanced-3', number: 3, title: '커스텀 훅 빌더', titleEn: 'Custom Hook Builder',
+  id: 'advanced-p03', number: 3, title: '커스텀 훅 빌더', titleEn: 'Custom Hook Builder',
   category: 'advanced', topic: 'react', difficulty: 'advanced',
   description: 'Vanilla JavaScript로 React의 useState, useEffect와 유사한 훅 시스템을 구현하세요. 상태 관리와 부수 효과(side effect) 처리를 직접 만들어보세요.',
   descriptionEn: 'Implement a hook system similar to React useState and useEffect using vanilla JavaScript. Build state management and side effect handling from scratch.',

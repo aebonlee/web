@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p5: WebProblem = {
-  id: 'intermediate-5', number: 5, title: '아코디언 메뉴', titleEn: 'Accordion Menu',
+  id: 'intermediate-p05', number: 5, title: '아코디언 메뉴', titleEn: 'Accordion Menu',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: '클릭하면 열리고 닫히는 아코디언 메뉴를 만드세요. 하나의 항목을 열면 나머지는 자동으로 닫히도록 구현하세요.',
   descriptionEn: 'Create an accordion menu that opens and closes on click. When one item opens, the others should automatically close.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p1: WebProblem = {
-  id: 'practical-1', number: 1, title: '포트폴리오 웹사이트', titleEn: 'Portfolio Website',
+  id: 'practical-p01', number: 1, title: '포트폴리오 웹사이트', titleEn: 'Portfolio Website',
   category: 'practical', topic: 'html', difficulty: 'practical',
   description: '히어로 섹션, 소개, 프로젝트 갤러리, 기술 스택, 연락처가 포함된 개인 포트폴리오 원페이지 웹사이트를 만드세요.',
   descriptionEn: 'Create a one-page personal portfolio website with hero section, about, project gallery, tech stack, and contact sections.',

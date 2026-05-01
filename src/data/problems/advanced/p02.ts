@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p2: WebProblem = {
-  id: 'advanced-2', number: 2, title: '상태 관리 패턴', titleEn: 'State Management Pattern',
+  id: 'advanced-p02', number: 2, title: '상태 관리 패턴', titleEn: 'State Management Pattern',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'Observer 패턴을 사용하여 간단한 상태 관리 라이브러리를 구현하세요. 상태가 변경되면 구독된 컴포넌트들이 자동으로 업데이트되어야 합니다.',
   descriptionEn: 'Implement a simple state management library using the Observer pattern. Subscribed components should auto-update when state changes.',

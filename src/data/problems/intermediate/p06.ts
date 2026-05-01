@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p6: WebProblem = {
-  id: 'intermediate-6', number: 6, title: '모달 팝업', titleEn: 'Modal Popup',
+  id: 'intermediate-p06', number: 6, title: '모달 팝업', titleEn: 'Modal Popup',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: '버튼을 클릭하면 오버레이와 함께 모달 팝업이 나타나는 컴포넌트를 만드세요. 닫기 버튼, 오버레이 클릭, ESC 키로 닫을 수 있어야 합니다.',
   descriptionEn: 'Create a modal popup component that appears with an overlay when a button is clicked. It should close via close button, overlay click, or ESC key.',

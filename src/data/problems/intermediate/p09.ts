@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p9: WebProblem = {
-  id: 'intermediate-9', number: 9, title: '이미지 슬라이더', titleEn: 'Image Slider',
+  id: 'intermediate-p09', number: 9, title: '이미지 슬라이더', titleEn: 'Image Slider',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: '이전/다음 버튼과 인디케이터 점이 있는 이미지 슬라이더를 만드세요. 자동 재생 기능도 포함하세요.',
   descriptionEn: 'Create an image slider with previous/next buttons and indicator dots. Include auto-play functionality.',

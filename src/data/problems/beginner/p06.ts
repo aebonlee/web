@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p6: WebProblem = {
-  id: 'beginner-6', number: 6, title: '그라데이션 버튼', titleEn: 'Gradient Button',
+  id: 'beginner-p06', number: 6, title: '그라데이션 버튼', titleEn: 'Gradient Button',
   category: 'beginner', topic: 'css', difficulty: 'beginner',
   description: 'CSS 그라데이션과 hover 애니메이션이 적용된 버튼을 만드세요. 마우스를 올리면 그라데이션 방향이 바뀌어야 합니다.',
   descriptionEn: 'Create a button with CSS gradient and hover animation. The gradient direction should change on hover.',

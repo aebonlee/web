@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p7: WebProblem = {
-  id: 'beginner-7', number: 7, title: '할 일 목록', titleEn: 'To-Do List',
+  id: 'beginner-p07', number: 7, title: '할 일 목록', titleEn: 'To-Do List',
   category: 'beginner', topic: 'javascript', difficulty: 'beginner',
   description: '입력창에 텍스트를 입력하고 추가 버튼을 누르면 할 일 목록에 항목이 추가되는 프로그램을 만드세요. 각 항목에 삭제 버튼도 포함하세요.',
   descriptionEn: 'Create a program where typing text and clicking Add adds items to a to-do list. Include a delete button for each item.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p3: WebProblem = {
-  id: 'practical-3', number: 3, title: '필터 기능 할 일 앱', titleEn: 'To-Do App with Filters',
+  id: 'practical-p03', number: 3, title: '필터 기능 할 일 앱', titleEn: 'To-Do App with Filters',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '전체/활성/완료 필터, 완료 토글, 삭제, 진행률 표시가 있는 할 일 관리 앱을 만드세요. localStorage로 데이터를 영구 저장하세요.',
   descriptionEn: 'Create a to-do management app with all/active/completed filters, completion toggle, delete, and progress bar. Persist data with localStorage.',

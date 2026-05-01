@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p10: WebProblem = {
-  id: 'intermediate-10', number: 10, title: '검색 필터', titleEn: 'Search Filter',
+  id: 'intermediate-p10', number: 10, title: '검색 필터', titleEn: 'Search Filter',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: '입력창에 텍스트를 입력하면 실시간으로 목록이 필터링되는 검색 기능을 만드세요. 카테고리 필터 버튼도 추가하세요.',
   descriptionEn: 'Create a search feature that filters a list in real-time as text is typed. Add category filter buttons too.',

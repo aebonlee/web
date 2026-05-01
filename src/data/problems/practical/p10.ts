@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p10: WebProblem = {
-  id: 'practical-10', number: 10, title: '풀스택 미니 프로젝트', titleEn: 'Full-Stack Mini Project',
+  id: 'practical-p10', number: 10, title: '풀스택 미니 프로젝트', titleEn: 'Full-Stack Mini Project',
   category: 'practical', topic: 'backend', difficulty: 'practical',
   description: '프론트엔드(UI) + 백엔드(시뮬레이션 API) + 데이터 저장(localStorage)을 결합한 회원 관리 시스템을 만드세요. CRUD 기능, 검색, 페이지네이션을 포함하세요.',
   descriptionEn: 'Create a member management system combining frontend (UI) + backend (simulated API) + data storage (localStorage). Include CRUD, search, and pagination.',

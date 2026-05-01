@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p4: WebProblem = {
-  id: 'beginner-4', number: 4, title: '네비게이션 바', titleEn: 'Navigation Bar',
+  id: 'beginner-p04', number: 4, title: '네비게이션 바', titleEn: 'Navigation Bar',
   category: 'beginner', topic: 'css', difficulty: 'beginner',
   description: 'Flexbox를 사용하여 수평 네비게이션 바를 만드세요.',
   descriptionEn: 'Create a horizontal navigation bar using Flexbox.',

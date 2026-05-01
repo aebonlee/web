@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p2: WebProblem = {
-  id: 'beginner-2', number: 2, title: '간단한 카드 UI', titleEn: 'Simple Card UI',
+  id: 'beginner-p02', number: 2, title: '간단한 카드 UI', titleEn: 'Simple Card UI',
   category: 'beginner', topic: 'css', difficulty: 'beginner',
   description: 'CSS를 사용하여 그림자와 둥근 모서리를 가진 카드 UI를 만드세요.',
   descriptionEn: 'Create a card UI with shadow and rounded corners using CSS.',

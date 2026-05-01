@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p1: WebProblem = {
-  id: 'advanced-1', number: 1, title: 'SPA 라우터', titleEn: 'SPA Router',
+  id: 'advanced-p01', number: 1, title: 'SPA 라우터', titleEn: 'SPA Router',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'Hash 기반 SPA(Single Page Application) 라우터를 직접 구현하세요. URL 변경 시 페이지 전환 없이 콘텐츠가 교체되어야 합니다.',
   descriptionEn: 'Implement a hash-based SPA (Single Page Application) router. Content should swap without page reload when the URL changes.',

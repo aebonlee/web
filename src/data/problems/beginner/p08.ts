@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p8: WebProblem = {
-  id: 'beginner-8', number: 8, title: '연락처 폼', titleEn: 'Contact Form',
+  id: 'beginner-p08', number: 8, title: '연락처 폼', titleEn: 'Contact Form',
   category: 'beginner', topic: 'html', difficulty: 'beginner',
   description: '이름, 이메일, 메시지 필드가 있는 연락처 폼을 만드세요. 각 필드에 적절한 label과 placeholder를 포함하세요.',
   descriptionEn: 'Create a contact form with name, email, and message fields. Include appropriate labels and placeholders for each field.',

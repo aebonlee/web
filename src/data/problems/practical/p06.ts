@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p6: WebProblem = {
-  id: 'practical-6', number: 6, title: '계산기 앱', titleEn: 'Calculator App',
+  id: 'practical-p06', number: 6, title: '계산기 앱', titleEn: 'Calculator App',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '사칙연산, 소수점, 퍼센트, 부호 변환, 백스페이스 기능이 있는 계산기를 만드세요. 키보드 입력도 지원하세요.',
   descriptionEn: 'Create a calculator with basic operations, decimal, percent, sign toggle, backspace, and keyboard input support.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p9: WebProblem = {
-  id: 'advanced-9', number: 9, title: 'Service Worker 캐싱', titleEn: 'Service Worker Caching',
+  id: 'advanced-p09', number: 9, title: 'Service Worker 캐싱', titleEn: 'Service Worker Caching',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'Service Worker의 캐싱 전략을 시뮬레이션하는 데모를 만드세요. Cache First, Network First, Stale While Revalidate 전략을 시각적으로 보여주세요.',
   descriptionEn: 'Create a demo simulating Service Worker caching strategies. Visually demonstrate Cache First, Network First, and Stale While Revalidate strategies.',

@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p5: WebProblem = {
-  id: 'advanced-5', number: 5, title: '드래그 앤 드롭', titleEn: 'Drag and Drop',
+  id: 'advanced-p05', number: 5, title: '드래그 앤 드롭', titleEn: 'Drag and Drop',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'HTML5 Drag and Drop API를 사용하여 칸반 보드 스타일의 드래그 앤 드롭 인터페이스를 만드세요. 카드를 열 사이에서 이동할 수 있어야 합니다.',
   descriptionEn: 'Create a Kanban-board style drag and drop interface using the HTML5 Drag and Drop API. Cards should be movable between columns.',

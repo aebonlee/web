@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p2: WebProblem = {
-  id: 'practical-2', number: 2, title: '날씨 대시보드', titleEn: 'Weather Dashboard',
+  id: 'practical-p02', number: 2, title: '날씨 대시보드', titleEn: 'Weather Dashboard',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '도시를 검색하면 현재 날씨, 기온, 습도, 풍속 등을 카드 형태로 보여주는 날씨 대시보드를 만드세요. (시뮬레이션 데이터 사용)',
   descriptionEn: 'Create a weather dashboard that shows current weather, temperature, humidity, and wind speed in card format when searching for a city. (Use simulated data)',

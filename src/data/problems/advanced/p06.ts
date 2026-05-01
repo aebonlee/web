@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p6: WebProblem = {
-  id: 'advanced-6', number: 6, title: 'Virtual DOM 개념', titleEn: 'Virtual DOM Concept',
+  id: 'advanced-p06', number: 6, title: 'Virtual DOM 개념', titleEn: 'Virtual DOM Concept',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: '간단한 Virtual DOM 시스템을 구현하세요. 가상 DOM 트리를 생성하고, diff 알고리즘으로 변경사항만 실제 DOM에 적용하는 패치 함수를 만드세요.',
   descriptionEn: 'Implement a simple Virtual DOM system. Create a virtual DOM tree, and build a patch function that applies only changes to the real DOM using a diff algorithm.',

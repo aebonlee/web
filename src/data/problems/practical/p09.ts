@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p9: WebProblem = {
-  id: 'practical-9', number: 9, title: '소셜 미디어 피드', titleEn: 'Social Media Feed',
+  id: 'practical-p09', number: 9, title: '소셜 미디어 피드', titleEn: 'Social Media Feed',
   category: 'practical', topic: 'javascript', difficulty: 'practical',
   description: '프로필 이미지, 게시물 텍스트, 좋아요/댓글 기능, 게시물 작성이 포함된 소셜 미디어 피드 UI를 만드세요.',
   descriptionEn: 'Create a social media feed UI with profile images, post text, like/comment functionality, and post creation.',

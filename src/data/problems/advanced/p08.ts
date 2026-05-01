@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p8: WebProblem = {
-  id: 'advanced-8', number: 8, title: 'WebSocket 채팅 UI', titleEn: 'WebSocket Chat UI',
+  id: 'advanced-p08', number: 8, title: 'WebSocket 채팅 UI', titleEn: 'WebSocket Chat UI',
   category: 'advanced', topic: 'javascript', difficulty: 'advanced',
   description: 'WebSocket을 시뮬레이션한 실시간 채팅 UI를 만드세요. 메시지 전송, 수신, 타이핑 인디케이터, 온라인 사용자 목록을 포함하세요.',
   descriptionEn: 'Create a real-time chat UI simulating WebSocket. Include message sending, receiving, typing indicator, and online user list.',

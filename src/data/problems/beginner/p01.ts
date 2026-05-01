@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p1: WebProblem = {
-  id: 'beginner-1', number: 1, title: '자기소개 페이지', titleEn: 'Self Introduction Page',
+  id: 'beginner-p01', number: 1, title: '자기소개 페이지', titleEn: 'Self Introduction Page',
   category: 'beginner', topic: 'html', difficulty: 'beginner',
   description: '자기소개 HTML 페이지를 작성하세요. 이름, 취미, 좋아하는 것을 포함해야 합니다.',
   descriptionEn: 'Create a self-introduction HTML page. Include your name, hobbies, and favorite things.',

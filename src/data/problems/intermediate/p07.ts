@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p7: WebProblem = {
-  id: 'intermediate-7', number: 7, title: '폼 유효성 검사', titleEn: 'Form Validation',
+  id: 'intermediate-p07', number: 7, title: '폼 유효성 검사', titleEn: 'Form Validation',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: '실시간 유효성 검사가 포함된 회원가입 폼을 만드세요. 이메일 형식, 비밀번호 강도, 비밀번호 확인 등을 검증하세요.',
   descriptionEn: 'Create a signup form with real-time validation. Validate email format, password strength, and password confirmation.',

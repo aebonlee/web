@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p2: WebProblem = {
-  id: 'intermediate-2', number: 2, title: 'CSS 애니메이션', titleEn: 'CSS Animations',
+  id: 'intermediate-p02', number: 2, title: 'CSS 애니메이션', titleEn: 'CSS Animations',
   category: 'intermediate', topic: 'css', difficulty: 'intermediate',
   description: '@keyframes를 사용하여 로딩 스피너, 페이드인 텍스트, 바운스 효과 등 다양한 CSS 애니메이션을 만드세요.',
   descriptionEn: 'Create various CSS animations using @keyframes: loading spinner, fade-in text, and bounce effects.',

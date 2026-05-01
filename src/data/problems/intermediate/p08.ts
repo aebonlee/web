@@ -1,6 +1,6 @@
 import type { WebProblem } from '../../types';
 export const p8: WebProblem = {
-  id: 'intermediate-8', number: 8, title: 'Local Storage CRUD', titleEn: 'Local Storage CRUD',
+  id: 'intermediate-p08', number: 8, title: 'Local Storage CRUD', titleEn: 'Local Storage CRUD',
   category: 'intermediate', topic: 'javascript', difficulty: 'intermediate',
   description: 'localStorage를 사용하여 메모를 생성, 읽기, 수정, 삭제할 수 있는 메모 앱을 만드세요. 페이지를 새로고침해도 데이터가 유지되어야 합니다.',
   descriptionEn: 'Create a memo app that can create, read, update, and delete memos using localStorage. Data should persist after page refresh.',
