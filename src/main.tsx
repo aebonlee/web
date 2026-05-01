@@ -9,7 +9,6 @@ import { ToastProvider } from './contexts/ToastContext';
 import { ProgressProvider } from './contexts/ProgressContext';
 import App from './App';
 import './index.css';
-import './styles/site.css';
 
 interface ErrorBoundaryState {
   hasError: boolean;
