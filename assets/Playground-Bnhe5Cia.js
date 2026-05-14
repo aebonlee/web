@@ -1,4 +1,4 @@
-import{d as e,u as t}from"./index-Bu37L54Q.js";import{t as n}from"./WebCodeEditor-Dw0oyCVG.js";var r=e(),i=`<h1>Hello, Web!</h1>
+import{d as e,u as t}from"./index-Y69GA7h8.js";import{t as n}from"./WebCodeEditor-eMv782H8.js";var r=e(),i=`<h1>Hello, Web!</h1>
 <p>여기에 HTML을 작성하세요.</p>
 <button id="myBtn">클릭!</button>`,a=`body { font-family: sans-serif; padding: 20px; }
 h1 { color: #0046C8; }
