@@ -68,6 +68,7 @@ const site = {
   ],
 
   menuItems: [
+    { path: '/about', labelKey: 'nav.about' },
     { path: '/guide', labelKey: 'guide', activePath: '/guide' },
     {
       path: '/html', labelKey: 'webBasics', activePath: '/html',
