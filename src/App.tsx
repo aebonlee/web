@@ -33,6 +33,7 @@ const Profile = lazyLoad(() => import('./pages/Profile'));
 const Playground = lazyLoad(() => import('./pages/Playground'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const NotFound = lazyLoad(() => import('./pages/NotFound'));
+const About = lazyLoad(() => import('./pages/About'));
 
 function LoadingFallback() {
   return (
@@ -66,6 +67,7 @@ export default function App() {
           <Route path="admin/dashboard/*" element={<AdminGuard><AdminDashboard /></AdminGuard>} />
           <Route path=":topic" element={<TopicList />} />
           <Route path=":topic/:chapterId" element={<TopicDetail />} />
+          <Route path="about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
