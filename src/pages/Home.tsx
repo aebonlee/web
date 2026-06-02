@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { topicOrder, topicMap } from '../data/index';
+import { topicOrder, topicMap, allProblems } from '../data/index';
+import site from '../config/site';
+import useCountUp from '../hooks/useCountUp';
 
 const TOPIC_ICONS: Record<string, string> = {
   html: 'HTML', css: 'CSS', javascript: 'JS', react: 'React',
@@ -12,6 +14,22 @@ const heroSlides = [
   { titleKey: 'heroTitle1', highlightKey: 'heroHighlight1', descKey: 'heroDesc1', btnKey: 'startLearning', btnLink: '/problems' },
   { titleKey: 'heroTitle2', highlightKey: 'heroHighlight2', descKey: 'heroDesc2', btnKey: 'startLearning', btnLink: '/html' },
   { titleKey: 'heroTitle3', highlightKey: 'heroHighlight3', descKey: 'heroDesc3', btnKey: 'viewProgress', btnLink: '/progress' }
+];
+
+const FEATURES = [
+  { icon: '🧭', titleKey: 'home.why.f1.title', descKey: 'home.why.f1.desc' },
+  { icon: '⌨️', titleKey: 'home.why.f2.title', descKey: 'home.why.f2.desc' },
+  { icon: '⚡', titleKey: 'home.why.f3.title', descKey: 'home.why.f3.desc' },
+  { icon: '📈', titleKey: 'home.why.f4.title', descKey: 'home.why.f4.desc' }
+];
+
+const totalChapters = topicOrder.reduce((sum, key) => sum + topicMap[key].chapters.length, 0);
+
+const STATS = [
+  { value: topicOrder.length, suffix: '', labelKey: 'home.stats.topics' },
+  { value: totalChapters, suffix: '', labelKey: 'home.stats.chapters' },
+  { value: allProblems.length, suffix: '', labelKey: 'home.stats.problems' },
+  { value: 100, suffix: '%', labelKey: 'home.stats.free' }
 ];
 
 function generateParticles(count: number) {
@@ -25,6 +43,16 @@ function generateParticles(count: number) {
 }
 
 const particles = generateParticles(12);
+
+function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+  const { count, ref } = useCountUp(value, 1600);
+  return (
+    <div className="home-stat" ref={ref as React.RefObject<HTMLDivElement>}>
+      <div className="home-stat-value">{count}{suffix}</div>
+      <div className="home-stat-label">{label}</div>
+    </div>
+  );
+}
 
 export default function Home() {
   const { t } = useLanguage();
@@ -80,6 +108,18 @@ export default function Home() {
         <div className="scroll-indicator"><div className="mouse"><div className="wheel" /></div></div>
       </section>
 
+      {/* Stats */}
+      <section className="home-stats-section">
+        <div className="container">
+          <div className="home-stats-grid">
+            {STATS.map(s => (
+              <StatItem key={s.labelKey} value={s.value} suffix={s.suffix} label={t(s.labelKey)} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Topics */}
       <section className="section">
         <div className="container">
           <div className="section-header">
@@ -103,6 +143,60 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Why / Features */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title" data-aos="fade-up">{t('home.why.title')}</h2>
+            <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">{t('home.why.subtitle')}</p>
+          </div>
+          <div className="home-feature-grid">
+            {FEATURES.map((f, idx) => (
+              <div key={f.titleKey} className="home-feature-card" data-aos="fade-up" data-aos-delay={`${idx * 80}`}>
+                <div className="home-feature-icon">{f.icon}</div>
+                <h3 className="home-feature-title">{t(f.titleKey)}</h3>
+                <p className="home-feature-desc">{t(f.descKey)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Difficulty categories */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title" data-aos="fade-up">{t('home.cat.title')}</h2>
+            <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">{t('home.cat.subtitle')}</p>
+          </div>
+          <div className="home-cat-grid">
+            {site.categories.map((cat, idx) => (
+              <Link key={cat.id} to={`/problems/${cat.id}`} className="home-cat-card" data-aos="fade-up" data-aos-delay={`${idx * 80}`}>
+                <span className="home-cat-bar" style={{ background: cat.color }} />
+                <span className="home-cat-step" style={{ color: cat.color }}>{String(idx + 1).padStart(2, '0')}</span>
+                <h3 className="home-cat-name">{t(cat.labelKey)}</h3>
+                <p className="home-cat-desc">{t(cat.descriptionKey)}</p>
+                <span className="home-cat-link">{t('startLearning')} →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="home-cta-section">
+        <div className="container">
+          <div className="home-cta-box" data-aos="zoom-in">
+            <h2 className="home-cta-title">{t('home.cta.title')}</h2>
+            <p className="home-cta-desc">{t('home.cta.desc')}</p>
+            <div className="home-cta-buttons">
+              <Link to="/problems" className="btn btn-primary">{t('home.cta.btn')}</Link>
+              <Link to="/guide" className="btn btn-secondary">{t('guide')}</Link>
+            </div>
           </div>
         </div>
       </section>

@@ -148,6 +148,24 @@ export const translations: Record<string, Record<string, unknown>> = {
     topicSection: '학습 주제',
     topicSectionDesc: '웹 개발에 필요한 핵심 기술들을 체계적으로 학습할 수 있습니다.',
 
+    // ─── Home sections (added) ───
+    'home.stats.free': '무료 학습',
+    'home.why.title': '왜 이 플랫폼인가요?',
+    'home.why.subtitle': '입문자부터 실무자까지, 막힘없이 성장하도록 설계했습니다.',
+    'home.why.f1.title': '체계적인 커리큘럼',
+    'home.why.f1.desc': 'HTML·CSS부터 React·TypeScript·Git·백엔드·DevOps까지 순서대로 정리된 학습 경로를 따라가세요.',
+    'home.why.f2.title': '직접 풀며 배우기',
+    'home.why.f2.desc': '난이도별 40개 실전 문제와 라이브 코드 에디터로 손으로 익힙니다.',
+    'home.why.f3.title': '실시간 미리보기',
+    'home.why.f3.desc': '작성한 코드를 즉시 화면으로 확인하며 결과를 체득합니다.',
+    'home.why.f4.title': '학습 현황 추적',
+    'home.why.f4.desc': '진도와 성취를 한눈에 확인하며 끝까지 완주하세요.',
+    'home.cat.title': '난이도별 도장깨기',
+    'home.cat.subtitle': '입문부터 실전까지 단계별로 도전하세요.',
+    'home.cta.title': '지금 바로 시작하세요',
+    'home.cta.desc': '회원가입 없이도 모든 학습 콘텐츠를 무료로 이용할 수 있습니다.',
+    'home.cta.btn': '학습 시작하기',
+
     // ─── Stats (flat) ───
     totalProblems: '총 문제 수',
     languages: '학습 언어',
@@ -632,6 +650,24 @@ export const translations: Record<string, Record<string, unknown>> = {
     // ─── Section (flat) ───
     topicSection: 'Learning Topics',
     topicSectionDesc: 'Learn essential web development technologies in a structured curriculum.',
+
+    // ─── Home sections (added) ───
+    'home.stats.free': 'Free',
+    'home.why.title': 'Why This Platform?',
+    'home.why.subtitle': 'Designed so everyone — from beginners to professionals — can grow without friction.',
+    'home.why.f1.title': 'Structured Curriculum',
+    'home.why.f1.desc': 'Follow an ordered learning path from HTML/CSS to React, TypeScript, Git, backend, and DevOps.',
+    'home.why.f2.title': 'Learn by Doing',
+    'home.why.f2.desc': 'Master concepts hands-on with 40 real problems by difficulty and a live code editor.',
+    'home.why.f3.title': 'Live Preview',
+    'home.why.f3.desc': 'See your code render instantly on screen and internalize the results.',
+    'home.why.f4.title': 'Progress Tracking',
+    'home.why.f4.desc': 'See your progress and achievements at a glance and finish what you start.',
+    'home.cat.title': 'Challenge by Difficulty',
+    'home.cat.subtitle': 'Take on challenges step by step, from beginner to practical.',
+    'home.cta.title': 'Start Right Now',
+    'home.cta.desc': 'All learning content is available for free — no sign-up required.',
+    'home.cta.btn': 'Start Learning',
 
     // ─── Stats (flat) ───
     totalProblems: 'Total Problems',
