@@ -88,6 +88,26 @@ Cache-Control: no-cache
         explanation: '내용이 바뀌면 해시(파일명)가 달라지므로, 자산을 길게 캐시해도 변경 시 브라우저가 새 파일을 내려받아 캐시 무효화 문제가 해결됩니다.',
         explanationEn: 'When content changes the hash (filename) changes, so assets can be cached for a long time yet browsers fetch new files on change, solving cache invalidation.'
       }
+    },
+    {
+      title: '실습 예제: 성능 점검 루틴',
+      titleEn: 'Practice: A Performance Audit Routine',
+      content: '빌드 후 번들 크기를 확인하고, Lighthouse로 성능 점수를 측정하고, 코드 분할로 큰 청크를 줄이는 점검 루틴을 따라 해 봅니다. 배포 전 반복하면 좋은 체크리스트입니다.',
+      contentEn: 'Follow an audit routine: check bundle size after build, measure performance with Lighthouse, and reduce large chunks with code splitting. A good checklist to repeat before deployment.',
+      code: `# 1) 빌드 후 청크 크기 확인 (Vite가 gzip 크기 출력)
+npm run build
+
+# 2) 번들 시각화로 큰 의존성 찾기
+npm install -D rollup-plugin-visualizer
+#   vite.config: plugins: [react(), visualizer()]
+
+# 3) Lighthouse로 성능 측정 (CLI)
+npx lighthouse https://web.dreamitbiz.com --view
+
+# 4) 무거운 청크는 동적 import로 분할
+#   const Chart = lazy(() => import('./Chart'));
+# → 초기 번들에서 제외되어 LCP 개선`,
+      codeLanguage: 'bash'
     }
   ]
 };

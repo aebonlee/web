@@ -121,3 +121,27 @@ HTML/CSS/JavaScript는 다중 섹션·퀴즈로 충실했으나, 나머지 5개 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / `npm run preview` 학습 라우트 HTTP 200 ✅
 - 빌드 번들에 chapter-sidebar-nav·chapter-sidebar-section-link 클래스 포함 확인
+
+---
+
+# 전 챕터 실습 예제 추가 (2026-06-02)
+
+## 배경
+각 챕터가 개념 설명 위주여서, 배운 내용을 직접 해보는 "실습 예제"가 부족했다.
+**32개 챕터 전부에 실습 예제 섹션을 1개씩 추가**해 학습-실습 흐름을 완성했다.
+
+## 작업 내용 (총 32개 실습 섹션 추가)
+- **HTML/CSS/JavaScript (12챕터)** — `codeLanguage: 'html'` + `livePreview: true`로
+  실제로 동작하는 인터랙티브 실습 (자기소개 카드, 설문 폼, 시맨틱 프로필, 미디어 갤러리,
+  알림 배지, 정보 카드, 네비게이션 바, 반응형 가격표, 글자 수 카운터, 할 일 목록,
+  실제 API 호출, 장바구니 합계 계산기 등).
+- **React/TypeScript (8챕터)** — 완성형 워크드 예제 (별점 컴포넌트, 좋아요 토글,
+  창 크기 추적 Hook, 테마 Context / 장바구니 합계 타이핑, 제네릭 페이지네이션 타입,
+  판별 유니온 상태 처리, 제네릭 List 컴포넌트).
+- **Git/Backend/DevOps (12챕터)** — 실전 시나리오 (첫 저장소·배포·rebase 정리·PR 보내기 /
+  메모 CRUD API·게시글 조회·보호 라우트·배포용 서버 / Vite 셋업·테스트 후 배포 워크플로·
+  품질 도구 셋업·성능 점검 루틴).
+
+## 결과
+- 챕터당 섹션 +1 → **총 실습 예제 32개 추가**. HTML/CSS/JS 실습은 Preview로 즉시 실행 확인 가능.
+- `npm run typecheck` ✅ / `npm run build` ✅ (data 청크 341KB → 381KB)

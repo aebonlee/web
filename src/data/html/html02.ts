@@ -53,6 +53,36 @@ const chapter: TopicChapter = {
 </form>`,
       codeLanguage: 'html',
       livePreview: true
+    },
+    {
+      title: '실습 예제: 만족도 설문 폼',
+      titleEn: 'Practice: Satisfaction Survey Form',
+      content: '라디오 버튼, 체크박스, 셀렉트, 텍스트영역을 조합해 간단한 설문 폼을 만들어 봅니다. 각 입력에 label을 연결해 접근성을 지키는 것이 핵심입니다.',
+      contentEn: 'Combine radio buttons, checkboxes, a select, and a textarea to build a simple survey form. The key is connecting a label to each input for accessibility.',
+      code: `<form style="max-width:360px;font-family:sans-serif;display:grid;gap:12px">
+  <h3>강의 만족도 설문</h3>
+
+  <fieldset>
+    <legend>전반적인 만족도</legend>
+    <label><input type="radio" name="sat" value="5"> 매우 만족</label><br>
+    <label><input type="radio" name="sat" value="3"> 보통</label><br>
+    <label><input type="radio" name="sat" value="1"> 불만족</label>
+  </fieldset>
+
+  <label for="topic">가장 유익한 주제</label>
+  <select id="topic" name="topic">
+    <option>HTML</option><option>CSS</option><option>JavaScript</option>
+  </select>
+
+  <label><input type="checkbox" name="recommend"> 지인에게 추천하겠습니다</label>
+
+  <label for="comment">자유 의견</label>
+  <textarea id="comment" rows="3" placeholder="의견을 남겨주세요"></textarea>
+
+  <button type="submit">제출</button>
+</form>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

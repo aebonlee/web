@@ -104,6 +104,34 @@ async function loadPosts() {
         explanation: '제네릭 인자로 반환 타입을 Post[]로 지정해, 호출 결과가 Post 배열로 추론되고 자동완성·타입 검사가 적용됩니다.',
         explanationEn: 'The generic argument sets the return type to Post[], so the result is inferred as an array of Post with autocomplete and type checking.'
       }
+    },
+    {
+      title: '실습 예제: 제네릭 List 컴포넌트',
+      titleEn: 'Practice: Generic List Component',
+      content: '제네릭을 사용해 어떤 타입의 배열이든 렌더링할 수 있는 재사용 List 컴포넌트를 만들어 봅니다. renderItem과 keyOf를 props로 받아 타입 안전성을 유지하면서 유연하게 동작합니다.',
+      contentEn: 'Use generics to build a reusable List component that can render an array of any type. It takes renderItem and keyOf as props, staying flexible while preserving type safety.',
+      code: `interface ListProps<T> {
+  items: T[];
+  keyOf: (item: T) => string | number;
+  renderItem: (item: T) => React.ReactNode;
+}
+
+function List<T>({ items, keyOf, renderItem }: ListProps<T>) {
+  return <ul>{items.map(item => <li key={keyOf(item)}>{renderItem(item)}</li>)}</ul>;
+}
+
+interface User { id: number; name: string; }
+
+function UserList({ users }: { users: User[] }) {
+  return (
+    <List
+      items={users}
+      keyOf={u => u.id}
+      renderItem={u => <strong>{u.name}</strong>}  // u는 User로 추론됨
+    />
+  );
+}`,
+      codeLanguage: 'tsx'
     }
   ]
 };

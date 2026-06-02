@@ -63,6 +63,29 @@ const chapter: TopicChapter = {
 <a href="#">마우스를 올려보세요 (hover)</a>`,
       codeLanguage: 'html',
       livePreview: true
+    },
+    {
+      title: '실습 예제: 알림 배지 스타일링',
+      titleEn: 'Practice: Styling Notification Badges',
+      content: '클래스 선택자와 가상 클래스(:hover)를 활용해 상태별 배지(성공·경고·위험)를 만들어 봅니다. 같은 구조에 클래스만 바꿔 다른 색을 적용하는 패턴을 익혀 보세요.',
+      contentEn: 'Use class selectors and the :hover pseudo-class to build status badges (success, warning, danger). Learn the pattern of applying different colors by swapping only the class on the same structure.',
+      code: `<style>
+  .badge {
+    display: inline-block; padding: 6px 14px; border-radius: 9999px;
+    font-family: sans-serif; font-weight: 700; color: #fff;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .badge:hover { opacity: 0.8; }
+  .badge.success { background: #00855A; }
+  .badge.warning { background: #C87200; }
+  .badge.danger  { background: #C8102E; }
+</style>
+
+<span class="badge success">완료</span>
+<span class="badge warning">대기중</span>
+<span class="badge danger">실패</span>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

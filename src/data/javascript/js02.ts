@@ -41,6 +41,43 @@ const chapter: TopicChapter = {
 </script>`,
       codeLanguage: 'html',
       livePreview: true
+    },
+    {
+      title: '실습 예제: 할 일 목록',
+      titleEn: 'Practice: To-Do List',
+      content: 'DOM 생성(createElement)·이벤트·삭제(remove)를 종합해 동작하는 할 일 목록을 만들어 봅니다. 입력 후 추가 버튼을 누르고, 각 항목의 삭제 버튼도 눌러 보세요.',
+      contentEn: 'Combine DOM creation (createElement), events, and removal (remove) to build a working to-do list. Add items and try the delete button on each item.',
+      code: `<div style="font-family:sans-serif;max-width:320px">
+  <div style="display:flex;gap:6px">
+    <input id="todoInput" placeholder="할 일 입력" style="flex:1;padding:6px">
+    <button id="add" style="padding:6px 12px;cursor:pointer">추가</button>
+  </div>
+  <ul id="todos" style="padding-left:18px"></ul>
+</div>
+<script>
+  const input = document.getElementById("todoInput");
+  const list = document.getElementById("todos");
+
+  function addTodo() {
+    const text = input.value.trim();
+    if (!text) return;
+    const li = document.createElement("li");
+    li.textContent = text;
+    const del = document.createElement("button");
+    del.textContent = "삭제";
+    del.style.cssText = "margin-left:8px;cursor:pointer";
+    del.onclick = () => li.remove();
+    li.appendChild(del);
+    list.appendChild(li);
+    input.value = "";
+    input.focus();
+  }
+
+  document.getElementById("add").addEventListener("click", addTodo);
+  input.addEventListener("keydown", e => { if (e.key === "Enter") addTodo(); });
+</script>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

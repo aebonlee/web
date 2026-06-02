@@ -101,6 +101,36 @@ create policy "자신의 글만 수정"
         explanation: 'RLS는 행 단위 보안 정책으로, auth.uid() 등을 사용해 로그인한 사용자가 허용된 행에만 접근하도록 제한합니다.',
         explanationEn: 'RLS is a row-level security policy that uses auth.uid() and others to restrict logged-in users to permitted rows only.'
       }
+    },
+    {
+      title: '실습 예제: 게시글 목록·상세 조회',
+      titleEn: 'Practice: Fetching Post List and Detail',
+      content: 'Supabase 클라이언트로 게시글 목록(페이지네이션)과 단일 게시글 상세를 조회하는 함수를 만들어 봅니다. select·order·range·single 메서드를 종합한 실전 데이터 접근 패턴입니다.',
+      contentEn: 'Build functions that fetch a post list (with pagination) and a single post\'s detail using the Supabase client. It is a practical data-access pattern combining select, order, range, and single.',
+      code: `import { createClient } from '@supabase/supabase-js';
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+
+// 목록 조회 (페이지당 10개)
+async function getPosts(page = 1) {
+  const size = 10;
+  const from = (page - 1) * size;
+  const { data, count, error } = await supabase
+    .from('posts')
+    .select('id, title, created_at', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, from + size - 1);
+  if (error) throw error;
+  return { posts: data, total: count };
+}
+
+// 단일 게시글 상세
+async function getPost(id) {
+  const { data, error } = await supabase
+    .from('posts').select('*').eq('id', id).single();
+  if (error) throw error;
+  return data;
+}`,
+      codeLanguage: 'javascript'
     }
   ]
 };

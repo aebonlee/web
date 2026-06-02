@@ -96,6 +96,38 @@ pm2 startup && pm2 save   # 부팅 시 자동 실행`,
         explanation: '/health 같은 헬스 체크 엔드포인트는 로드밸런서·모니터링 도구가 서버 상태를 주기적으로 확인하는 데 사용됩니다.',
         explanationEn: 'A health-check endpoint like /health is used by load balancers and monitoring tools to periodically verify server status.'
       }
+    },
+    {
+      title: '실습 예제: 배포 준비된 서버 구성',
+      titleEn: 'Practice: A Deployment-Ready Server Setup',
+      content: '환경 변수 로딩, 필수 변수 검증, 헬스 체크, 포트 설정을 갖춘 "배포 가능한" 서버 기본 골격을 만들어 봅니다. 운영 환경에 바로 올릴 수 있는 최소 구성입니다.',
+      contentEn: 'Build a "deployment-ready" server skeleton with environment-variable loading, required-variable validation, a health check, and port configuration. It is a minimal setup you can ship to production directly.',
+      code: `require('dotenv').config();
+const express = require('express');
+const app = express();
+
+// 1) 필수 환경 변수 검증 (없으면 즉시 종료)
+['DATABASE_URL', 'JWT_SECRET'].forEach(key => {
+  if (!process.env[key]) {
+    console.error('환경 변수 누락: ' + key);
+    process.exit(1);
+  }
+});
+
+app.use(express.json());
+
+// 2) 헬스 체크 (모니터링용)
+app.get('/health', (req, res) =>
+  res.json({ status: 'ok', uptime: process.uptime() })
+);
+
+// 3) 포트는 플랫폼이 주입 (Render/Railway 등)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log('listening on ' + PORT));
+
+# 실행/운영
+# pm2 start server.js --name api && pm2 save`,
+      codeLanguage: 'javascript'
     }
   ]
 };

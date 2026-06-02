@@ -80,6 +80,42 @@ const chapter: TopicChapter = {
 </table>`,
       codeLanguage: 'html',
       livePreview: true
+    },
+    {
+      title: '실습 예제: 시맨틱 프로필 페이지',
+      titleEn: 'Practice: Semantic Profile Page',
+      content: '시맨틱 태그(header·main·section·footer)와 리스트·테이블을 함께 사용해 작은 프로필 페이지를 구성해 봅니다. <div> 대신 의미 있는 태그를 쓰는 연습이 핵심입니다.',
+      contentEn: 'Build a small profile page using semantic tags (header, main, section, footer) together with lists and a table. The key is practicing meaningful tags instead of <div>.',
+      code: `<article style="max-width:380px;font-family:sans-serif;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
+  <header style="background:#0046C8;color:#fff;padding:16px">
+    <h2 style="margin:0">이애본</h2>
+    <p style="margin:4px 0 0">프론트엔드 학습자</p>
+  </header>
+  <main style="padding:16px">
+    <section>
+      <h3>보유 기술</h3>
+      <ul>
+        <li>HTML / CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+    <section>
+      <h3>학습 현황</h3>
+      <table border="1" cellpadding="6" style="border-collapse:collapse;width:100%">
+        <thead><tr><th>토픽</th><th>진도</th></tr></thead>
+        <tbody>
+          <tr><td>HTML</td><td>100%</td></tr>
+          <tr><td>CSS</td><td>60%</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer style="padding:12px 16px;color:#666;font-size:0.85rem">
+    &copy; 2026 DreamIT Biz
+  </footer>
+</article>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

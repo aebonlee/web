@@ -109,6 +109,37 @@ app.post('/api/users', (req, res) => {
         explanation: 'CORS는 브라우저의 동일 출처 정책 때문에 필요합니다. 서버가 허용 출처를 지정해야 다른 도메인의 프론트엔드가 API를 호출할 수 있습니다.',
         explanationEn: 'CORS is needed due to the browser\'s same-origin policy. The server must specify allowed origins so a frontend on another domain can call the API.'
       }
+    },
+    {
+      title: '실습 예제: 보호된 라우트 만들기',
+      titleEn: 'Practice: Building a Protected Route',
+      content: '비밀번호 해싱 → 로그인 시 JWT 발급 → 인증 미들웨어로 보호된 라우트 접근까지, 인증 흐름을 한 파일로 엮어 봅니다. 토큰이 없으면 401이 반환되는 것을 확인하세요.',
+      contentEn: 'Tie the auth flow together in one file: password hashing → issuing a JWT on login → accessing a protected route via auth middleware. Verify that a missing token returns 401.',
+      code: `const jwt = require('jsonwebtoken');
+const SECRET = process.env.JWT_SECRET;
+
+// 로그인 → 토큰 발급 (비밀번호 검증은 bcrypt.compare 가정)
+app.post('/api/login', async (req, res) => {
+  const user = await findUser(req.body.email);
+  const ok = user && await bcrypt.compare(req.body.password, user.password);
+  if (!ok) return res.status(401).json({ error: '인증 실패' });
+  const token = jwt.sign({ userId: user.id }, SECRET, { expiresIn: '1h' });
+  res.json({ token });
+});
+
+// 인증 미들웨어
+function auth(req, res, next) {
+  const token = (req.headers.authorization || '').split(' ')[1];
+  if (!token) return res.status(401).json({ error: '토큰 없음' });
+  try { req.user = jwt.verify(token, SECRET); next(); }
+  catch { res.status(403).json({ error: '유효하지 않은 토큰' }); }
+}
+
+// 보호된 라우트
+app.get('/api/me', auth, (req, res) => {
+  res.json({ userId: req.user.userId });
+});`,
+      codeLanguage: 'javascript'
     }
   ]
 };

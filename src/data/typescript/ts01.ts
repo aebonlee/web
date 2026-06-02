@@ -118,6 +118,30 @@ function log(message: string): void {
         explanation: '명시적으로 값을 반환하지 않는 함수의 반환 타입은 void로 표기합니다.',
         explanationEn: 'A function that does not explicitly return a value has the return type void.'
       }
+    },
+    {
+      title: '실습 예제: 장바구니 합계 함수 타이핑',
+      titleEn: 'Practice: Typing a Cart Total Function',
+      content: 'interface로 상품 타입을 정의하고, 그 배열을 받아 합계를 계산하는 함수에 타입을 부여해 봅니다. 잘못된 속성에 접근하면 컴파일 단계에서 오류가 잡히는 것을 확인하세요.',
+      contentEn: 'Define a product type with an interface and type a function that takes an array of them and computes the total. Notice that accessing a wrong property is caught at compile time.',
+      code: `interface CartItem {
+  name: string;
+  price: number;
+  qty: number;
+}
+
+function cartTotal(items: CartItem[]): number {
+  return items.reduce((sum, item) => sum + item.price * item.qty, 0);
+}
+
+const cart: CartItem[] = [
+  { name: '키보드', price: 89000, qty: 1 },
+  { name: '마우스', price: 32000, qty: 2 }
+];
+
+const total: number = cartTotal(cart);  // 153000
+// cart[0].pirce  ← 오타 시 컴파일 에러로 즉시 발견`,
+      codeLanguage: 'typescript'
     }
   ]
 };

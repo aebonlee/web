@@ -95,6 +95,33 @@ function area(s: Shape): number {
         explanation: 'unknown은 어떤 값이든 받지만, 좁히기(narrowing) 없이는 사용할 수 없어 any보다 타입 안전합니다.',
         explanationEn: 'unknown accepts any value but cannot be used without narrowing, making it type-safer than any.'
       }
+    },
+    {
+      title: '실습 예제: 판별 유니온으로 상태 처리',
+      titleEn: 'Practice: Handling State with a Discriminated Union',
+      content: '공통 필드(status)를 판별자로 갖는 유니온 타입을 만들어, switch로 각 상태를 안전하게 처리해 봅니다. API 로딩 상태를 표현하는 실전 패턴으로, 빠진 케이스를 never로 잡아낼 수 있습니다.',
+      contentEn: 'Build a union type with a common discriminant field (status) and handle each state safely with switch. This is a real-world pattern for representing API loading states, where missing cases are caught with never.',
+      code: `type Fetch<T> =
+  | { status: 'loading' }
+  | { status: 'success'; data: T }
+  | { status: 'error'; message: string };
+
+function render(state: Fetch<string[]>): string {
+  switch (state.status) {
+    case 'loading':
+      return '불러오는 중...';
+    case 'success':
+      return state.data.join(', ');   // 여기서만 data 접근 가능
+    case 'error':
+      return '에러: ' + state.message; // 여기서만 message 접근 가능
+    default:
+      const _exhaustive: never = state;
+      return _exhaustive;
+  }
+}
+
+render({ status: 'success', data: ['A', 'B'] });`,
+      codeLanguage: 'typescript'
     }
   ]
 };

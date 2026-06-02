@@ -92,6 +92,27 @@ git push origin fix/typo`,
         explanation: '내 fork는 origin, 원본 저장소는 upstream으로 추가하는 것이 관례입니다. upstream에서 fetch/merge해 동기화합니다.',
         explanationEn: 'By convention, your fork is origin and the original repo is added as upstream. You sync by fetching/merging from upstream.'
       }
+    },
+    {
+      title: '실습 예제: 오픈소스에 PR 보내기',
+      titleEn: 'Practice: Sending a PR to Open Source',
+      content: 'Fork → upstream 동기화 → 기능 브랜치 → 커밋 컨벤션 → push → PR 까지, 오픈소스 기여의 표준 흐름을 한 번에 따라 해 봅니다. 첫 컨트리뷰션 시 그대로 활용할 수 있습니다.',
+      contentEn: 'Follow the standard open-source contribution flow end to end: Fork → sync upstream → feature branch → conventional commit → push → PR. You can use it as-is for your first contribution.',
+      code: `# 1) Fork한 내 저장소 클론 + 원본 연결
+git clone https://github.com/me/awesome-lib.git && cd awesome-lib
+git remote add upstream https://github.com/original/awesome-lib.git
+
+# 2) 최신 원본 반영
+git fetch upstream && git switch main && git merge upstream/main
+
+# 3) 기능 브랜치에서 작업 + 컨벤션 커밋
+git switch -c fix/readme-typo
+git commit -am "docs: README 설치 명령 오타 수정"
+
+# 4) 내 fork로 push 후 GitHub에서 PR 생성
+git push origin fix/readme-typo
+# → GitHub의 "Compare & pull request" 버튼으로 원본에 PR`,
+      codeLanguage: 'bash'
     }
   ]
 };

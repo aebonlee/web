@@ -41,6 +41,38 @@ const chapter: TopicChapter = {
         explanation: 'border-box는 padding과 border를 width/height 안에 포함시킵니다.',
         explanationEn: 'border-box includes padding and border within the width/height.'
       }
+    },
+    {
+      title: '실습 예제: 정보 카드 만들기',
+      titleEn: 'Practice: Building an Info Card',
+      content: 'padding·border·margin·border-radius·box-shadow를 조합해 깔끔한 정보 카드를 만들어 봅니다. 여백이 박스 모델 안에서 어떻게 작동하는지 Preview로 확인하세요.',
+      contentEn: 'Combine padding, border, margin, border-radius, and box-shadow to build a clean info card. Check in Preview how spacing works within the box model.',
+      code: `<style>
+  .info-card {
+    box-sizing: border-box;
+    width: 280px;
+    padding: 24px;
+    margin: 16px auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-family: sans-serif;
+  }
+  .info-card h3 { margin: 0 0 8px; color: #0046C8; }
+  .info-card p { margin: 0; color: #555; line-height: 1.6; }
+  .info-card .tag {
+    display: inline-block; margin-top: 12px; padding: 4px 10px;
+    background: #E8F4FD; color: #0046C8; border-radius: 6px; font-size: 0.8rem;
+  }
+</style>
+
+<div class="info-card">
+  <h3>박스 모델</h3>
+  <p>content → padding → border → margin 순서로 공간이 쌓입니다.</p>
+  <span class="tag">CSS 기초</span>
+</div>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

@@ -120,6 +120,42 @@ app.use((err, req, res, next) => {
         explanation: '404 Not Found는 요청한 리소스가 서버에 존재하지 않음을 의미합니다. 400은 잘못된 요청, 500은 서버 내부 오류입니다.',
         explanationEn: '404 Not Found means the requested resource does not exist on the server. 400 is a bad request and 500 is an internal server error.'
       }
+    },
+    {
+      title: '실습 예제: 메모 CRUD API',
+      titleEn: 'Practice: Memo CRUD API',
+      content: '메모리 배열을 데이터 저장소로 삼아, 메모를 조회·생성·삭제하는 완전한 미니 REST API를 만들어 봅니다. 라우팅·상태 코드·입력 검증을 한 번에 연습하는 예제입니다.',
+      contentEn: 'Using an in-memory array as the data store, build a complete mini REST API to read, create, and delete memos. This example practices routing, status codes, and input validation together.',
+      code: `const express = require('express');
+const app = express();
+app.use(express.json());
+
+let memos = [{ id: 1, text: '첫 메모' }];
+let nextId = 2;
+
+// 목록
+app.get('/api/memos', (req, res) => res.json(memos));
+
+// 생성 (검증 포함)
+app.post('/api/memos', (req, res) => {
+  const { text } = req.body;
+  if (!text) return res.status(400).json({ error: 'text는 필수입니다' });
+  const memo = { id: nextId++, text };
+  memos.push(memo);
+  res.status(201).json(memo);
+});
+
+// 삭제
+app.delete('/api/memos/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const before = memos.length;
+  memos = memos.filter(m => m.id !== id);
+  if (memos.length === before) return res.status(404).json({ error: '없음' });
+  res.status(204).send();
+});
+
+app.listen(3000, () => console.log('http://localhost:3000'));`,
+      codeLanguage: 'javascript'
     }
   ]
 };

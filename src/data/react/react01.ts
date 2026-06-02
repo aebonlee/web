@@ -115,6 +115,36 @@ function Shop() {
         explanation: 'key는 React가 어떤 항목이 추가/변경/삭제되었는지 식별하여 렌더링 성능을 높이는 데 사용됩니다.',
         explanationEn: 'key helps React identify which items were added/changed/removed, improving rendering performance.'
       }
+    },
+    {
+      title: '실습 예제: 별점 표시 컴포넌트',
+      titleEn: 'Practice: Star Rating Component',
+      content: 'props로 받은 점수를 기반으로 별(★)을 채워 표시하는 컴포넌트를 만들어 봅니다. 배열 생성과 map, 조건부 스타일을 종합한 연습입니다. rating 값을 바꿔 재사용해 보세요.',
+      contentEn: 'Build a component that fills stars (★) based on a score passed via props. It combines array creation, map, and conditional styling. Reuse it by changing the rating value.',
+      code: `function StarRating({ rating, max = 5 }) {
+  // 0..max-1 인덱스 배열을 만들어 채움 여부 판단
+  return (
+    <div aria-label={\`\${rating} / \${max}\`}>
+      {Array.from({ length: max }, (_, i) => (
+        <span key={i} style={{ color: i < rating ? '#FDCB6E' : '#ddd', fontSize: 24 }}>
+          ★
+        </span>
+      ))}
+      <span style={{ marginLeft: 8, color: '#666' }}>{rating}/{max}</span>
+    </div>
+  );
+}
+
+function Reviews() {
+  return (
+    <div>
+      <StarRating rating={5} />
+      <StarRating rating={3} />
+      <StarRating rating={4} max={5} />
+    </div>
+  );
+}`,
+      codeLanguage: 'jsx'
     }
   ]
 };

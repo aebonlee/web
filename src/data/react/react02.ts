@@ -128,6 +128,39 @@ function SignupForm() {
         explanation: '제어 컴포넌트는 input의 value를 React state와 연결하고 onChange로 갱신하여, state가 입력값의 단일 출처가 됩니다.',
         explanationEn: 'A controlled component binds the input\'s value to React state and updates it via onChange, making state the single source of truth.'
       }
+    },
+    {
+      title: '실습 예제: 좋아요 토글 버튼',
+      titleEn: 'Practice: Like Toggle Button',
+      content: 'boolean 상태와 숫자 상태를 함께 다뤄, 누를 때마다 좋아요가 켜지고/꺼지며 카운트가 증감하는 버튼을 만들어 봅니다. 함수형 업데이트로 안전하게 카운트를 갱신합니다.',
+      contentEn: 'Manage a boolean state and a number state together to build a button that toggles a like on/off and increments/decrements the count on each press. Update the count safely with a functional update.',
+      code: `import { useState } from 'react';
+
+function LikeButton() {
+  const [liked, setLiked] = useState(false);
+  const [count, setCount] = useState(12);
+
+  function toggle() {
+    setLiked(prev => !prev);
+    setCount(prev => prev + (liked ? -1 : 1));
+  }
+
+  return (
+    <button
+      onClick={toggle}
+      style={{
+        padding: '8px 16px',
+        border: '1px solid ' + (liked ? '#C8102E' : '#ccc'),
+        background: liked ? '#FDECEE' : '#fff',
+        color: liked ? '#C8102E' : '#333',
+        borderRadius: 8, cursor: 'pointer'
+      }}
+    >
+      {liked ? '♥' : '♡'} 좋아요 {count}
+    </button>
+  );
+}`,
+      codeLanguage: 'jsx'
     }
   ]
 };

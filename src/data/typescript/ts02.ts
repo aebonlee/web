@@ -125,6 +125,34 @@ function isString(v: unknown): v is string {
         explanation: 'typeof value === "number" 검사를 통과한 분기에서는 TypeScript가 value를 number로 좁혀 추론합니다.',
         explanationEn: 'In the branch passing the typeof value === "number" check, TypeScript narrows value to number.'
       }
+    },
+    {
+      title: '실습 예제: 제네릭 페이지네이션 타입',
+      titleEn: 'Practice: Generic Pagination Type',
+      content: '제네릭과 유틸리티 타입을 조합해 어떤 데이터든 담을 수 있는 페이지네이션 응답 타입을 만들어 봅니다. 실제 API 설계에서 자주 쓰는 재사용 가능한 패턴입니다.',
+      contentEn: 'Combine generics and utility types to build a pagination response type that can hold any data. It is a reusable pattern frequently used in real API design.',
+      code: `// 어떤 항목 타입이든 담는 페이지네이션 응답
+interface Paginated<T> {
+  items: T[];
+  page: number;
+  total: number;
+}
+
+interface Product { id: number; name: string; price: number; }
+
+// 목록에는 가격을 뺀 요약 타입만 노출
+type ProductSummary = Omit<Product, 'price'>;
+
+const res: Paginated<ProductSummary> = {
+  items: [{ id: 1, name: '키보드' }, { id: 2, name: '마우스' }],
+  page: 1,
+  total: 42
+};
+
+function firstName(r: Paginated<ProductSummary>): string | undefined {
+  return r.items[0]?.name;
+}`,
+      codeLanguage: 'typescript'
     }
   ]
 };

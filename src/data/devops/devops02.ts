@@ -105,6 +105,35 @@ EXPOSE 80
         explanation: '카나리 배포는 소수 사용자에게 먼저 새 버전을 노출해 위험을 줄이고, 문제가 없으면 점진적으로 비율을 높입니다.',
         explanationEn: 'Canary deployment exposes the new version to a few users first to reduce risk, then gradually increases the rollout if no issues arise.'
       }
+    },
+    {
+      title: '실습 예제: 테스트 후 자동 배포 워크플로',
+      titleEn: 'Practice: Test-then-Deploy Workflow',
+      content: 'main에 push되면 의존성 설치 → 린트 → 테스트 → 빌드 → 배포 순서로 자동 실행되는 GitHub Actions 워크플로를 작성해 봅니다. 테스트가 실패하면 배포가 중단되는 안전장치가 핵심입니다.',
+      contentEn: 'Write a GitHub Actions workflow that, on push to main, runs install → lint → test → build → deploy in order. The key safeguard is that deployment stops if tests fail.',
+      code: `# .github/workflows/ci-cd.yml
+name: CI/CD
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run lint           # 실패 시 이후 단계 중단
+      - run: npm run test -- --run   # 테스트 통과해야 배포
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: \${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist`,
+      codeLanguage: 'yaml'
     }
   ]
 };

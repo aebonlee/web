@@ -106,6 +106,50 @@ const chapter: TopicChapter = {
         explanation: '옵셔널 체이닝은 앞 값이 null/undefined일 때 에러를 던지지 않고 undefined를 반환하여 안전하게 중첩 속성에 접근합니다.',
         explanationEn: 'Optional chaining returns undefined instead of throwing when the preceding value is null/undefined, safely accessing nested properties.'
       }
+    },
+    {
+      title: '실습 예제: 장바구니 합계 계산기',
+      titleEn: 'Practice: Cart Total Calculator',
+      content: 'map·filter·reduce 등 배열 메서드와 구조 분해를 종합해, 체크된 상품의 합계를 실시간으로 계산하는 장바구니를 만들어 봅니다. 체크박스를 켜고 끄며 합계 변화를 확인하세요.',
+      contentEn: 'Combine array methods (map, filter, reduce) and destructuring to build a cart that calculates the total of checked items in real time. Toggle the checkboxes and watch the total change.',
+      code: `<div id="cart" style="font-family:sans-serif;max-width:320px"></div>
+<h3 id="total" style="font-family:sans-serif"></h3>
+<script>
+  const products = [
+    { id: 1, name: '키보드', price: 89000, checked: true },
+    { id: 2, name: '마우스', price: 32000, checked: true },
+    { id: 3, name: '모니터', price: 210000, checked: false }
+  ];
+
+  const cart = document.getElementById('cart');
+  const totalEl = document.getElementById('total');
+
+  function render() {
+    cart.innerHTML = products.map(({ id, name, price, checked }) =>
+      '<label style="display:block;margin:4px 0">' +
+      '<input type="checkbox" data-id="' + id + '"' + (checked ? ' checked' : '') + '> ' +
+      name + ' — ' + price.toLocaleString() + '원</label>'
+    ).join('');
+
+    const total = products
+      .filter(p => p.checked)
+      .reduce((sum, p) => sum + p.price, 0);
+    totalEl.textContent = '합계: ' + total.toLocaleString() + '원';
+
+    cart.querySelectorAll('input').forEach(box => {
+      box.addEventListener('change', e => {
+        const id = Number(e.target.dataset.id);
+        const item = products.find(p => p.id === id);
+        item.checked = e.target.checked;
+        render();
+      });
+    });
+  }
+
+  render();
+</script>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

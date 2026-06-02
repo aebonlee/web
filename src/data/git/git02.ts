@@ -98,6 +98,27 @@ jobs:
         explanation: 'GitHub는 .github/workflows/ 폴더 안의 YAML 파일을 자동으로 워크플로로 인식하여 실행합니다.',
         explanationEn: 'GitHub automatically recognizes and runs YAML files inside the .github/workflows/ folder as workflows.'
       }
+    },
+    {
+      title: '실습 예제: 로컬 프로젝트를 GitHub에 올리고 배포하기',
+      titleEn: 'Practice: Push a Local Project to GitHub and Deploy',
+      content: '로컬 저장소를 GitHub 원격에 연결하고, gh-pages로 정적 사이트를 배포하는 전체 과정을 따라 해 봅니다. 이 학습 사이트(web.dreamitbiz.com)도 동일한 방식으로 운영됩니다.',
+      contentEn: 'Follow the full process of connecting a local repo to a GitHub remote and deploying a static site with gh-pages. This learning site (web.dreamitbiz.com) is operated the same way.',
+      code: `# 1) GitHub에서 빈 저장소 생성 후 원격 연결
+git remote add origin https://github.com/me/my-site.git
+git push -u origin main
+
+# 2) 배포 도구 설치 및 스크립트 등록
+npm install -D gh-pages
+#   package.json
+#   "scripts": { "predeploy": "npm run build", "deploy": "gh-pages -d dist" }
+
+# 3) 커스텀 도메인 + 배포
+echo "my-site.example.com" > public/CNAME
+npm run deploy        # 빌드 후 gh-pages 브랜치로 발행
+
+# 4) GitHub 저장소 Settings > Pages 에서 gh-pages 브랜치 확인`,
+      codeLanguage: 'bash'
     }
   ]
 };

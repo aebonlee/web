@@ -85,6 +85,33 @@ const chapter: TopicChapter = {
         explanation: 'sandbox 속성은 iframe 내부의 스크립트 실행·폼 제출 등 기능을 기본 차단하고, allow-* 토큰으로 필요한 권한만 허용합니다.',
         explanationEn: 'The sandbox attribute blocks features like script execution and form submission inside the iframe by default, allowing only needed permissions via allow-* tokens.'
       }
+    },
+    {
+      title: '실습 예제: 미디어 갤러리',
+      titleEn: 'Practice: Media Gallery',
+      content: 'figure와 figcaption으로 이미지 카드를 나열하고, video를 함께 배치해 작은 미디어 갤러리를 만들어 봅니다. 반응형으로 보이도록 max-width를 사용하는 점에 주목하세요.',
+      contentEn: 'Lay out image cards with figure and figcaption and place a video alongside to build a small media gallery. Note the use of max-width so it stays responsive.',
+      code: `<div style="display:flex;gap:12px;flex-wrap:wrap;font-family:sans-serif">
+  <figure style="margin:0;width:150px">
+    <img src="https://picsum.photos/id/10/150/100" alt="자연 사진"
+         style="width:100%;border-radius:8px">
+    <figcaption style="font-size:0.8rem;color:#666">자연 풍경</figcaption>
+  </figure>
+  <figure style="margin:0;width:150px">
+    <img src="https://picsum.photos/id/20/150/100" alt="도시 사진"
+         style="width:100%;border-radius:8px">
+    <figcaption style="font-size:0.8rem;color:#666">도시 야경</figcaption>
+  </figure>
+  <figure style="margin:0;width:150px">
+    <video controls poster="https://picsum.photos/id/30/150/100"
+           style="width:100%;border-radius:8px">
+      <source src="clip.mp4" type="video/mp4">
+    </video>
+    <figcaption style="font-size:0.8rem;color:#666">소개 영상</figcaption>
+  </figure>
+</div>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

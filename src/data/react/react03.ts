@@ -133,6 +133,32 @@ function ThemeToggle() {
         explanation: '커스텀 Hook은 반드시 use로 시작해야 React가 Hook 규칙을 적용하고 린터가 올바르게 검사할 수 있습니다.',
         explanationEn: 'A custom Hook must start with "use" so React applies the Rules of Hooks and the linter can check it correctly.'
       }
+    },
+    {
+      title: '실습 예제: 창 크기 추적기',
+      titleEn: 'Practice: Window Size Tracker',
+      content: 'useEffect로 resize 이벤트를 구독하고 정리(cleanup)에서 해제하는 패턴을 실습합니다. 이벤트 리스너를 등록·해제하는 흐름이 핵심입니다. 브라우저 창 크기를 바꾸면 값이 갱신됩니다.',
+      contentEn: 'Practice subscribing to the resize event with useEffect and unsubscribing in cleanup. The key is the register/unregister flow for event listeners. The value updates as you resize the browser window.',
+      code: `import { useState, useEffect } from 'react';
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const onResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize); // 정리
+  }, []);
+
+  return width;
+}
+
+function ResponsiveBadge() {
+  const width = useWindowWidth();
+  const device = width < 600 ? '모바일' : width < 1024 ? '태블릿' : '데스크톱';
+  return <p>현재 너비: {width}px → {device}</p>;
+}`,
+      codeLanguage: 'jsx'
     }
   ]
 };

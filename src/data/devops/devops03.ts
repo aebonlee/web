@@ -100,6 +100,27 @@ npx husky init
         explanation: 'Git 훅은 특정 Git 이벤트(예: pre-commit) 시 스크립트를 실행합니다. Husky로 커밋 전 린트·테스트를 강제해 품질을 보장합니다.',
         explanationEn: 'Git hooks run scripts on specific Git events (e.g., pre-commit). Husky enforces lint/tests before commit to ensure quality.'
       }
+    },
+    {
+      title: '실습 예제: 품질 도구 한 번에 셋업',
+      titleEn: 'Practice: Set Up Quality Tools at Once',
+      content: 'ESLint·Prettier·Husky·lint-staged를 설치하고, 커밋 직전에 변경된 파일만 자동 검사·정리되도록 구성해 봅니다. 팀 프로젝트 초기 세팅에 그대로 쓸 수 있는 절차입니다.',
+      contentEn: 'Install ESLint, Prettier, Husky, and lint-staged, and configure it so only changed files are auto-checked/formatted right before commit. This procedure is ready to use for initial team project setup.',
+      code: `# 1) 설치
+npm install -D eslint prettier husky lint-staged
+
+# 2) Husky 초기화 + pre-commit 훅
+npx husky init
+echo "npx lint-staged" > .husky/pre-commit
+
+# 3) package.json 에 lint-staged 설정
+#   "lint-staged": {
+#     "*.{ts,tsx}": ["eslint --fix", "prettier --write"]
+#   }
+
+# 이제 git commit 시 변경된 파일만 자동 검사/정리됨
+git add . && git commit -m "feat: 기능 추가"  # 훅이 자동 실행`,
+      codeLanguage: 'bash'
     }
   ]
 };

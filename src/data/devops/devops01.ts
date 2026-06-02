@@ -101,6 +101,27 @@ pnpm add react`,
         explanation: 'npm ci는 lock 파일과 정확히 일치하게 설치하며 기존 node_modules를 지우고 재설치해 빌드 재현성을 보장합니다.',
         explanationEn: 'npm ci installs exactly matching the lock file, wiping and reinstalling node_modules to guarantee reproducible builds.'
       }
+    },
+    {
+      title: '실습 예제: Vite 프로젝트 만들고 환경 변수 쓰기',
+      titleEn: 'Practice: Create a Vite Project and Use Env Vars',
+      content: 'Vite 프로젝트를 생성해 개발 서버를 띄우고, .env에 환경 변수를 정의해 코드에서 사용한 뒤 프로덕션 빌드까지 해 봅니다. 실제 프론트엔드 프로젝트의 시작 절차 그대로입니다.',
+      contentEn: 'Create a Vite project, run the dev server, define an env var in .env and use it in code, then make a production build. This is exactly how a real frontend project starts.',
+      code: `# 1) 프로젝트 생성 + 의존성 설치
+npm create vite@latest my-app -- --template react-ts
+cd my-app && npm install
+
+# 2) 환경 변수 정의 (.env)
+echo "VITE_API_URL=https://api.example.com" > .env
+
+# 3) 코드에서 사용
+#   const url = import.meta.env.VITE_API_URL;
+
+# 4) 개발 서버 / 빌드 / 미리보기
+npm run dev       # http://localhost:5173
+npm run build     # dist/ 생성
+npm run preview   # 빌드 결과 확인`,
+      codeLanguage: 'bash'
     }
   ]
 };

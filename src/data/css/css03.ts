@@ -47,6 +47,39 @@ const chapter: TopicChapter = {
         explanation: 'justify-content는 주축(기본: 가로) 방향 정렬, align-items는 교차축(기본: 세로) 정렬입니다.',
         explanationEn: 'justify-content aligns along the main axis (default: horizontal), align-items along the cross axis (default: vertical).'
       }
+    },
+    {
+      title: '실습 예제: 네비게이션 바',
+      titleEn: 'Practice: Navigation Bar',
+      content: 'Flexbox의 justify-content: space-between과 gap을 사용해 로고-메뉴-버튼이 배치된 상단 네비게이션 바를 만들어 봅니다. 실제 웹사이트 헤더에서 가장 많이 쓰이는 패턴입니다.',
+      contentEn: 'Use Flexbox\'s justify-content: space-between and gap to build a top navigation bar with logo, menu, and button. This is the most common pattern in real website headers.',
+      code: `<style>
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px; background: #0046C8; border-radius: 10px;
+    font-family: sans-serif; color: #fff;
+  }
+  .nav .logo { font-weight: 800; font-size: 1.1rem; }
+  .nav .menu { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+  .nav .menu a { color: #cfe0ff; text-decoration: none; }
+  .nav .menu a:hover { color: #fff; }
+  .nav .cta {
+    background: #fff; color: #0046C8; border: none;
+    padding: 8px 14px; border-radius: 8px; font-weight: 700; cursor: pointer;
+  }
+</style>
+
+<nav class="nav">
+  <div class="logo">DreamIT</div>
+  <ul class="menu">
+    <li><a href="#">홈</a></li>
+    <li><a href="#">학습</a></li>
+    <li><a href="#">소개</a></li>
+  </ul>
+  <button class="cta">시작하기</button>
+</nav>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

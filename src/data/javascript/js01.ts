@@ -78,6 +78,28 @@ const chapter: TopicChapter = {
 </script>`,
       codeLanguage: 'html',
       livePreview: true
+    },
+    {
+      title: '실습 예제: 실시간 글자 수 카운터',
+      titleEn: 'Practice: Live Character Counter',
+      content: '변수·이벤트·조건문을 활용해 입력창의 글자 수를 실시간으로 세는 카운터를 만들어 봅니다. 100자를 넘으면 색이 빨갛게 바뀌도록 조건을 추가했습니다. 직접 입력해 보세요.',
+      contentEn: 'Use variables, events, and conditionals to build a counter that counts characters in real time. A condition turns the color red when it exceeds 100 characters. Try typing.',
+      code: `<textarea id="ta" rows="3" style="width:100%;box-sizing:border-box;padding:8px"
+  placeholder="여기에 입력해 보세요..."></textarea>
+<p id="count" style="font-family:sans-serif">0 / 100</p>
+<script>
+  const ta = document.getElementById("ta");
+  const count = document.getElementById("count");
+  const MAX = 100;
+
+  ta.addEventListener("input", function() {
+    const len = ta.value.length;
+    count.textContent = len + " / " + MAX;
+    count.style.color = len > MAX ? "#C8102E" : "#555";
+  });
+</script>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

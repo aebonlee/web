@@ -88,6 +88,32 @@ git stash pop                     # 임시 저장 복원`,
         explanation: 'git revert는 기존 이력을 지우지 않고 변경을 취소하는 새 커밋을 만들어, 공유된 브랜치에서도 안전합니다. reset --hard는 이력을 바꿔 협업 시 위험합니다.',
         explanationEn: 'git revert creates a new commit that undoes changes without deleting history, making it safe on shared branches. reset --hard rewrites history and is risky in collaboration.'
       }
+    },
+    {
+      title: '실습 예제: 첫 저장소 만들고 커밋하기',
+      titleEn: 'Practice: Create Your First Repo and Commit',
+      content: '빈 폴더에서 시작해 저장소를 만들고 첫 커밋을 남긴 뒤, 기능 브랜치를 만들어 작업하는 전체 흐름을 따라 해 봅니다. 가장 기본이 되는 일상 워크플로입니다.',
+      contentEn: 'Follow the full flow of starting from an empty folder, creating a repo, making your first commit, then creating a feature branch to work on. This is the most basic daily workflow.',
+      code: `# 1) 새 프로젝트 폴더에서 저장소 시작
+mkdir my-site && cd my-site
+git init
+
+# 2) 파일 만들고 첫 커밋
+echo "# My Site" > README.md
+git add README.md
+git commit -m "chore: 프로젝트 초기화"
+
+# 3) 기능 브랜치에서 작업
+git switch -c feature/hello
+echo "<h1>Hello</h1>" > index.html
+git add index.html
+git commit -m "feat: 첫 페이지 추가"
+
+# 4) main에 병합
+git switch main
+git merge feature/hello
+git log --oneline    # 이력 확인`,
+      codeLanguage: 'bash'
     }
   ]
 };

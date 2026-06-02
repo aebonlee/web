@@ -90,6 +90,27 @@ git bisect reset           # 탐색 종료`,
         explanation: 'git bisect는 good/bad 지점을 표시하면 이진 탐색으로 문제가 처음 발생한 커밋을 효율적으로 찾아줍니다.',
         explanationEn: 'git bisect efficiently finds the first faulty commit via binary search once you mark good/bad points.'
       }
+    },
+    {
+      title: '실습 예제: 커밋 이력 정리하기',
+      titleEn: 'Practice: Tidying Up Commit History',
+      content: '"오타 수정", "다시 수정" 같은 지저분한 커밋들을 interactive rebase로 하나로 합쳐(squash) 깔끔한 이력을 만들어 봅니다. PR을 올리기 전 자주 쓰는 정리 작업입니다.',
+      contentEn: 'Use interactive rebase to squash messy commits like "fix typo" and "fix again" into one for a clean history. This is common cleanup done before opening a PR.',
+      code: `# 최근 3개 커밋을 정리 대상으로 열기
+git rebase -i HEAD~3
+
+# 편집기에서 (위가 과거, 아래가 최신):
+#   pick   a1b2c3  feat: 로그인 폼 추가
+#   squash d4e5f6  fix: 오타 수정       ← 위 커밋에 합침
+#   squash 7g8h9i  fix: 다시 수정       ← 위 커밋에 합침
+# 저장하면 합쳐진 커밋 메시지를 새로 작성
+
+# 정리된 이력 확인
+git log --oneline
+
+# 이미 push한 브랜치라면 (주의: 본인 기능 브랜치에서만)
+git push --force-with-lease`,
+      codeLanguage: 'bash'
     }
   ]
 };

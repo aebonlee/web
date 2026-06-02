@@ -120,6 +120,40 @@ function Parent() {
         explanation: 'useCallback은 의존성이 바뀌지 않는 한 동일한 함수 참조를 유지합니다. useMemo는 값(계산 결과)을 메모이제이션합니다.',
         explanationEn: 'useCallback keeps the same function reference as long as dependencies are unchanged. useMemo memoizes a value (computation result).'
       }
+    },
+    {
+      title: '실습 예제: 테마 Context 적용',
+      titleEn: 'Practice: Applying a Theme Context',
+      content: 'Context와 커스텀 Hook을 결합해, 어디서든 테마를 읽고 토글할 수 있는 작은 시스템을 만들어 봅니다. Provider로 감싸고 useTheme()으로 소비하는 전형적인 패턴입니다.',
+      contentEn: 'Combine Context and a custom Hook to build a small system where the theme can be read and toggled anywhere. It is the typical pattern of wrapping with a Provider and consuming via useTheme().',
+      code: `import { createContext, useContext, useState } from 'react';
+
+const ThemeContext = createContext(null);
+
+function ThemeProvider({ children }) {
+  const [dark, setDark] = useState(false);
+  const toggle = () => setDark(d => !d);
+  return (
+    <ThemeContext.Provider value={{ dark, toggle }}>
+      <div style={{ background: dark ? '#111' : '#fff', color: dark ? '#fff' : '#111', padding: 20 }}>
+        {children}
+      </div>
+    </ThemeContext.Provider>
+  );
+}
+
+// 커스텀 Hook으로 소비 편의 제공
+const useTheme = () => useContext(ThemeContext);
+
+function Header() {
+  const { dark, toggle } = useTheme();
+  return <button onClick={toggle}>{dark ? '🌙 다크' : '☀️ 라이트'}</button>;
+}
+
+function App() {
+  return <ThemeProvider><Header /></ThemeProvider>;
+}`,
+      codeLanguage: 'jsx'
     }
   ]
 };

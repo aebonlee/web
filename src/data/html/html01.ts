@@ -63,6 +63,26 @@ const chapter: TopicChapter = {
 <a href="mailto:aebon@dreamitbiz.com">이메일 보내기</a>`,
       codeLanguage: 'html',
       livePreview: true
+    },
+    {
+      title: '실습 예제: 자기소개 카드',
+      titleEn: 'Practice: Self-Introduction Card',
+      content: '지금까지 배운 제목·단락·링크·이미지를 모두 사용해 간단한 자기소개 카드를 만들어 봅니다. Preview로 결과를 확인하고, 이름·소개 문구·링크를 자유롭게 바꿔 보세요.',
+      contentEn: 'Use everything you learned — headings, paragraphs, links, and images — to build a simple self-introduction card. Check the result in Preview and freely change the name, intro text, and links.',
+      code: `<div style="max-width:320px;border:1px solid #e5e7eb;border-radius:12px;padding:20px;font-family:sans-serif">
+  <img src="https://picsum.photos/80" alt="프로필 사진"
+       style="width:80px;height:80px;border-radius:50%">
+  <h2>이애본</h2>
+  <p><strong>웹 개발 학습자</strong> · 서울</p>
+  <p>HTML을 배우며 첫 웹페이지를 만들고 있습니다. <em>꾸준함</em>이 무기!</p>
+  <hr>
+  <p>
+    <a href="https://www.dreamitbiz.com" target="_blank">포트폴리오</a> ·
+    <a href="mailto:aebon@dreamitbiz.com">이메일</a>
+  </p>
+</div>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };

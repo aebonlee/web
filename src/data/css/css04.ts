@@ -107,6 +107,31 @@ const chapter: TopicChapter = {
         explanation: ':root는 문서 최상위(html)를 가리키며, 여기에 정의한 변수는 모든 요소에서 var()로 재사용할 수 있습니다.',
         explanationEn: ':root targets the document root (html); variables defined there can be reused anywhere via var().'
       }
+    },
+    {
+      title: '실습 예제: 반응형 가격표',
+      titleEn: 'Practice: Responsive Pricing Cards',
+      content: 'Grid·CSS 변수·미디어 쿼리를 모두 사용해 반응형 가격표를 만들어 봅니다. Preview 영역의 너비에 따라 1열↔다열로 바뀌는지 확인해 보세요(미리보기가 좁으면 1열로 보입니다).',
+      contentEn: 'Build a responsive pricing table using Grid, CSS variables, and media queries together. Check whether it switches between 1 and multiple columns depending on the preview width (it shows 1 column when narrow).',
+      code: `<style>
+  :root { --accent: #8B1AC8; }
+  .plans { display: grid; grid-template-columns: 1fr; gap: 12px; font-family: sans-serif; }
+  @media (min-width: 480px) { .plans { grid-template-columns: repeat(2, 1fr); } }
+  .plan {
+    border: 2px solid #eee; border-radius: 12px; padding: 20px; text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .plan:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .plan h3 { margin: 0 0 8px; }
+  .plan .price { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+</style>
+
+<div class="plans">
+  <div class="plan"><h3>Basic</h3><div class="price">무료</div><p>핵심 강의</p></div>
+  <div class="plan"><h3>Pro</h3><div class="price">₩9,900</div><p>전체 강의 + 인증서</p></div>
+</div>`,
+      codeLanguage: 'html',
+      livePreview: true
     }
   ]
 };
