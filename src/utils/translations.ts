@@ -24,6 +24,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     progress: '진행률',
     playground: '실습장',
     webBasics: '웹 기초',
+    vibeCoding: '바이브코딩',
     frameworks: '프레임워크',
     tools: '도구',
 
@@ -36,6 +37,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     git: 'Git & GitHub',
     backend: '백엔드',
     devops: 'DevOps',
+    vibecoding: '바이브코딩',
 
     // ─── Topics (dotted) ───
     'topic.html': 'HTML',
@@ -66,6 +68,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     gitDesc: '버전 관리 시스템으로 코드를 효율적으로 관리하는 방법을 학습합니다.',
     backendDesc: '서버, API, 데이터베이스 등 백엔드 기술을 학습합니다.',
     devopsDesc: '배포, CI/CD, 인프라 관리 등 DevOps 실무를 학습합니다.',
+    vibecodingDesc: 'Claude Code 설치부터 Node.js 설정·오류 해결까지, AI와 함께하는 개발을 시작합니다.',
 
     // ─── HTML Chapters ───
     html01: 'HTML 기본 구조',
@@ -114,6 +117,11 @@ export const translations: Record<string, Record<string, unknown>> = {
     devops02: '배포와 CI/CD',
     devops03: '코드 품질과 테스트',
     devops04: '성능 최적화와 모니터링',
+
+    // ─── Vibe Coding Chapters ───
+    vibe01: 'Node.js 설치',
+    vibe02: 'Claude Code 설치와 시작',
+    vibe03: '자주 발생하는 오류 해결',
 
     // ─── Categories (flat) ───
     beginner: '입문',
@@ -539,6 +547,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     progress: 'Progress',
     playground: 'Playground',
     webBasics: 'Web Basics',
+    vibeCoding: 'Vibe Coding',
     frameworks: 'Frameworks',
     tools: 'Dev Tools',
 
@@ -551,6 +560,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     git: 'Git & GitHub',
     backend: 'Backend',
     devops: 'DevOps',
+    vibecoding: 'Vibe Coding',
 
     // ─── Topics (dotted) ───
     'topic.html': 'HTML',
@@ -581,6 +591,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     gitDesc: 'Learn to manage code efficiently with version control.',
     backendDesc: 'Learn server, API, and database technologies.',
     devopsDesc: 'Learn deployment, CI/CD, and infrastructure management.',
+    vibecodingDesc: 'Start developing with AI — from installing Claude Code to Node.js setup and troubleshooting.',
 
     // ─── HTML Chapters ───
     html01: 'HTML Basic Structure',
@@ -629,6 +640,11 @@ export const translations: Record<string, Record<string, unknown>> = {
     devops02: 'Deployment & CI/CD',
     devops03: 'Code Quality & Testing',
     devops04: 'Performance & Monitoring',
+
+    // ─── Vibe Coding Chapters ───
+    vibe01: 'Installing Node.js',
+    vibe02: 'Installing & Starting Claude Code',
+    vibe03: 'Troubleshooting Common Errors',
 
     // ─── Categories (flat) ───
     beginner: 'Beginner',

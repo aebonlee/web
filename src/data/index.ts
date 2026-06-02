@@ -13,6 +13,7 @@ import tsChapters from './typescript/index';
 import gitChapters from './git/index';
 import backendChapters from './backend/index';
 import devopsChapters from './devops/index';
+import vibecodingChapters from './vibecoding/index';
 
 export const allProblems = [
   ...beginnerProblems,
@@ -44,9 +45,10 @@ export const topicMap: Record<string, { chapters: TopicChapter[]; titleKey: stri
   typescript: { chapters: tsChapters, titleKey: 'typescript', color: '#3178C6', icon: 'ts' },
   git: { chapters: gitChapters, titleKey: 'git', color: '#F05032', icon: 'git' },
   backend: { chapters: backendChapters, titleKey: 'backend', color: '#68A063', icon: 'backend' },
-  devops: { chapters: devopsChapters, titleKey: 'devops', color: '#2496ED', icon: 'devops' }
+  devops: { chapters: devopsChapters, titleKey: 'devops', color: '#2496ED', icon: 'devops' },
+  vibecoding: { chapters: vibecodingChapters, titleKey: 'vibecoding', color: '#CC785C', icon: 'vibe' }
 };
 
-export const topicOrder = ['html', 'css', 'javascript', 'react', 'typescript', 'git', 'backend', 'devops'];
+export const topicOrder = ['html', 'css', 'javascript', 'vibecoding', 'react', 'typescript', 'git', 'backend', 'devops'];
 
 export { beginnerProblems, intermediateProblems, advancedProblems, practicalProblems };

@@ -78,6 +78,7 @@ const site = {
         { path: '/javascript', labelKey: 'javascript' }
       ]
     },
+    { path: '/vibecoding', labelKey: 'vibeCoding', activePath: '/vibecoding' },
     {
       path: '/react', labelKey: 'frameworks', activePath: '/react',
       dropdown: [

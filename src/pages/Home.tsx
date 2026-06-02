@@ -7,7 +7,8 @@ import useCountUp from '../hooks/useCountUp';
 
 const TOPIC_ICONS: Record<string, string> = {
   html: 'HTML', css: 'CSS', javascript: 'JS', react: 'React',
-  typescript: 'TS', git: 'Git', backend: 'BE', devops: 'DO'
+  typescript: 'TS', git: 'Git', backend: 'BE', devops: 'DO',
+  vibecoding: 'AI'
 };
 
 const heroSlides = [

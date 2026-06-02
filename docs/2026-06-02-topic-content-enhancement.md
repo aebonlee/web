@@ -186,6 +186,31 @@ HTML/CSS/JavaScript는 다중 섹션·퀴즈로 충실했으나, 나머지 5개 
 ## 해결
 - 프리뷰 문서 `<head>`에 `<meta charset="UTF-8">` 추가, Blob 타입도 `text/html;charset=utf-8`로 지정.
 - 앱 내 iframe 생성처는 `LivePreview` 한 곳뿐이라 단일 수정으로 모든 프리뷰(챕터·실습·Playground·문제풀이)에 적용.
+- 추가 보강: `index.html`에 `http-equiv` charset 메타 중복 선언.
+- 참고: 소스·빌드·라이브 번들·HTTP 헤더가 전 계층 정상 UTF-8임을 바이트 단위로 확인(이중 인코딩 아님).
+  본문까지 깨져 보일 경우 브라우저의 강제 인코딩 설정/캐시 문제이므로 강력 새로고침 권장.
 
 ## 검증 (charset 수정)
 - `npm run typecheck` ✅ / `npm run build` ✅ / 번들에 `meta charset="UTF-8"` 포함 확인
+
+---
+
+# ✨ 바이브코딩 토픽 추가 (Claude Code 설치 가이드) (2026-06-02)
+
+## 요청
+상단 메뉴 "웹 기초" 다음에 "바이브코딩" 메뉴를 추가하고, Claude Code 설치를 위한
+Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
+
+## 작업 내용
+- 신규 토픽 `vibecoding`(바이브코딩) 추가 — 색상 #CC785C(Claude 테라코타), 3개 챕터:
+  - **vibe01 — Node.js 설치**: 바이브코딩/Node 개념, OS별 설치(Windows·macOS), nvm 버전관리
+  - **vibe02 — Claude Code 설치와 시작**: `npm i -g @anthropic-ai/claude-code`, 실행/로그인, 슬래시 명령
+  - **vibe03 — 자주 발생하는 오류 해결**: EACCES 권한, command not found/PATH, 버전·프록시·캐시
+  - 각 3섹션 + 3퀴즈, codeLanguage `bash`.
+- `data/index.ts`의 `topicMap`·`topicOrder`(웹기초 다음 위치)에 등록.
+- `site.ts` 상단 메뉴에 `웹 기초` 다음 `바이브코딩`(/vibecoding) 항목 추가.
+- `translations.ts` ko/en에 메뉴 라벨(vibeCoding)·토픽명(vibecoding)·설명·챕터 제목(vibe01~03) 추가.
+- `Home.tsx` 토픽 아이콘에 `vibecoding: 'AI'` 추가.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / `preview` `/vibecoding` HTTP 200, 콘텐츠 번들 포함 확인
