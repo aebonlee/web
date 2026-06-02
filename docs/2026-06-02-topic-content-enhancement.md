@@ -235,3 +235,25 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / 번들에 `__livePreviewHeight` 포함 확인
+
+---
+
+# 로고 변경 + 푸터 바로가기 메뉴 정비 (2026-06-02)
+
+## 작업 내용
+- **로고를 "Web A to Z"로 변경** (`site.ts` brand.parts):
+  - "Web "(brand-it, 기본색) + "A to Z"(brand-dream, 포인트 블루) 2조각으로 렌더.
+  - Navbar·Footer 모두 `site.brand.parts`를 사용하므로 동시 반영됨.
+- **푸터 바로가기(quick links) 메뉴 정비** (`site.ts` footerLinks):
+  - 기존: 가이드/문제/실습장/학습현황 4개.
+  - 변경: 소개·가이드·웹 기초·바이브코딩·도장깨기·실습장·학습현황 7개로 확장하여
+    현재 상단 메뉴 구조 및 신규 바이브코딩 토픽과 일치시킴.
+  - 모든 경로는 유효 라우트, 라벨 키(ko/en) 존재 확인.
+
+## 현재 콘텐츠 규모(누적)
+- 학습 토픽 10개(HTML·CSS·JS·바이브코딩·React·TS·Git·Backend·DevOps),
+  토픽 챕터 37개(웹/프로그래밍 9토픽 × 4 + 바이브코딩 3), 코딩 도전문제 40개.
+- 각 챕터 다중 섹션·퀴즈·실습 예제, HTML/CSS/JS 실습은 라이브 프리뷰 자동 높이 지원.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / 푸터 라벨 키(ko·en) 존재 확인

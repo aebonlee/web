@@ -32,7 +32,8 @@ const site = {
 
   brand: {
     parts: [
-      { text: 'Web', className: 'brand-it' }
+      { text: 'Web ', className: 'brand-it' },
+      { text: 'A to Z', className: 'brand-dream' }
     ]
   },
 
@@ -127,7 +128,10 @@ const site = {
   ],
 
   footerLinks: [
+    { path: '/about', labelKey: 'nav.about' },
     { path: '/guide', labelKey: 'guide' },
+    { path: '/html', labelKey: 'webBasics' },
+    { path: '/vibecoding', labelKey: 'vibeCoding' },
     { path: '/problems', labelKey: 'problems' },
     { path: '/playground', labelKey: 'playground' },
     { path: '/progress', labelKey: 'progress' },
