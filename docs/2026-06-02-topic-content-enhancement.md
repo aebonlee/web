@@ -145,3 +145,25 @@ HTML/CSS/JavaScript는 다중 섹션·퀴즈로 충실했으나, 나머지 5개 
 ## 결과
 - 챕터당 섹션 +1 → **총 실습 예제 32개 추가**. HTML/CSS/JS 실습은 Preview로 즉시 실행 확인 가능.
 - `npm run typecheck` ✅ / `npm run build` ✅ (data 청크 341KB → 381KB)
+
+---
+
+# 🐛 버그 수정: 콘텐츠가 보이지 않던 문제 (2026-06-02)
+
+## 증상
+배포된 사이트에서 **네비게이션 메뉴만 보이고 본문 콘텐츠가 비어 있음**.
+
+## 원인
+- `[data-aos]` 요소는 CSS에서 `opacity: 0`으로 숨겨지고, 스크롤 진입 시 `.aos-animate`
+  클래스가 붙어야 보이는 구조(`animations.css`).
+- 그런데 `.aos-animate`를 부여하는 `useAOS` 훅이 **Cart/Checkout/OrderConfirmation(비활성 페이지)에서만**
+  호출되고, 실제 사용 중인 Home·TopicList·TopicDetail·PublicLayout에서는 호출되지 않았음.
+- 초기 구현부터 존재한 잠재 버그로, `data-aos`가 붙은 모든 본문 콘텐츠가 영구히 `opacity:0` 상태였음.
+  (사이드바·네비는 `data-aos`가 없어 보였기 때문에 "메뉴만 존재"하는 것처럼 나타남)
+
+## 해결
+- `PublicLayout`에서 `useAOS()`를 호출 → 모든 라우트 페이지에 IntersectionObserver가 적용되어
+  본문이 정상적으로 표시됨. MutationObserver가 SPA 라우트 전환 시 새로 마운트된 콘텐츠도 처리.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅
