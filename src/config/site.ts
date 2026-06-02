@@ -33,7 +33,7 @@ const site = {
   brand: {
     parts: [
       { text: 'Web ', className: 'brand-it' },
-      { text: 'A to Z', className: 'brand-dream' }
+      { text: 'AtoZ', className: 'brand-dream' }
     ]
   },
 
