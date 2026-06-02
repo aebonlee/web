@@ -1,4 +1,4 @@
-import{n as e}from"./chunk-CaILmz35.js";import{g as t,u as n}from"./index-NPbi-LnG.js";var r=e(t(),1),i=n();function a({html:e=``,css:t=``,js:n=``,height:a=300}){let o=(0,r.useRef)(null);return(0,r.useEffect)(()=>{let r=o.current;if(!r)return;let i=`<!DOCTYPE html>
+import{n as e}from"./chunk-CaILmz35.js";import{g as t,u as n}from"./index-gOFcoFxR.js";var r=e(t(),1),i=n();function a({html:e=``,css:t=``,js:n=``,height:a=300}){let o=(0,r.useRef)(null);return(0,r.useEffect)(()=>{let r=o.current;if(!r)return;let i=`<!DOCTYPE html>
 <html>
 <head>
 <style>
