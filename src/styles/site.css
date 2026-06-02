@@ -770,6 +770,12 @@
   word-break: break-word;
 }
 
+/* 소스 코드 주석 — 녹색 표시 */
+.code-comment {
+  color: #6A9955;
+  font-style: italic;
+}
+
 /* Output blocks */
 .chapter-output {
   border: 1px solid var(--border-light);

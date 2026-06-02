@@ -14,6 +14,10 @@ import gitChapters from './git/index';
 import backendChapters from './backend/index';
 import devopsChapters from './devops/index';
 import vibecodingChapters from './vibecoding/index';
+import djangoChapters from './django/index';
+import flaskChapters from './flask/index';
+import gradioChapters from './gradio/index';
+import streamlitChapters from './streamlit/index';
 
 export const allProblems = [
   ...beginnerProblems,
@@ -46,9 +50,13 @@ export const topicMap: Record<string, { chapters: TopicChapter[]; titleKey: stri
   git: { chapters: gitChapters, titleKey: 'git', color: '#F05032', icon: 'git' },
   backend: { chapters: backendChapters, titleKey: 'backend', color: '#68A063', icon: 'backend' },
   devops: { chapters: devopsChapters, titleKey: 'devops', color: '#2496ED', icon: 'devops' },
-  vibecoding: { chapters: vibecodingChapters, titleKey: 'vibecoding', color: '#CC785C', icon: 'vibe' }
+  vibecoding: { chapters: vibecodingChapters, titleKey: 'vibecoding', color: '#CC785C', icon: 'vibe' },
+  django: { chapters: djangoChapters, titleKey: 'django', color: '#44B78B', icon: 'django' },
+  flask: { chapters: flaskChapters, titleKey: 'flask', color: '#6366F1', icon: 'flask' },
+  gradio: { chapters: gradioChapters, titleKey: 'gradio', color: '#FF7C00', icon: 'gradio' },
+  streamlit: { chapters: streamlitChapters, titleKey: 'streamlit', color: '#FF4B4B', icon: 'streamlit' }
 };
 
-export const topicOrder = ['html', 'css', 'javascript', 'vibecoding', 'react', 'typescript', 'git', 'backend', 'devops'];
+export const topicOrder = ['html', 'css', 'javascript', 'vibecoding', 'react', 'typescript', 'django', 'flask', 'gradio', 'streamlit', 'git', 'backend', 'devops'];
 
 export { beginnerProblems, intermediateProblems, advancedProblems, practicalProblems };

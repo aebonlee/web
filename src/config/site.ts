@@ -88,6 +88,15 @@ const site = {
       ]
     },
     {
+      path: '/django', labelKey: 'python', activePath: '/django',
+      dropdown: [
+        { path: '/django', labelKey: 'django' },
+        { path: '/flask', labelKey: 'flask' },
+        { path: '/gradio', labelKey: 'gradio' },
+        { path: '/streamlit', labelKey: 'streamlit' }
+      ]
+    },
+    {
       path: '/git', labelKey: 'tools', activePath: '/git',
       dropdown: [
         { path: '/git', labelKey: 'git' },

@@ -26,6 +26,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     webBasics: '웹 기초',
     vibeCoding: '바이브코딩',
     frameworks: '프레임워크',
+    python: 'Python',
     tools: '도구',
 
     // ─── Topics (flat — used by site.ts dropdown labelKey) ───
@@ -38,6 +39,10 @@ export const translations: Record<string, Record<string, unknown>> = {
     backend: '백엔드',
     devops: 'DevOps',
     vibecoding: '바이브코딩',
+    django: 'Django',
+    flask: 'Flask',
+    gradio: 'Gradio',
+    streamlit: 'Streamlit',
 
     // ─── Topics (dotted) ───
     'topic.html': 'HTML',
@@ -69,6 +74,10 @@ export const translations: Record<string, Record<string, unknown>> = {
     backendDesc: '서버, API, 데이터베이스 등 백엔드 기술을 학습합니다.',
     devopsDesc: '배포, CI/CD, 인프라 관리 등 DevOps 실무를 학습합니다.',
     vibecodingDesc: 'Claude Code 설치부터 Node.js 설정·오류 해결까지, AI와 함께하는 개발을 시작합니다.',
+    djangoDesc: '파이썬 풀스택 웹 프레임워크 Django로 모델·뷰·템플릿을 학습합니다.',
+    flaskDesc: '가볍고 유연한 파이썬 마이크로 프레임워크 Flask로 API와 웹앱을 만듭니다.',
+    gradioDesc: 'ML 모델·함수를 웹 UI로 감싸 데모를 빠르게 만드는 Gradio를 학습합니다.',
+    streamlitDesc: '파이썬 스크립트만으로 데이터 앱·대시보드를 만드는 Streamlit을 학습합니다.',
 
     // ─── HTML Chapters ───
     html01: 'HTML 기본 구조',
@@ -122,6 +131,20 @@ export const translations: Record<string, Record<string, unknown>> = {
     vibe01: 'Node.js 설치',
     vibe02: 'Claude Code 설치와 시작',
     vibe03: '자주 발생하는 오류 해결',
+
+    // ─── Python Framework Chapters ───
+    django01: 'Django 시작과 구조',
+    django02: '모델과 ORM',
+    django03: '뷰·URL·템플릿',
+    flask01: 'Flask 시작과 라우팅',
+    flask02: 'JSON REST API',
+    flask03: '템플릿과 구조화',
+    gradio01: 'Gradio 시작',
+    gradio02: 'Blocks와 챗봇',
+    gradio03: '공유와 미디어',
+    streamlit01: 'Streamlit 시작',
+    streamlit02: '위젯과 상태',
+    streamlit03: '레이아웃과 배포',
 
     // ─── Categories (flat) ───
     beginner: '입문',
@@ -549,6 +572,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     webBasics: 'Web Basics',
     vibeCoding: 'Vibe Coding',
     frameworks: 'Frameworks',
+    python: 'Python',
     tools: 'Dev Tools',
 
     // ─── Topics (flat) ───
@@ -561,6 +585,10 @@ export const translations: Record<string, Record<string, unknown>> = {
     backend: 'Backend',
     devops: 'DevOps',
     vibecoding: 'Vibe Coding',
+    django: 'Django',
+    flask: 'Flask',
+    gradio: 'Gradio',
+    streamlit: 'Streamlit',
 
     // ─── Topics (dotted) ───
     'topic.html': 'HTML',
@@ -592,6 +620,10 @@ export const translations: Record<string, Record<string, unknown>> = {
     backendDesc: 'Learn server, API, and database technologies.',
     devopsDesc: 'Learn deployment, CI/CD, and infrastructure management.',
     vibecodingDesc: 'Start developing with AI — from installing Claude Code to Node.js setup and troubleshooting.',
+    djangoDesc: 'Learn models, views, and templates with Django, the Python full-stack web framework.',
+    flaskDesc: 'Build APIs and web apps with Flask, the lightweight, flexible Python micro framework.',
+    gradioDesc: 'Learn Gradio to quickly wrap ML models and functions into a web UI demo.',
+    streamlitDesc: 'Learn Streamlit to build data apps and dashboards with just a Python script.',
 
     // ─── HTML Chapters ───
     html01: 'HTML Basic Structure',
@@ -645,6 +677,20 @@ export const translations: Record<string, Record<string, unknown>> = {
     vibe01: 'Installing Node.js',
     vibe02: 'Installing & Starting Claude Code',
     vibe03: 'Troubleshooting Common Errors',
+
+    // ─── Python Framework Chapters ───
+    django01: 'Django Start & Structure',
+    django02: 'Models & ORM',
+    django03: 'Views, URLs, Templates',
+    flask01: 'Flask Start & Routing',
+    flask02: 'JSON REST API',
+    flask03: 'Templates & Structure',
+    gradio01: 'Getting Started with Gradio',
+    gradio02: 'Blocks & Chatbot',
+    gradio03: 'Sharing & Media',
+    streamlit01: 'Getting Started with Streamlit',
+    streamlit02: 'Widgets & State',
+    streamlit03: 'Layout & Deployment',
 
     // ─── Categories (flat) ───
     beginner: 'Beginner',

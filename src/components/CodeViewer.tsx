@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCodeCopy } from '../hooks/useCodeCopy';
 import { useLanguage } from '../contexts/LanguageContext';
+import { highlightComments } from '../utils/highlightCode';
 
 interface CodeViewerProps {
   code: string;
@@ -28,7 +29,7 @@ export default function CodeViewer({ code, language = 'html', showCopy = true }:
           )}
         </div>
         <div className="code-content">
-          <pre>{code}</pre>
+          <pre dangerouslySetInnerHTML={{ __html: highlightComments(code, language) }} />
         </div>
       </div>
     </div>

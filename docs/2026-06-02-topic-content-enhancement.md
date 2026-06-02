@@ -257,3 +257,29 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / 푸터 라벨 키(ko·en) 존재 확인
+
+---
+
+# Python 프레임워크 토픽 + About 개편 + 주석 녹색 (2026-06-02)
+
+## 1) Python 상단 메뉴 + 4개 토픽 추가
+- 신규 상단 메뉴 **"Python"**(드롭다운)을 "프레임워크"(React/TS) 다음에 추가.
+- 신규 토픽 4개(각 3챕터, 개념 2 + 실습 1, 코드 `python`):
+  - **Django**(#44B78B): 시작·MTV / 모델·ORM·admin / URL·뷰·템플릿
+  - **Flask**(#6366F1): 시작·라우팅 / JSON REST API·에러처리 / Jinja2·Blueprint·폼
+  - **Gradio**(#FF7C00): Interface·컴포넌트 / Blocks·State·챗봇 / 공유·이미지·Dataframe
+  - **Streamlit**(#FF4B4B): 시작·차트 / 위젯·session_state·캐시 / 레이아웃·배포·CSV
+- `data/index.ts` topicMap·topicOrder 등록, `site.ts` Python 드롭다운, translations ko/en(메뉴·토픽명·설명·챕터 12개), Home 아이콘(Dj·Fl·Gr·St) 연결.
+
+## 2) About 페이지 개편 (이모지 누락 수정)
+- 원인: About이 Font Awesome 아이콘(`fa-*`)을 썼는데 프로젝트에 FA가 로드되지 않아 아이콘이 전부 미표시.
+- 해결: **이모지 기반**으로 교체(🌐🤖⚛️🐍🔧🥋⚡📈), 통계·CTA 추가, 현재 플랫폼 범위(바이브코딩·Python 포함)로 콘텐츠 갱신, 실제 CSS 변수 사용.
+
+## 3) 소스 코드 주석 녹색 표시
+- 챕터 코드/`CodeViewer`가 평문 `<pre>`라 주석 구분이 안 됨.
+- `utils/highlightComments`로 언어별 주석(`#`, `//`, `/* */`, `<!-- -->`; `://` 오탐 제외)을
+  `<span class="code-comment">`로 감싸 **녹색(#6A9955)** 표시. HTML 이스케이프 후 주입(보안).
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ (data 청크 445KB)
+- `preview`에서 /django·/flask·/gradio·/streamlit·/django/01-start HTTP 200, 주석 하이라이트·콘텐츠 번들 포함 확인

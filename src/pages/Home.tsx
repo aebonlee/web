@@ -8,7 +8,8 @@ import useCountUp from '../hooks/useCountUp';
 const TOPIC_ICONS: Record<string, string> = {
   html: 'HTML', css: 'CSS', javascript: 'JS', react: 'React',
   typescript: 'TS', git: 'Git', backend: 'BE', devops: 'DO',
-  vibecoding: 'AI'
+  vibecoding: 'AI',
+  django: 'Dj', flask: 'Fl', gradio: 'Gr', streamlit: 'St'
 };
 
 const heroSlides = [

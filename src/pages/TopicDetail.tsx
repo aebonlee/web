@@ -5,6 +5,7 @@ import { useCodeCopy } from '../hooks/useCodeCopy';
 import { topicMap, topicOrder } from '../data/index';
 import LivePreview from '../components/LivePreview';
 import QuizQuestion from '../components/QuizQuestion';
+import { highlightComments } from '../utils/highlightCode';
 
 export default function TopicDetail() {
   const { topic, chapterId } = useParams();
@@ -133,7 +134,7 @@ export default function TopicDetail() {
                           )}
                         </div>
                       </div>
-                      <div className="chapter-code-content"><pre>{section.code}</pre></div>
+                      <div className="chapter-code-content"><pre dangerouslySetInnerHTML={{ __html: highlightComments(section.code, section.codeLanguage) }} /></div>
                     </div>
                   )}
 
