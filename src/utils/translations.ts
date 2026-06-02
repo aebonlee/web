@@ -6,7 +6,7 @@ export const translations: Record<string, Record<string, unknown>> = {
     'nav.playground': '실습장',
     'nav.guide': '학습가이드',
     'nav.progress': '진행률',
-    'nav.about': '소개',
+    'nav.about': 'About',
     'nav.login': '로그인',
     'nav.register': '회원가입',
     'nav.mypage': '마이페이지',
