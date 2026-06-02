@@ -65,3 +65,35 @@ HTML/CSS/JavaScript는 다중 섹션·퀴즈로 충실했으나, 나머지 5개 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / `npm run preview` HTTP 200 ✅
 - 빌드 번들에 home-stat-value·home-feature-card·home-cta-box 클래스 포함 확인
+
+---
+
+# 토픽별 챕터 확장 — 전 토픽 4챕터 통일 (2026-06-02)
+
+## 배경
+챕터 수가 토픽마다 달랐다(HTML/CSS/JS/React=3, TS/Git/Backend/DevOps=2).
+학습 분량의 균형과 커리큘럼 완성도를 위해 **모든 토픽을 4챕터로 통일**했다.
+
+## 추가한 신규 챕터 (12개, 각 3섹션 + 3퀴즈)
+| 토픽 | 신규 챕터 | 주제 |
+|------|-----------|------|
+| HTML | html04 | 멀티미디어와 임베드 (img/figure, audio/video, iframe) |
+| CSS | css04 | Grid와 반응형 (Grid, 미디어쿼리, CSS 변수/transition) |
+| JavaScript | js04 | ES6+ 핵심 (구조분해·전개, 배열 고차함수, 템플릿 리터럴·옵셔널체이닝) |
+| React | react04 | Context·useReducer·성능 최적화(memo/useMemo/useCallback) |
+| TypeScript | ts03 | 고급 타입 (enum·리터럴, 맵드·조건부 타입, unknown/never) |
+| TypeScript | ts04 | React와 TypeScript (Props·Hook·이벤트·제네릭 API) |
+| Git | git03 | Rebase·cherry-pick·tag·diff/blame/bisect |
+| Git | git04 | .gitignore·커밋 컨벤션·브랜치 전략·Fork 기여 |
+| Backend | backend03 | 인증 (bcrypt 해싱, JWT, CORS·보안) |
+| Backend | backend04 | 환경 변수, 파일 업로드(multer), 서버 배포(PM2) |
+| DevOps | devops03 | ESLint·Prettier, 자동화 테스트(Vitest), Git Hooks(Husky) |
+| DevOps | devops04 | 성능 최적화, 모니터링·로깅(Sentry/web-vitals), HTTPS·캐싱 |
+
+- HTML/CSS/JS 신규 챕터는 `codeLanguage: 'html'` + `livePreview: true`로 실시간 미리보기 지원.
+- React/TS는 jsx/tsx, Git/DevOps는 bash, Backend는 javascript로 라벨 지정.
+- 8개 `index.ts`에 신규 챕터 import 추가, `translations.ts` ko/en에 챕터 titleKey 12개씩 추가.
+
+## 결과
+- 전 토픽 4챕터 = **총 32챕터**(이전 20). 코딩 도전문제 40개와 함께 콘텐츠 대폭 확충.
+- `npm run typecheck` ✅ / `npm run build` ✅ (data 청크 277KB → 341KB)

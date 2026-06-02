@@ -71,37 +71,49 @@ export const translations: Record<string, Record<string, unknown>> = {
     html01: 'HTML 기본 구조',
     html02: '텍스트와 링크',
     html03: '폼과 입력',
+    html04: '멀티미디어와 임베드',
 
     // ─── CSS Chapters ───
     css01: 'CSS 선택자와 속성',
     css02: '박스 모델과 레이아웃',
     css03: 'Flexbox',
+    css04: 'Grid와 반응형 디자인',
 
     // ─── JavaScript Chapters ───
     js01: '변수와 자료형',
     js02: '함수와 스코프',
     js03: 'DOM 조작',
+    js04: 'ES6+ 핵심 문법',
 
     // ─── React Chapters ───
     react01: 'JSX와 컴포넌트',
     react02: 'State와 Props',
     react03: 'Hooks',
+    react04: 'Context와 컴포넌트 패턴',
 
     // ─── TypeScript Chapters ───
     ts01: '타입 기초',
     ts02: '인터페이스와 타입',
+    ts03: '고급 타입과 enum',
+    ts04: 'React와 TypeScript',
 
     // ─── Git Chapters ───
     git01: 'Git 기초',
     git02: '브랜칭과 머지',
+    git03: 'Rebase와 이력 관리',
+    git04: '협업 전략과 컨벤션',
 
     // ─── Backend Chapters ───
     backend01: 'Node.js 기초',
     backend02: 'REST API',
+    backend03: '인증과 JWT',
+    backend04: '환경 변수와 배포',
 
     // ─── DevOps Chapters ───
     devops01: 'Vite와 빌드도구',
     devops02: '배포와 CI/CD',
+    devops03: '코드 품질과 테스트',
+    devops04: '성능 최적화와 모니터링',
 
     // ─── Categories (flat) ───
     beginner: '입문',
@@ -574,37 +586,49 @@ export const translations: Record<string, Record<string, unknown>> = {
     html01: 'HTML Basic Structure',
     html02: 'Text and Links',
     html03: 'Forms and Input',
+    html04: 'Multimedia & Embedding',
 
     // ─── CSS Chapters ───
     css01: 'CSS Selectors & Properties',
     css02: 'Box Model & Layout',
     css03: 'Flexbox',
+    css04: 'Grid & Responsive Design',
 
     // ─── JavaScript Chapters ───
     js01: 'Variables & Data Types',
     js02: 'Functions & Scope',
     js03: 'DOM Manipulation',
+    js04: 'Modern ES6+ Syntax',
 
     // ─── React Chapters ───
     react01: 'JSX & Components',
     react02: 'State & Props',
     react03: 'Hooks',
+    react04: 'Context & Component Patterns',
 
     // ─── TypeScript Chapters ───
     ts01: 'Type Basics',
     ts02: 'Interfaces & Types',
+    ts03: 'Advanced Types & Enums',
+    ts04: 'TypeScript with React',
 
     // ─── Git Chapters ───
     git01: 'Git Basics',
     git02: 'Branching & Merging',
+    git03: 'Rebase & History',
+    git04: 'Collaboration & Conventions',
 
     // ─── Backend Chapters ───
     backend01: 'Node.js Basics',
     backend02: 'REST API',
+    backend03: 'Authentication & JWT',
+    backend04: 'Env Config & Deployment',
 
     // ─── DevOps Chapters ───
     devops01: 'Vite & Build Tools',
     devops02: 'Deployment & CI/CD',
+    devops03: 'Code Quality & Testing',
+    devops04: 'Performance & Monitoring',
 
     // ─── Categories (flat) ───
     beginner: 'Beginner',
