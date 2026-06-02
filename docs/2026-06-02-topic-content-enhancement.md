@@ -214,3 +214,24 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / `preview` `/vibecoding` HTTP 200, 콘텐츠 번들 포함 확인
+
+---
+
+# 라이브 프리뷰 높이 자동 확장 (스크롤 제거) (2026-06-02)
+
+## 요청
+소스코드/실행 결과가 길면 세로 영역을 넉넉히 배정해 내부 스크롤 없이 전체가 보이게.
+
+## 작업 내용
+- 챕터 코드 블록(`.chapter-code-content pre`)은 이미 `white-space: pre-wrap` + 높이 제한 없음 →
+  세로 스크롤 없이 전체 표시됨(확인). 별도 수정 불필요.
+- 문제는 `LivePreview` iframe이 고정 높이(TopicDetail 200px)라 렌더 결과가 길면 내부 스크롤 발생.
+- `LivePreview`를 **콘텐츠 높이 자동 확장**으로 개선:
+  - iframe 내부에 측정 스크립트 주입 → `scrollHeight`를 `postMessage`로 부모에 전달
+    (sandbox `allow-scripts` 유지, `allow-same-origin` 불필요 → 보안 유지).
+  - 부모가 메시지를 받아 iframe 높이를 콘텐츠 높이로 설정(+여유 4px), 기존 height는 최소 높이로 사용.
+  - `load`/`resize`/`ResizeObserver` 및 타이머로 재측정 → 비동기 렌더 후에도 정확.
+  - iframe `scrolling="no"`로 내부 스크롤 제거.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / 번들에 `__livePreviewHeight` 포함 확인
