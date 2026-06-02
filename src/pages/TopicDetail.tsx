@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useCodeCopy } from '../hooks/useCodeCopy';
-import { topicMap } from '../data/index';
+import { topicMap, topicOrder } from '../data/index';
 import LivePreview from '../components/LivePreview';
 import QuizQuestion from '../components/QuizQuestion';
 
@@ -52,11 +52,68 @@ export default function TopicDetail() {
         </div>
 
         <div className="chapter-layout">
+          <aside className="chapter-sidebar">
+            <div className="chapter-sidebar-inner">
+              <Link to={`/${topic}`} className="chapter-sidebar-topic" style={{ borderColor: config.color }}>
+                <span className="chapter-sidebar-topic-badge" style={{ background: config.color }}>{t(config.titleKey)}</span>
+                <span className="chapter-sidebar-topic-label">{chapters.length} {t('chapters')}</span>
+              </Link>
+
+              <nav className="chapter-sidebar-nav" aria-label={t('chapterList')}>
+                {chapters.map(ch => {
+                  const isActive = ch.id === chapterId;
+                  return (
+                    <div key={ch.id} className="chapter-sidebar-item">
+                      <Link
+                        to={`/${topic}/${ch.id}`}
+                        className={`chapter-sidebar-link ${isActive ? 'active' : ''}`}
+                        style={isActive ? { color: config.color } : undefined}
+                      >
+                        <span
+                          className="chapter-sidebar-num"
+                          style={isActive ? { background: config.color, color: '#fff', borderColor: config.color } : undefined}
+                        >
+                          {String(ch.chapter).padStart(2, '0')}
+                        </span>
+                        <span className="chapter-sidebar-text">{t(ch.titleKey)}</span>
+                      </Link>
+                      {isActive && (
+                        <div className="chapter-sidebar-sections">
+                          {chapter.sections.map((section, si) => (
+                            <a key={si} href={`#sec-${si}`} className="chapter-sidebar-section-link">
+                              {language === 'ko' ? section.title : section.titleEn}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </nav>
+
+              <div className="chapter-sidebar-topics">
+                <div className="chapter-sidebar-topics-label">{t('topicSection')}</div>
+                <div className="chapter-sidebar-topics-list">
+                  {topicOrder.map(key => (
+                    <Link
+                      key={key}
+                      to={`/${key}`}
+                      className={`chapter-sidebar-topic-chip ${key === topic ? 'active' : ''}`}
+                      style={key === topic ? { background: topicMap[key].color, color: '#fff', borderColor: topicMap[key].color } : undefined}
+                    >
+                      {t(topicMap[key].titleKey)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+
           <div className="chapter-content">
             {chapter.sections.map((section, idx) => {
               const copyId = `${topic}-${chapterId}-${idx}`;
               return (
-                <div key={idx} className="chapter-section" data-aos="fade-up" data-aos-delay={idx * 80}>
+                <div key={idx} id={`sec-${idx}`} className="chapter-section" data-aos="fade-up" data-aos-delay={idx * 80}>
                   <h3>{language === 'ko' ? section.title : section.titleEn}</h3>
                   <div className="chapter-section-content">{language === 'ko' ? section.content : section.contentEn}</div>
 

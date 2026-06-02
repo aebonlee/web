@@ -476,19 +476,209 @@
 
 /* Chapter layout */
 .chapter-layout {
-  max-width: 860px;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 40px;
+  max-width: 1180px;
   margin: 0 auto;
+  align-items: start;
 }
 
 .chapter-content {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  min-width: 0;
+}
+
+/* ── Chapter sidebar (left menu) ── */
+.chapter-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height, 80px) + 16px);
+  align-self: start;
+}
+
+.chapter-sidebar-inner {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  max-height: calc(100vh - var(--nav-height, 80px) - 40px);
+  overflow-y: auto;
+}
+
+.chapter-sidebar-topic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--primary-blue);
+  background: var(--bg-light-gray);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+
+.chapter-sidebar-topic-badge {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.chapter-sidebar-topic-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chapter-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chapter-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.chapter-sidebar-link:hover {
+  background: var(--bg-light-gray);
+  color: var(--text-primary);
+}
+
+.chapter-sidebar-link.active {
+  background: var(--bg-light-gray);
+  font-weight: 700;
+}
+
+.chapter-sidebar-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.chapter-sidebar-text {
+  min-width: 0;
+}
+
+.chapter-sidebar-sections {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 0 6px 36px;
+  padding-left: 10px;
+  border-left: 2px solid var(--border-light);
+}
+
+.chapter-sidebar-section-link {
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.chapter-sidebar-section-link:hover {
+  color: var(--primary-blue);
+  background: var(--bg-light-gray);
+}
+
+.chapter-sidebar-topics {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.chapter-sidebar-topics-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.chapter-sidebar-topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chapter-sidebar-topic-chip {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.chapter-sidebar-topic-chip:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+[data-theme="dark"] .chapter-sidebar-inner,
+[data-theme="dark"] .chapter-sidebar-topic-chip {
+  background: var(--bg-light-gray);
+  border-color: var(--border-medium);
+}
+
+[data-theme="dark"] .chapter-sidebar-topic {
+  background: var(--bg-medium-gray);
+}
+
+@media (max-width: 900px) {
+  .chapter-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .chapter-sidebar {
+    position: static;
+    top: auto;
+  }
+
+  .chapter-sidebar-inner {
+    max-height: none;
+  }
+
+  .chapter-sidebar-sections {
+    display: none;
+  }
 }
 
 /* Chapter sections */
 .chapter-section {
   padding: 0;
+  scroll-margin-top: calc(var(--nav-height, 80px) + 20px);
 }
 
 .chapter-section h3 {
