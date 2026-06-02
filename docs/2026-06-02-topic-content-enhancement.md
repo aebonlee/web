@@ -167,3 +167,25 @@ HTML/CSS/JavaScript는 다중 섹션·퀴즈로 충실했으나, 나머지 5개 
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅
+
+---
+
+# 🐛 버그 수정: 라이브 프리뷰 한글 깨짐 (2026-06-02)
+
+## 증상
+챕터/실습의 **라이브 프리뷰(iframe) 안에서 한글이 깨져(모지바케) 표시**됨.
+(예: 자기소개 카드의 "이애본 · 웹 개발 학습자" 등)
+
+## 원인
+- `LivePreview`가 Blob URL로 iframe에 띄우는 HTML 문서에 `<meta charset>`이 없었고,
+  `new Blob([doc], { type: 'text/html' })`에도 charset이 지정되지 않음.
+- 부모 페이지는 UTF-8이지만, charset 선언이 없는 Blob 문서는 브라우저가 인코딩을 추정 →
+  UTF-8 한글이 EUC-KR 등으로 잘못 해석되어 깨짐.
+- 본문(앱 셸)은 정상 UTF-8이며, 깨짐은 프리뷰 iframe 내부에 한정됨.
+
+## 해결
+- 프리뷰 문서 `<head>`에 `<meta charset="UTF-8">` 추가, Blob 타입도 `text/html;charset=utf-8`로 지정.
+- 앱 내 iframe 생성처는 `LivePreview` 한 곳뿐이라 단일 수정으로 모든 프리뷰(챕터·실습·Playground·문제풀이)에 적용.
+
+## 검증 (charset 수정)
+- `npm run typecheck` ✅ / `npm run build` ✅ / 번들에 `meta charset="UTF-8"` 포함 확인

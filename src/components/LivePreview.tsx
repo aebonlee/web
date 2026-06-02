@@ -15,8 +15,9 @@ export default function LivePreview({ html = '', css = '', js = '', height = 300
     if (!iframe) return;
 
     const doc = `<!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+<meta charset="UTF-8">
 <style>
 body { font-family: 'Noto Sans KR', sans-serif; padding: 16px; margin: 0; }
 ${css}
@@ -28,7 +29,7 @@ ${html}
 </body>
 </html>`;
 
-    const blob = new Blob([doc], { type: 'text/html' });
+    const blob = new Blob([doc], { type: 'text/html;charset=utf-8' });
     iframe.src = URL.createObjectURL(blob);
 
     return () => {
