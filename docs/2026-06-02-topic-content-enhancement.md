@@ -448,3 +448,22 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run build` 후 dist 번들에 supabase URL 포함 확인 → 배포 후 라이브 번들에도 포함 확인.
+
+---
+
+# GitHub Actions 자동 배포 워크플로 추가 (로그인 env 회귀 방지) (2026-06-03)
+
+## 배경
+web만 자동 배포 워크플로가 없어 수동 `npm run deploy`(로컬 .env 의존)에 의존 → 로컬 .env 부재 시
+Supabase 설정이 빠진 빌드가 배포되어 로그인이 깨지는 회귀가 발생. 형제 리포(coding·joongang·ax-study)는
+이미 `.github/workflows/deploy.yml`로 Actions 자동 배포를 사용 중.
+
+## 작업 내용
+- 형제 리포의 deploy 워크플로를 가져와 `web/.github/workflows/deploy.yml` 생성:
+  - push(main)/수동(workflow_dispatch) 트리거 → `npm ci` → `npm run build` → peaceiris/actions-gh-pages@v4로 gh-pages 배포(cname web.dreamitbiz.com).
+  - 빌드 env에 `VITE_SUPABASE_URL/ANON_KEY`를 **repo secret 우선, 없으면 공개 anon 값으로 폴백** 주입
+    → secrets 미설정이어도 Supabase가 항상 구성되어 로그인 회귀를 원천 차단.
+- 이후 web 배포는 main push 시 Actions가 처리(로컬 .env 의존 제거).
+
+## 검증
+- 워크플로 push 후 Actions 빌드·배포 성공 및 라이브 번들에 Supabase 포함 확인.
