@@ -6,6 +6,67 @@ const chapter: TopicChapter = {
   titleKey: 'backend01',
   sections: [
     {
+      title: 'Node.js 설치 & Express 프로젝트 준비',
+      titleEn: 'Installing Node.js & Setting Up an Express Project',
+      content: '백엔드 개발은 Node.js 런타임 설치에서 시작합니다. 설치 방법은 운영체제마다 다르니 본인 OS의 창만 따라 하세요(아래). Node를 설치하면 패키지 매니저 npm도 함께 설치되며, 권장 버전은 18 이상입니다. 설치 후에는 프로젝트 폴더를 만들고 npm init으로 초기화한 뒤 Express를 설치하면 준비가 끝납니다. (Node 버전 관리가 필요하면 nvm 사용을 권장합니다.)',
+      contentEn: 'Backend development starts by installing the Node.js runtime. The method differs by OS — follow only your OS panel below. Installing Node also installs the npm package manager; version 18+ is recommended. Then create a project folder, initialize it with npm init, and install Express. (Use nvm if you need Node version management.)',
+      codeBlocks: [
+        {
+          label: '🪟 Windows',
+          code: `# 공식 설치 파일: https://nodejs.org 에서 LTS(.msi) 설치
+#   또는 winget 사용
+winget install OpenJS.NodeJS.LTS
+
+# ★ 설치 후 새 PowerShell 창에서 확인
+node -v
+npm -v`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS',
+          code: `# Homebrew (권장)
+brew install node
+
+# 또는 nvm으로 설치 (버전 관리에 유리)
+#   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+#   nvm install --lts
+
+node -v
+npm -v`,
+          codeLanguage: 'bash',
+        },
+        {
+          label: '🐧 Linux',
+          code: `# nvm 권장 (배포판 기본 패키지는 버전이 낮을 수 있음)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
+
+# 또는 Debian/Ubuntu 패키지
+#   sudo apt update && sudo apt install nodejs npm
+
+node -v
+npm -v`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# 설치 후 (운영체제 공통) — 프로젝트 폴더 만들고 Express 설치
+mkdir my-api && cd my-api
+npm init -y                 # package.json 생성
+npm install express         # Express 설치
+
+# 이제 server.js 를 만들어 다음 섹션의 코드를 작성하면 됩니다.`,
+      codeLanguage: 'bash',
+      quiz: {
+        question: 'Node.js를 설치하면 함께 설치되는 패키지 매니저는?',
+        questionEn: 'Which package manager is installed together with Node.js?',
+        options: ['pip', 'npm', 'brew', 'apt'],
+        optionsEn: ['pip', 'npm', 'brew', 'apt'],
+        correctIndex: 1,
+        explanation: 'Node.js를 설치하면 npm(Node Package Manager)이 함께 설치되어 express 같은 패키지를 설치할 수 있습니다.',
+        explanationEn: 'Installing Node.js also installs npm (Node Package Manager), letting you install packages like express.'
+      }
+    },
+    {
       title: 'Node.js & Express 기초',
       titleEn: 'Node.js & Express Basics',
       content: 'Node.js는 브라우저 밖에서 JavaScript를 실행하는 런타임입니다. Express는 Node.js의 가장 인기 있는 웹 프레임워크로, REST API를 쉽게 구축할 수 있습니다. HTTP 메서드(GET/POST/PUT/DELETE)를 경로(route)에 매핑해 CRUD API를 만듭니다.',

@@ -399,3 +399,16 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / preview /git/01-basics 200, 설치 콘텐츠 번들 포함 확인.
+
+---
+
+# Backend 토픽에 OS별 설치 섹션 추가 (2026-06-03)
+
+## 작업 내용
+- `backend01` 첫 섹션으로 **"Node.js 설치 & Express 프로젝트 준비"** 추가:
+  - OS별 설치 창 3종 — 🪟Windows(nodejs.org/winget)·🍎macOS(brew/nvm)·🐧Linux(nvm/apt).
+  - 공통: `node -v`/`npm -v` 확인 + `mkdir`·`npm init -y`·`npm install express` 프로젝트 준비.
+- 오버뷰의 "이런 걸 배워요"·로드맵에 자동 반영.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / preview /backend/01-nodejs 200, 설치 콘텐츠 번들 포함 확인.
