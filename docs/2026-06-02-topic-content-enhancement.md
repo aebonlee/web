@@ -412,3 +412,20 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / preview /backend/01-nodejs 200, 설치 콘텐츠 번들 포함 확인.
+
+---
+
+# DevOps 토픽에 OS별 설치 섹션 추가 (2026-06-03)
+
+## 작업 내용
+- `devops01` 첫 섹션 **"개발 환경 준비 — Node.js 설치"** 추가:
+  - OS별 Node 설치 창 3종(🪟Windows winget·🍎macOS brew/nvm·🐧Linux nvm/apt). Vite·ESLint·Vitest의 공통 전제.
+- `devops02` Docker 섹션에 **Docker 설치(OS별)** 창 추가:
+  - 🪟Windows·🍎macOS Docker Desktop(winget/brew cask), 🐧Linux Docker Engine(get.docker.com + usermod). 설치 창이 Dockerfile 앞에 표시.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / preview /devops/01-vite·/devops/02-cicd 200, 설치 콘텐츠 번들 포함 확인.
+
+## 정리 — OS별 설치/설정 코드 창 적용 현황
+바이브코딩 · Python(django/flask/gradio/streamlit) · Git · Backend · DevOps 전부 OS별 설치 창 적용 완료.
+(HTML/CSS/JS/React/TS는 설치 불필요 또는 브라우저/Node 기반이라 별도 OS 설치 섹션 없음.)

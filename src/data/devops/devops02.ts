@@ -49,8 +49,42 @@ jobs:
     {
       title: 'Docker로 환경 통일',
       titleEn: 'Standardizing Environments with Docker',
-      content: 'Docker는 애플리케이션과 실행 환경을 컨테이너로 묶어 "내 컴퓨터에서는 되는데" 문제를 없앱니다. Dockerfile에 빌드 과정을 정의하고 이미지를 만들면, 어디서든 동일하게 실행됩니다. 멀티 스테이지 빌드로 최종 이미지 크기를 줄일 수 있습니다.',
-      contentEn: 'Docker packages an application and its runtime into a container, eliminating the "works on my machine" problem. Define the build process in a Dockerfile and build an image, and it runs identically anywhere. Multi-stage builds reduce the final image size.',
+      content: 'Docker는 애플리케이션과 실행 환경을 컨테이너로 묶어 "내 컴퓨터에서는 되는데" 문제를 없앱니다. 먼저 운영체제에 맞게 Docker를 설치하세요(아래 OS별 창). Windows·macOS는 Docker Desktop, Linux는 Docker Engine을 설치합니다. 설치 후 Dockerfile에 빌드 과정을 정의하고 이미지를 만들면 어디서든 동일하게 실행됩니다. 멀티 스테이지 빌드로 최종 이미지 크기를 줄일 수 있습니다.',
+      contentEn: 'Docker packages an application and its runtime into a container, eliminating the "works on my machine" problem. First install Docker for your OS (panels below): Docker Desktop on Windows/macOS, Docker Engine on Linux. Then define the build in a Dockerfile and build an image to run it identically anywhere. Multi-stage builds reduce the final image size.',
+      codeBlocks: [
+        {
+          label: '🪟 Windows',
+          code: `# Docker Desktop 설치 (WSL2 기반)
+#   https://www.docker.com/products/docker-desktop 에서 설치
+#   또는 winget 사용
+winget install Docker.DockerDesktop
+
+# 설치 후 Docker Desktop 실행 → 새 터미널에서 확인
+docker --version`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS',
+          code: `# Docker Desktop 설치
+brew install --cask docker
+# 또는 https://www.docker.com/products/docker-desktop 에서 설치
+
+# Docker Desktop 앱 실행 후 확인
+docker --version`,
+          codeLanguage: 'bash',
+        },
+        {
+          label: '🐧 Linux',
+          code: `# Docker Engine 설치 (공식 편의 스크립트)
+curl -fsSL https://get.docker.com | sh
+
+# sudo 없이 쓰려면 현재 사용자를 docker 그룹에 추가 (재로그인 필요)
+sudo usermod -aG docker $USER
+
+docker --version`,
+          codeLanguage: 'bash',
+        },
+      ],
       code: `# Dockerfile - 멀티 스테이지 빌드
 # 1단계: 빌드
 FROM node:20-alpine AS build

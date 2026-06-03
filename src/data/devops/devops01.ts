@@ -6,6 +6,60 @@ const chapter: TopicChapter = {
   titleKey: 'devops01',
   sections: [
     {
+      title: '개발 환경 준비 — Node.js 설치',
+      titleEn: 'Setting Up Your Environment — Installing Node.js',
+      content: 'Vite·ESLint·Vitest 등 이 토픽에서 다루는 도구는 모두 Node.js 위에서 동작합니다. 따라서 가장 먼저 Node.js(와 함께 설치되는 npm)를 설치해야 합니다. 설치 방법은 운영체제마다 다르니 본인 OS의 창만 따라 하세요(아래). 권장 버전은 18 이상이며, 여러 버전을 오갈 일이 많은 DevOps 작업에서는 nvm 사용이 특히 유리합니다.',
+      contentEn: 'The tools in this topic — Vite, ESLint, Vitest, etc. — all run on Node.js, so install Node.js (and the npm that comes with it) first. The method differs by OS — follow only your OS panel below. Version 18+ is recommended, and nvm is especially handy for DevOps work that often switches versions.',
+      codeBlocks: [
+        {
+          label: '🪟 Windows',
+          code: `# 공식 설치 파일: https://nodejs.org 에서 LTS(.msi) 설치
+#   또는 winget 사용
+winget install OpenJS.NodeJS.LTS
+
+# ★ 설치 후 새 PowerShell 창에서 확인
+node -v
+npm -v`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS',
+          code: `# Homebrew (권장)
+brew install node
+
+# 또는 nvm (버전 관리에 유리)
+#   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+#   nvm install --lts
+
+node -v
+npm -v`,
+          codeLanguage: 'bash',
+        },
+        {
+          label: '🐧 Linux',
+          code: `# nvm 권장 (배포판 기본 패키지는 버전이 낮을 수 있음)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
+
+# 또는 Debian/Ubuntu
+#   sudo apt update && sudo apt install nodejs npm
+
+node -v
+npm -v`,
+          codeLanguage: 'bash',
+        },
+      ],
+      quiz: {
+        question: '이 토픽의 도구(Vite·ESLint·Vitest)들이 공통으로 필요로 하는 것은?',
+        questionEn: 'What do the tools in this topic (Vite, ESLint, Vitest) all require?',
+        options: ['Python', 'Node.js', 'Docker', 'Java'],
+        optionsEn: ['Python', 'Node.js', 'Docker', 'Java'],
+        correctIndex: 1,
+        explanation: 'Vite·ESLint·Vitest 등은 모두 Node.js 기반 도구라, Node.js(및 npm) 설치가 먼저 필요합니다.',
+        explanationEn: 'Vite, ESLint, Vitest, etc. are all Node.js-based tools, so installing Node.js (and npm) comes first.'
+      }
+    },
+    {
       title: 'Vite 빌드 도구',
       titleEn: 'Vite Build Tool',
       content: 'Vite는 차세대 프론트엔드 빌드 도구로, 빠른 개발 서버와 최적화된 프로덕션 빌드를 제공합니다. HMR(Hot Module Replacement)으로 코드 변경 시 즉시 반영되며, 개발 중에는 네이티브 ES 모듈을 사용해 번들링 없이 빠르게 구동됩니다.',
