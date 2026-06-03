@@ -35,20 +35,30 @@ npm update -g @anthropic-ai/claude-code
     {
       title: '프로젝트 폴더에서 실행 & 로그인',
       titleEn: 'Run in Your Project Folder & Log In',
-      content: '2챕터에서 만든 프로젝트 폴더로 이동(cd)한 뒤 claude를 실행하면 대화형 세션이 시작됩니다. ★실행 전 pwd로 "원하는 폴더에 있는지" 꼭 확인하세요(엉뚱한 폴더에서 실행하면 그 폴더를 작업 대상으로 삼습니다). 처음 실행하면 브라우저로 Anthropic 계정 로그인(인증)을 진행합니다.',
-      contentEn: 'Move (cd) into the project folder you made in Chapter 2, then run claude to start an interactive session. ★Before running, confirm with pwd that you are in the intended folder (running in the wrong folder makes that folder the workspace). On first run, log in (authenticate) with your Anthropic account in the browser.',
-      code: `# 1) 작업 폴더로 이동 후 위치 확인
-cd ~/dev/my-first-app        # Windows: cd $HOME\\dev\\my-first-app
-pwd                          # 원하는 폴더가 맞는지 확인!
+      content: '2챕터에서 만든 프로젝트 폴더로 이동(cd)한 뒤 claude를 실행하면 대화형 세션이 시작됩니다. ★실행 전 pwd로 "원하는 폴더에 있는지" 꼭 확인하세요(엉뚱한 폴더에서 실행하면 그 폴더를 작업 대상으로 삼습니다). 처음 실행하면 브라우저로 Anthropic 계정 로그인(인증)을 진행합니다. 본인 OS의 창만 따라 하세요.',
+      contentEn: 'Move (cd) into the project folder from Chapter 2, then run claude to start an interactive session. ★Before running, confirm with pwd that you are in the intended folder (running elsewhere makes that folder the workspace). On first run, authenticate with your Anthropic account in the browser. Follow only your OS panel.',
+      codeBlocks: [
+        {
+          label: '🪟 Windows (PowerShell)',
+          code: `# 1) 작업 폴더로 이동 + 위치 확인
+cd $HOME\\dev\\my-first-app
+pwd                  # 원하는 폴더가 맞는지 확인!
 
-# 2) Claude Code 실행
-claude
+# 2) Claude Code 실행 (첫 실행 시 브라우저 로그인)
+claude`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS / Linux (터미널)',
+          code: `# 1) 작업 폴더로 이동 + 위치 확인
+cd ~/dev/my-first-app
+pwd                  # 원하는 폴더가 맞는지 확인!
 
-# 3) 첫 실행 시 안내에 따라 브라우저로 로그인/인증
-#    인증이 끝나면 자연어로 요청:
-#    "이 폴더에 간단한 HTML 페이지를 만들어줘"
-#    "방금 만든 파일을 설명해줘"`,
-      codeLanguage: 'bash',
+# 2) Claude Code 실행 (첫 실행 시 브라우저 로그인)
+claude`,
+          codeLanguage: 'bash',
+        },
+      ],
       quiz: {
         question: 'claude 실행 전에 pwd로 폴더를 확인해야 하는 이유는?',
         questionEn: 'Why check the folder with pwd before running claude?',

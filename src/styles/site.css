@@ -706,6 +706,30 @@
   background: #1E1E2E;
 }
 
+/* OS별 등 라벨이 붙은 다중 코드 창 — 데스크톱 나란히, 모바일 세로 */
+.chapter-code-os-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.chapter-code-os-grid .chapter-code-block {
+  margin: 0;
+}
+
+.chapter-code-os-grid .chapter-code-header span {
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 720px) {
+  .chapter-code-os-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .chapter-code-header {
   display: flex;
   justify-content: space-between;

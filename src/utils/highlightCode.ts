@@ -9,7 +9,7 @@ function escapeHtml(s: string): string {
     .replace(/>/g, '&gt;');
 }
 
-const HASH_LANGS = new Set(['python', 'bash', 'shell', 'sh', 'yaml', 'yml', 'dockerfile', 'ruby', 'toml', 'ini']);
+const HASH_LANGS = new Set(['python', 'bash', 'shell', 'sh', 'yaml', 'yml', 'dockerfile', 'ruby', 'toml', 'ini', 'powershell', 'ps1']);
 
 /**
  * 주석을 <span class="code-comment">로 감싼 HTML 문자열을 반환한다.

@@ -348,3 +348,23 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / `preview` /vibecoding·/vibecoding/02-folder·/04-troubleshooting HTTP 200.
+
+---
+
+# 바이브코딩: OS별 코드 창 분리 + 명령어 정확화 (2026-06-03)
+
+## 배경
+"운영체제별로 정확한 명령어를, 명령어 소스 창도 구분해서" 요청.
+기존엔 한 코드 블록에 Windows/macOS를 주석으로 섞어 초보자가 혼동할 수 있었음.
+
+## 작업 내용
+- 데이터 모델 확장: `TopicSection.codeBlocks?: CodeBlock[]`(라벨+코드+언어) 추가(`data/types.ts`).
+- `TopicDetail` 렌더러: `codeBlocks`를 **라벨이 붙은 개별 코드 창**으로 렌더(데스크톱 2열·모바일 1열, 각 창 복사 버튼).
+- `styles/site.css`에 `.chapter-code-os-grid` 추가.
+- 바이브코딩 챕터(vibe02·03·04) 재작성 → OS 분기 단계를 **🪟 Windows (PowerShell) / 🍎 macOS·Linux** 두 창으로 분리.
+- 명령어 정확화: Windows는 PowerShell 기준(`cd $HOME`, `mkdir`(CMD는 `md` 병기), `pwd`, `dir`, `where.exe`,
+  `Set-ExecutionPolicy -Scope CurrentUser`), macOS는 `mkdir -p`, `ls -al`, nvm/zshrc.
+- `highlightCode`의 주석 녹색 처리 대상에 `powershell` 추가.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / preview 200, OS 코드 창 클래스 번들 포함 확인.

@@ -138,6 +138,28 @@ export default function TopicDetail() {
                     </div>
                   )}
 
+                  {/* OS별 등 라벨이 붙은 다중 코드 창 */}
+                  {section.codeBlocks && section.codeBlocks.length > 0 && (
+                    <div className="chapter-code-os-grid">
+                      {section.codeBlocks.map((block, bi) => {
+                        const cbId = `${copyId}-cb${bi}`;
+                        return (
+                          <div key={bi} className="chapter-code-block">
+                            <div className="chapter-code-header">
+                              <span>{block.label}</span>
+                              <div className="chapter-code-actions">
+                                <button className={`chapter-copy-btn ${copiedId === cbId ? 'copied' : ''}`} onClick={() => copyCode(block.code, cbId)}>
+                                  {copiedId === cbId ? t('copied') : t('copy')}
+                                </button>
+                              </div>
+                            </div>
+                            <div className="chapter-code-content"><pre dangerouslySetInnerHTML={{ __html: highlightComments(block.code, block.codeLanguage || section.codeLanguage) }} /></div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
                   {section.livePreview && section.code && (
                     <LivePreview
                       html={section.codeLanguage === 'html' ? section.code : ''}
