@@ -10,10 +10,23 @@ const chapter: TopicChapter = {
       titleEn: 'Getting Started with Gradio',
       content: 'Gradio는 머신러닝 모델이나 파이썬 함수를 몇 줄로 웹 UI로 감싸주는 라이브러리입니다. gr.Interface에 함수와 입력·출력 타입만 지정하면 즉시 데모 페이지가 생성됩니다. AI 데모·프로토타입 공유에 특히 유용합니다.',
       contentEn: 'Gradio is a library that wraps a machine learning model or Python function into a web UI in a few lines. Give gr.Interface a function and input/output types, and a demo page is generated instantly. It is especially useful for sharing AI demos and prototypes.',
-      code: `# 설치
-pip install gradio
-
-# app.py
+      codeBlocks: [
+        {
+          label: '🪟 Windows (PowerShell) — 가상환경 + 설치',
+          code: `python -m venv venv
+venv\\Scripts\\activate
+pip install gradio`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS / Linux — 가상환경 + 설치',
+          code: `python3 -m venv venv
+source venv/bin/activate
+pip install gradio`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# app.py
 import gradio as gr
 
 def greet(name):

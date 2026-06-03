@@ -10,10 +10,23 @@ const chapter: TopicChapter = {
       titleEn: 'Getting Started with Streamlit',
       content: 'Streamlit은 파이썬 스크립트만으로 데이터 앱·대시보드를 만드는 프레임워크입니다. HTML/CSS/JS 없이 st.write, st.title 같은 함수를 위에서 아래로 쓰면 그대로 웹 화면이 됩니다. streamlit run 명령으로 실행합니다.',
       contentEn: 'Streamlit is a framework for building data apps and dashboards with just a Python script. Without HTML/CSS/JS, functions like st.write and st.title written top-to-bottom become a web page. Run it with the streamlit run command.',
-      code: `# 설치
-pip install streamlit
-
-# app.py
+      codeBlocks: [
+        {
+          label: '🪟 Windows (PowerShell) — 가상환경 + 설치',
+          code: `python -m venv venv
+venv\\Scripts\\activate
+pip install streamlit`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS / Linux — 가상환경 + 설치',
+          code: `python3 -m venv venv
+source venv/bin/activate
+pip install streamlit`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# app.py
 import streamlit as st
 
 st.title("Web AtoZ 데이터 앱")

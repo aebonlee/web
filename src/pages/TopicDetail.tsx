@@ -118,27 +118,7 @@ export default function TopicDetail() {
                   <h3>{language === 'ko' ? section.title : section.titleEn}</h3>
                   <div className="chapter-section-content">{language === 'ko' ? section.content : section.contentEn}</div>
 
-                  {section.code && (
-                    <div className="chapter-code-block">
-                      <div className="chapter-code-header">
-                        <span>{section.codeLanguage?.toUpperCase() || 'CODE'}</span>
-                        <div className="chapter-code-actions">
-                          <button className={`chapter-copy-btn ${copiedId === copyId ? 'copied' : ''}`} onClick={() => copyCode(section.code!, copyId)}>
-                            {copiedId === copyId ? t('copied') : t('copy')}
-                          </button>
-                          {section.livePreview && (
-                            <button className="chapter-practice-btn" onClick={() => setExpandedCode(section.code!)}>
-                              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                              Preview
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                      <div className="chapter-code-content"><pre dangerouslySetInnerHTML={{ __html: highlightComments(section.code, section.codeLanguage) }} /></div>
-                    </div>
-                  )}
-
-                  {/* OS별 등 라벨이 붙은 다중 코드 창 */}
+                  {/* OS별 등 라벨이 붙은 다중 코드 창 (설치/설정 — 본문 코드보다 먼저) */}
                   {section.codeBlocks && section.codeBlocks.length > 0 && (
                     <div className="chapter-code-os-grid">
                       {section.codeBlocks.map((block, bi) => {
@@ -157,6 +137,26 @@ export default function TopicDetail() {
                           </div>
                         );
                       })}
+                    </div>
+                  )}
+
+                  {section.code && (
+                    <div className="chapter-code-block">
+                      <div className="chapter-code-header">
+                        <span>{section.codeLanguage?.toUpperCase() || 'CODE'}</span>
+                        <div className="chapter-code-actions">
+                          <button className={`chapter-copy-btn ${copiedId === copyId ? 'copied' : ''}`} onClick={() => copyCode(section.code!, copyId)}>
+                            {copiedId === copyId ? t('copied') : t('copy')}
+                          </button>
+                          {section.livePreview && (
+                            <button className="chapter-practice-btn" onClick={() => setExpandedCode(section.code!)}>
+                              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                              Preview
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                      <div className="chapter-code-content"><pre dangerouslySetInnerHTML={{ __html: highlightComments(section.code, section.codeLanguage) }} /></div>
                     </div>
                   )}
 

@@ -10,9 +10,12 @@ const chapter: TopicChapter = {
       titleEn: 'Getting Started with Django',
       content: 'Django는 파이썬으로 작성된 풀스택 웹 프레임워크로, "배터리 포함(batteries included)" 철학에 따라 ORM·인증·관리자 페이지 등을 기본 제공합니다. 가상환경을 만들고 pip로 설치한 뒤, 프로젝트와 앱을 생성하는 것으로 시작합니다.',
       contentEn: 'Django is a full-stack web framework written in Python. Following the "batteries included" philosophy, it provides an ORM, authentication, an admin page, and more out of the box. You start by creating a virtual environment, installing it with pip, then creating a project and an app.',
-      code: `# 가상환경 + 설치
+      codeBlocks: [
+        {
+          label: '🪟 Windows (PowerShell)',
+          code: `# 가상환경 생성 + 활성화 (Windows)
 python -m venv venv
-source venv/bin/activate        # Windows: venv\\Scripts\\activate
+venv\\Scripts\\activate
 pip install django
 
 # 프로젝트와 앱 생성
@@ -21,7 +24,24 @@ python manage.py startapp blog
 
 # 개발 서버 실행 → http://127.0.0.1:8000
 python manage.py runserver`,
-      codeLanguage: 'python',
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS / Linux (터미널)',
+          code: `# 가상환경 생성 + 활성화 (macOS / Linux)
+python3 -m venv venv
+source venv/bin/activate
+pip install django
+
+# 프로젝트와 앱 생성
+django-admin startproject config .
+python manage.py startapp blog
+
+# 개발 서버 실행 → http://127.0.0.1:8000
+python manage.py runserver`,
+          codeLanguage: 'bash',
+        },
+      ],
       quiz: {
         question: 'Django 개발 서버를 실행하는 명령은?',
         questionEn: 'Which command runs the Django development server?',

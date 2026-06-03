@@ -368,3 +368,21 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / preview 200, OS 코드 창 클래스 번들 포함 확인.
+
+---
+
+# 다른 토픽으로 OS별 코드 창 확대 적용 (2026-06-03)
+
+## 배경
+바이브코딩에 적용한 OS별 코드 창(codeBlocks)을 OS가 갈리는 다른 토픽에도 적용.
+
+## 작업 내용
+- 렌더 순서 조정: `codeBlocks`(설치/설정)를 본문 `code`(앱 코드)보다 **먼저** 표시 → "설정 후 코드" 자연스러운 흐름.
+- **Python 가상환경 활성화 OS 분리** (대표적 OS 분기점):
+  - `django01`: venv 생성·활성화(`venv\\Scripts\\activate` vs `source venv/bin/activate`)부터 runserver까지 OS별 창.
+  - `flask01`·`gradio01`·`streamlit01`: 가상환경+설치 창을 🪟Windows/🍎macOS로 분리, 앱 코드는 그 뒤에 표시.
+- **devops01** 환경변수 파일 생성: PowerShell `Set-Content .env ...` vs bash `echo ... > .env` 로 분리(npm 단계는 공통).
+- Git/Backend는 명령이 OS 무관(git·node·npm 동일)이라 적용 대상 아님.
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / preview /django·/flask·/streamlit/01-start·/devops/01-vite 200.

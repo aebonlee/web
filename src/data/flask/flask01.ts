@@ -10,10 +10,23 @@ const chapter: TopicChapter = {
       titleEn: 'Getting Started with Flask',
       content: 'Flask는 가볍고 유연한 파이썬 마이크로 웹 프레임워크입니다. 최소한의 핵심만 제공하고 필요한 기능은 확장으로 추가하는 방식이라, 작은 API나 프로토타입을 빠르게 만들기에 좋습니다. pip로 설치하고 몇 줄로 서버를 띄울 수 있습니다.',
       contentEn: 'Flask is a lightweight, flexible Python micro web framework. It provides a minimal core and adds features via extensions, making it great for quickly building small APIs or prototypes. Install with pip and start a server in just a few lines.',
-      code: `# 설치
-pip install flask
-
-# app.py
+      codeBlocks: [
+        {
+          label: '🪟 Windows (PowerShell) — 가상환경 + 설치',
+          code: `python -m venv venv
+venv\\Scripts\\activate
+pip install flask`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS / Linux — 가상환경 + 설치',
+          code: `python3 -m venv venv
+source venv/bin/activate
+pip install flask`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# app.py
 from flask import Flask
 
 app = Flask(__name__)
