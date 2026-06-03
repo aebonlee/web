@@ -22,12 +22,12 @@ export default function Progress() {
 
   useEffect(() => {
     if (!supabase) { setLoading(false); return; }
-    supabase.from('web_user_progress').select('problem_id, user_id').then(({ data, error }) => {
+    // RLS로 raw 행은 본인 것만 보이므로, 집계는 SECURITY DEFINER RPC로 조회 (개인정보 비노출)
+    supabase.rpc('web_progress_stats').then(({ data, error }) => {
       if (error || !data) { setLoading(false); return; }
-      const uniqueUsers = new Set(data.map(r => r.user_id)).size;
-      const totalCompletions = data.length;
-      const problemCounts: Record<string, number> = {};
-      data.forEach(r => { problemCounts[r.problem_id] = (problemCounts[r.problem_id] || 0) + 1; });
+      const uniqueUsers = Number(data.uniqueUsers) || 0;
+      const totalCompletions = Number(data.totalCompletions) || 0;
+      const problemCounts: Record<string, number> = (data.problemCounts || {}) as Record<string, number>;
       let popularProblemId: string | null = null; let maxCount = 0;
       Object.entries(problemCounts).forEach(([id, cnt]) => { if (cnt > maxCount) { maxCount = cnt; popularProblemId = id; } });
       const popularProblem = popularProblemId ? allProblems.find(p => p.id === popularProblemId) ?? null : null;
