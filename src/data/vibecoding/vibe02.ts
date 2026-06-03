@@ -1,81 +1,90 @@
 import type { TopicChapter } from '../types';
 
 const chapter: TopicChapter = {
-  id: '02-install-claude-code',
+  id: '02-folder',
   chapter: 2,
   titleKey: 'vibe02',
   sections: [
     {
-      title: 'Claude Code 설치',
-      titleEn: 'Installing Claude Code',
-      content: 'Node.js가 준비되면 npm으로 Claude Code를 전역(-g) 설치합니다. 설치가 끝나면 어느 폴더에서든 claude 명령을 사용할 수 있습니다. nvm을 쓰면 sudo 없이 설치되어 권한 오류를 피할 수 있습니다.',
-      contentEn: 'Once Node.js is ready, install Claude Code globally (-g) with npm. After installation, the claude command is available in any folder. With nvm, it installs without sudo, avoiding permission errors.',
-      code: `# 전역 설치
-npm install -g @anthropic-ai/claude-code
+      title: '작업 폴더를 어디에 만들까?',
+      titleEn: 'Where to Create Your Project Folder',
+      content: 'Claude Code는 "실행한 폴더"를 작업 대상으로 삼습니다. 그래서 먼저 내 프로젝트를 담을 폴더를 정해야 합니다. 한글·공백·특수문자가 없는 영문 경로를 권장합니다(오류가 적습니다). 권장 위치는 Windows는 C:\\Users\\사용자\\dev, macOS는 ~/dev(홈 폴더 아래 dev) 입니다. 바탕화면이나 다운로드 폴더는 경로가 길고 한글이 섞이기 쉬워 피하는 게 좋습니다.',
+      contentEn: 'Claude Code treats the folder it runs in as its workspace, so first decide where to keep your project. Prefer an English path without spaces or special characters (fewer errors). Recommended locations are C:\\Users\\you\\dev on Windows and ~/dev (a dev folder under home) on macOS. Avoid the Desktop or Downloads folder — long paths that often contain non-English characters.',
+      code: `# ── Windows (PowerShell) ──
+cd $HOME            # 내 사용자 폴더로 이동 (C:\\Users\\사용자)
+mkdir dev           # 작업용 dev 폴더 생성 (한 번만)
+cd dev              # dev 폴더로 이동
 
-# 설치 확인
-claude --version
+# ── macOS / Linux (터미널) ──
+cd ~                # 홈 폴더로 이동 (/Users/사용자)
+mkdir -p dev        # dev 폴더 생성 (이미 있으면 그냥 통과)
+cd dev              # dev 폴더로 이동
 
-# (선택) 최신으로 업데이트
-npm update -g @anthropic-ai/claude-code`,
+# 지금 어디에 있는지 확인 (공통)
+pwd                 # 현재 폴더 경로 출력`,
       codeLanguage: 'bash',
       quiz: {
-        question: 'Claude Code를 어디서든 실행 가능하도록 설치하는 npm 옵션은?',
-        questionEn: 'Which npm option installs Claude Code so it runs anywhere?',
-        options: ['--save', '-g (전역 설치)', '-D', '--local'],
-        optionsEn: ['--save', '-g (global install)', '-D', '--local'],
+        question: '작업 폴더 경로로 가장 권장되는 것은?',
+        questionEn: 'Which project folder path is most recommended?',
+        options: ['바탕화면\\새 폴더 (한글·공백 포함)', '영문·공백 없는 경로 (예: ~/dev, C:\\Users\\you\\dev)', '아무 곳이나 상관없다', '시스템 폴더(C:\\Windows)'],
+        optionsEn: ['Desktop\\New Folder (Korean/spaces)', 'English path without spaces (e.g., ~/dev, C:\\Users\\you\\dev)', 'Anywhere is fine', 'A system folder (C:\\Windows)'],
         correctIndex: 1,
-        explanation: 'npm install -g 는 패키지를 전역(global)으로 설치해, 특정 프로젝트가 아니라 시스템 어디서든 claude 명령을 쓸 수 있게 합니다.',
-        explanationEn: 'npm install -g installs the package globally so the claude command works system-wide, not just in one project.'
+        explanation: '한글·공백·특수문자가 없는 영문 경로가 도구 오류를 줄입니다. 홈 폴더 아래 dev 같은 짧은 경로가 안전합니다.',
+        explanationEn: 'An English path without spaces/special characters reduces tooling errors. A short path like dev under your home folder is safe.'
       }
     },
     {
-      title: '실행과 로그인',
-      titleEn: 'Running and Logging In',
-      content: '작업할 프로젝트 폴더로 이동한 뒤 claude를 실행하면 대화형 세션이 시작됩니다. 처음 실행하면 로그인(인증) 절차가 진행되며, 브라우저로 Anthropic 계정에 인증합니다. 인증 후에는 그 폴더의 코드를 이해하고 작업을 도와줍니다.',
-      contentEn: 'Move into the project folder you want to work in and run claude to start an interactive session. On first run, a login (authentication) flow opens to authenticate with your Anthropic account in the browser. After that, it understands the folder\'s code and assists with tasks.',
-      code: `# 프로젝트 폴더로 이동 후 실행
-cd my-project
-claude
+      title: '터미널에서 폴더 다루기 (cd · pwd · 목록)',
+      titleEn: 'Working with Folders in the Terminal (cd · pwd · listing)',
+      content: '터미널의 기본은 "지금 어느 폴더에 있는지"를 늘 확인하는 것입니다. pwd로 현재 위치를 보고, cd로 폴더를 이동하고, 목록을 봅니다(Windows는 dir, macOS는 ls). cd ..는 상위 폴더로, cd 폴더명은 하위 폴더로 들어갑니다. 경로 구분자는 Windows가 역슬래시(\\), macOS가 슬래시(/)입니다.',
+      contentEn: 'The basics of the terminal are always knowing "which folder am I in." Use pwd to see your location, cd to move, and list contents (dir on Windows, ls on macOS). cd .. goes up one level; cd foldername enters a subfolder. Path separators are backslash (\\) on Windows and slash (/) on macOS.',
+      code: `# 현재 위치 확인 (공통)
+pwd
 
-# 첫 실행 시 안내에 따라 브라우저로 로그인/인증
-# 인증이 끝나면 자연어로 요청하면 됩니다:
-#   "이 프로젝트에 로그인 폼을 만들어줘"
-#   "이 버그 원인을 찾아서 고쳐줘"`,
+# 폴더 목록 보기
+dir                 # ── Windows
+ls -al              # ── macOS / Linux
+
+# 폴더 이동
+cd dev              # dev 폴더로 들어가기
+cd ..               # 한 단계 위로
+cd ~                # (macOS) 홈으로 / Windows는: cd $HOME
+
+# 새 프로젝트 폴더 만들고 들어가기 (공통)
+mkdir my-first-app
+cd my-first-app
+pwd                 # 여기가 Claude Code를 실행할 폴더!`,
       codeLanguage: 'bash',
       quiz: {
-        question: 'Claude Code로 특정 프로젝트를 작업하려면 어떻게 시작하나요?',
-        questionEn: 'How do you start working on a specific project with Claude Code?',
-        options: ['아무 폴더에서나 한 번만 실행', '프로젝트 폴더로 이동(cd) 후 claude 실행', '브라우저에서만 사용', 'node 명령으로 실행'],
-        optionsEn: ['Run once from any folder', 'cd into the project folder then run claude', 'Use only in a browser', 'Run with the node command'],
+        question: '현재 내가 어느 폴더에 있는지 확인하는 명령은?',
+        questionEn: 'Which command shows which folder you are currently in?',
+        options: ['cd', 'pwd', 'mkdir', 'node'],
+        optionsEn: ['cd', 'pwd', 'mkdir', 'node'],
         correctIndex: 1,
-        explanation: 'Claude Code는 실행한 폴더를 작업 컨텍스트로 삼습니다. 작업할 프로젝트 폴더로 cd 한 뒤 claude를 실행하세요.',
-        explanationEn: 'Claude Code uses the folder it runs in as its working context. cd into the target project folder, then run claude.'
+        explanation: 'pwd(print working directory)는 현재 작업 폴더의 경로를 출력합니다. cd는 이동, mkdir는 폴더 생성입니다.',
+        explanationEn: 'pwd (print working directory) prints the current folder path. cd moves, and mkdir creates a folder.'
       }
     },
     {
-      title: '기본 사용법과 슬래시 명령',
-      titleEn: 'Basics and Slash Commands',
-      content: '세션 안에서는 평소 말하듯 요청하면 됩니다. /로 시작하는 슬래시 명령으로 도구 기능을 빠르게 쓸 수 있습니다(예: /help 도움말, /clear 대화 초기화). 코드 변경은 사용자의 승인을 거쳐 적용되므로 안전하게 진행됩니다.',
-      contentEn: 'Inside a session, just ask in plain language. Slash commands that start with / quickly access tool features (e.g., /help for help, /clear to reset the conversation). Code changes are applied after your approval, so it proceeds safely.',
-      code: `# 세션 안에서 쓰는 대표 슬래시 명령
-/help        # 사용 가능한 명령 보기
-/clear       # 대화 컨텍스트 초기화
-/init        # 프로젝트에 CLAUDE.md(안내 파일) 생성
+      title: '실습: 프로젝트 폴더 만들고 준비 끝내기',
+      titleEn: 'Practice: Create a Project Folder and Finish Setup',
+      content: '이제 Claude Code를 실행할 폴더를 직접 만들어 봅니다. dev 폴더 안에 프로젝트 폴더를 만들고, 그 안으로 들어가 pwd로 위치를 확인하면 준비 끝입니다. 다음 챕터에서 바로 이 폴더에서 Claude Code를 실행합니다.',
+      contentEn: 'Now create the folder where you will run Claude Code. Make a project folder inside dev, move into it, and confirm with pwd — setup done. In the next chapter you will run Claude Code right in this folder.',
+      code: `# ── Windows (PowerShell) ──
+cd $HOME
+mkdir dev -Force        # dev 없으면 생성
+cd dev
+mkdir my-first-app
+cd my-first-app
+pwd                     # C:\\Users\\사용자\\dev\\my-first-app
 
-# 자연어 요청 예시
-#   "README에 설치 방법 섹션을 추가해줘"
-#   "테스트를 실행하고 실패하면 원인을 설명해줘"`,
-      codeLanguage: 'bash',
-      quiz: {
-        question: 'Claude Code 세션에서 / 로 시작하는 입력은 무엇인가요?',
-        questionEn: 'What is an input starting with / in a Claude Code session?',
-        options: ['파일 경로', '슬래시 명령(도구 기능 단축)', '주석', '에러 메시지'],
-        optionsEn: ['A file path', 'A slash command (shortcut to tool features)', 'A comment', 'An error message'],
-        correctIndex: 1,
-        explanation: '/help, /clear 처럼 / 로 시작하는 입력은 슬래시 명령으로, 도구의 기능을 빠르게 호출합니다.',
-        explanationEn: 'Inputs starting with / like /help and /clear are slash commands that quickly invoke tool features.'
-      }
+# ── macOS / Linux (터미널) ──
+mkdir -p ~/dev/my-first-app
+cd ~/dev/my-first-app
+pwd                     # /Users/사용자/dev/my-first-app
+
+# 여기까지 됐으면 이 폴더 안에서 다음 챕터(Claude Code 실행)로!`,
+      codeLanguage: 'bash'
     }
   ]
 };

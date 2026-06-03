@@ -128,9 +128,10 @@ export const translations: Record<string, Record<string, unknown>> = {
     devops04: '성능 최적화와 모니터링',
 
     // ─── Vibe Coding Chapters ───
-    vibe01: 'Node.js 설치',
-    vibe02: 'Claude Code 설치와 시작',
-    vibe03: '자주 발생하는 오류 해결',
+    vibe01: 'Node.js 설치 (운영체제별)',
+    vibe02: '작업 폴더와 터미널',
+    vibe03: 'Claude Code 설치와 시작',
+    vibe04: '자주 발생하는 오류 해결',
 
     // ─── Python Framework Chapters ───
     django01: 'Django 시작과 구조',
@@ -674,9 +675,10 @@ export const translations: Record<string, Record<string, unknown>> = {
     devops04: 'Performance & Monitoring',
 
     // ─── Vibe Coding Chapters ───
-    vibe01: 'Installing Node.js',
-    vibe02: 'Installing & Starting Claude Code',
-    vibe03: 'Troubleshooting Common Errors',
+    vibe01: 'Installing Node.js (by OS)',
+    vibe02: 'Project Folder & Terminal',
+    vibe03: 'Installing & Starting Claude Code',
+    vibe04: 'Troubleshooting Common Errors',
 
     // ─── Python Framework Chapters ───
     django01: 'Django Start & Structure',

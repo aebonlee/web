@@ -326,3 +326,25 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 ## 검증
 - 잘못된 도메인(templete) 잔존 0건, `<loc>` 70개 확인.
 - `npm run build`로 dist에 반영(빌드가 public/ 복사).
+
+---
+
+# 바이브코딩 초보자용 상세화 (운영체제별 + 폴더 지정) (2026-06-03)
+
+## 배경
+"자주 발생하는 오류 해결"까지는 좋으나, **운영체제(Windows/macOS)에 맞춘 오류·폴더 지정**까지 다뤄
+초보자가 한 번에 따라할 수 있도록 더 상세한 단계별 안내가 필요.
+
+## 작업 내용
+- 바이브코딩 토픽 3챕터 → **4챕터**로 확장(운영체제별·폴더 중심):
+  - **vibe01 Node.js 설치 (운영체제별)** — OS·터미널 확인 / Windows .msi·winget / macOS nvm·Homebrew·pkg.
+  - **vibe02 작업 폴더와 터미널 (신규)** — 권장 경로(C:\\Users\\you\\dev, ~/dev), 한글·공백 경로 회피,
+    cd·pwd·dir/ls, OS별 경로 구분자, 프로젝트 폴더 생성·이동 실습.
+  - **vibe03 Claude Code 설치와 시작** — 전역 설치, 프로젝트 폴더에서 실행(실행 전 pwd 강조)·로그인, 슬래시 명령.
+  - **vibe04 자주 발생하는 오류 해결** — macOS EACCES + Windows 실행정책(ExecutionPolicy),
+    PATH 문제(OS별), 폴더 실수·버전·프록시·캐시.
+- 각 챕터 코드 블록을 `# ── Windows ──` / `# ── macOS / Linux ──`로 명시 구분.
+- `index.ts` 4챕터 등록, 번역 키(vibe01~04 ko/en) 갱신, sitemap 재생성(71 URL, vibecoding 4챕터 포함).
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / `preview` /vibecoding·/vibecoding/02-folder·/04-troubleshooting HTTP 200.

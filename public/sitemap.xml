@@ -67,25 +67,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/html/02-forms</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://web.dreamitbiz.com/html/03-semantic</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/html/04-media</loc>
+    <loc>https://web.dreamitbiz.com/html/02-forms</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://web.dreamitbiz.com/html/01-elements</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web.dreamitbiz.com/html/04-media</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +103,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/css/01-selectors</loc>
+    <loc>https://web.dreamitbiz.com/css/04-grid-responsive</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -115,7 +115,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/css/04-grid-responsive</loc>
+    <loc>https://web.dreamitbiz.com/css/01-selectors</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -127,7 +127,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/javascript/03-async</loc>
+    <loc>https://web.dreamitbiz.com/javascript/04-es6</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,7 +139,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/javascript/04-es6</loc>
+    <loc>https://web.dreamitbiz.com/javascript/03-async</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,13 +157,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/vibecoding/02-install-claude-code</loc>
+    <loc>https://web.dreamitbiz.com/vibecoding/02-folder</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/vibecoding/03-troubleshooting</loc>
+    <loc>https://web.dreamitbiz.com/vibecoding/04-troubleshooting</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web.dreamitbiz.com/vibecoding/03-install-claude-code</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -187,7 +193,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/react/02-state</loc>
+    <loc>https://web.dreamitbiz.com/react/04-context</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -199,7 +205,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/react/04-context</loc>
+    <loc>https://web.dreamitbiz.com/react/02-state</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -217,7 +223,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/typescript/02-generics</loc>
+    <loc>https://web.dreamitbiz.com/typescript/04-react-ts</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -229,7 +235,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/typescript/04-react-ts</loc>
+    <loc>https://web.dreamitbiz.com/typescript/02-generics</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -241,7 +247,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/django/01-start</loc>
+    <loc>https://web.dreamitbiz.com/django/03-views-templates</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -253,7 +259,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/django/03-views-templates</loc>
+    <loc>https://web.dreamitbiz.com/django/01-start</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -289,12 +295,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/gradio/02-blocks</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://web.dreamitbiz.com/gradio/01-start</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -307,16 +307,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://web.dreamitbiz.com/gradio/02-blocks</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://web.dreamitbiz.com/streamlit</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://web.dreamitbiz.com/streamlit/01-start</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://web.dreamitbiz.com/streamlit/02-widgets</loc>
@@ -326,6 +326,12 @@
   </url>
   <url>
     <loc>https://web.dreamitbiz.com/streamlit/03-layout-deploy</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web.dreamitbiz.com/streamlit/01-start</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -343,13 +349,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/git/02-github</loc>
+    <loc>https://web.dreamitbiz.com/git/03-rebase</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/git/03-rebase</loc>
+    <loc>https://web.dreamitbiz.com/git/02-github</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -367,7 +373,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/backend/01-nodejs</loc>
+    <loc>https://web.dreamitbiz.com/backend/02-database</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -379,13 +385,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/backend/03-auth</loc>
+    <loc>https://web.dreamitbiz.com/backend/01-nodejs</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/backend/02-database</loc>
+    <loc>https://web.dreamitbiz.com/backend/03-auth</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -397,7 +403,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/devops/01-vite</loc>
+    <loc>https://web.dreamitbiz.com/devops/02-cicd</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -409,7 +415,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://web.dreamitbiz.com/devops/02-cicd</loc>
+    <loc>https://web.dreamitbiz.com/devops/01-vite</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
