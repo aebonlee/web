@@ -266,6 +266,12 @@ h4 { line-height: 1.45; letter-spacing: -0.01em; }
     line-height: 1.25;
 }
 
+/* 타이틀 히어로(page-header) 바로 아래 콘텐츠 영역에 상단 여백 확보
+   (그렇지 않으면 콘텐츠가 히어로에 붙어 보임) */
+.page-header + .container {
+    padding-top: 40px;
+}
+
 .page-header p {
     font-size: 17px;
     color: rgba(255, 255, 255, 0.85);
