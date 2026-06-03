@@ -305,3 +305,24 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / `preview` /html·/react·/django·/vibecoding HTTP 200, 오버뷰 클래스 번들 포함 확인
+
+---
+
+# SEO 정비: sitemap.xml / robots.txt (2026-06-03)
+
+## 배경
+`public/sitemap.xml`이 다른 템플릿 잔재 상태였음 — 도메인이 `templete.dreamitbiz.com`,
+존재하지 않는 경로(`/books`, `/shop`, `/cart`, `/books/it` 등)만 나열, 실제 토픽/챕터 누락.
+`robots.txt`의 Sitemap URL도 잘못된 도메인.
+
+## 작업 내용
+- `public/sitemap.xml` 전면 재생성 (도메인 `https://web.dreamitbiz.com`, lastmod 2026-06-03):
+  - 정적: `/`, `/about`, `/guide`, `/problems`, `/playground`, `/progress`
+  - 문제 카테고리: `/problems/{beginner,intermediate,advanced,practical}`
+  - 13개 토픽 오버뷰 `/{topic}` + 각 챕터 `/{topic}/{chapterId}` (챕터 id는 데이터 파일에서 추출)
+  - 총 **70개 URL**, 우선순위/changefreq 차등 부여.
+- `public/robots.txt` Sitemap URL을 `https://web.dreamitbiz.com/sitemap.xml`로 정정.
+
+## 검증
+- 잘못된 도메인(templete) 잔존 0건, `<loc>` 70개 확인.
+- `npm run build`로 dist에 반영(빌드가 public/ 복사).
