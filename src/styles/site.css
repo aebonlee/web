@@ -3572,3 +3572,56 @@
     display: none;
   }
 }
+
+
+/* ─────────────────────────────────────────────
+   MYPAGE 진행률 + ADMIN 대시보드 (회원 결과)
+   ───────────────────────────────────────────── */
+
+/* 마이페이지 진행률 */
+.mypage-progress-overall { margin-bottom: 18px; }
+.mypage-progress-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 8px; font-size: 0.95rem; color: var(--text-primary);
+}
+.mypage-progress-pct { font-weight: 800; color: var(--primary-blue); font-size: 1.1rem; }
+.mypage-progress-track {
+  height: 12px; background: var(--bg-light-gray); border: 1px solid var(--border-light);
+  border-radius: var(--radius-full); overflow: hidden;
+}
+.mypage-progress-track.sm { height: 8px; }
+.mypage-progress-fill {
+  height: 100%; background: var(--primary-blue);
+  border-radius: var(--radius-full); transition: width 0.5s ease;
+}
+.mypage-progress-cats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 14px;
+}
+.mypage-progress-cat-top {
+  display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px;
+}
+.mypage-progress-cat-count { color: var(--text-light); font-weight: 600; }
+
+/* 관리자 대시보드 */
+.admin-stat-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 24px;
+}
+.admin-stat-card {
+  background: var(--bg-white); border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg); padding: 18px; text-align: center;
+}
+.admin-stat-val { font-size: 1.8rem; font-weight: 800; color: var(--primary-blue); }
+.admin-stat-label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+.admin-empty { padding: 40px; text-align: center; color: var(--text-secondary); background: var(--bg-light-gray); border-radius: var(--radius-md); }
+.admin-table-wrap { overflow-x: auto; border: 1px solid var(--border-light); border-radius: var(--radius-lg); }
+.admin-result-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; white-space: nowrap; }
+.admin-result-table th, .admin-result-table td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--border-light); }
+.admin-result-table th { background: var(--bg-light-gray); font-weight: 700; color: var(--text-primary); }
+.admin-result-table tbody tr:hover { background: var(--bg-light-gray); }
+.admin-cell-muted { color: var(--text-secondary); font-size: 0.82rem; }
+.admin-mini-track { display: inline-block; width: 90px; height: 7px; background: var(--bg-light-gray); border-radius: 999px; overflow: hidden; vertical-align: middle; }
+.admin-mini-fill { height: 100%; background: var(--primary-blue); border-radius: 999px; }
+.admin-pct { margin-left: 8px; font-size: 0.8rem; color: var(--text-secondary); }
+
+[data-theme="dark"] .admin-stat-card,
+[data-theme="dark"] .admin-table-wrap { background: var(--bg-light-gray); border-color: var(--border-medium); }
