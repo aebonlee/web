@@ -386,3 +386,16 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 검증
 - `npm run typecheck` ✅ / `npm run build` ✅ / preview /django·/flask·/streamlit/01-start·/devops/01-vite 200.
+
+---
+
+# Git 토픽에 OS별 설치 섹션 추가 (2026-06-03)
+
+## 작업 내용
+- `git01` 첫 섹션으로 **"Git 설치와 초기 설정"** 추가:
+  - OS별 설치 창 3종 — 🪟Windows(git-scm/winget), 🍎macOS(Homebrew/xcode-select), 🐧Linux(apt/dnf).
+  - 공통: `git --version` 확인 + 최초 1회 전역 설정(`git config --global user.name/email`, `init.defaultBranch main`).
+- 오버뷰의 "이런 걸 배워요"·로드맵에 자동 반영(섹션 데이터 기반).
+
+## 검증
+- `npm run typecheck` ✅ / `npm run build` ✅ / preview /git/01-basics 200, 설치 콘텐츠 번들 포함 확인.

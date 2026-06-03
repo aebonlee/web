@@ -6,6 +6,69 @@ const chapter: TopicChapter = {
   titleKey: 'git01',
   sections: [
     {
+      title: 'Git 설치와 초기 설정',
+      titleEn: 'Installing Git & First-Time Setup',
+      content: 'Git 명령을 쓰려면 먼저 Git을 설치해야 합니다. 설치 방법은 운영체제마다 다르니 본인 OS의 창만 따라 하세요(아래). 설치 후 새 터미널에서 git --version으로 확인합니다. 그다음 모든 커밋에 기록될 이름·이메일을 한 번만 설정하면(전역 설정) 준비가 끝납니다. 이름·이메일은 GitHub 계정과 같게 맞추는 것을 권장합니다.',
+      contentEn: 'To use Git commands, install Git first. The method differs by OS — follow only your OS panel below. After installing, verify with git --version in a new terminal. Then set the name/email recorded on every commit once (global config) and you are ready. It is recommended to match them to your GitHub account.',
+      codeBlocks: [
+        {
+          label: '🪟 Windows',
+          code: `# 방법 1) 공식 설치 파일: https://git-scm.com 에서 다운로드 후 설치
+#         (설치 옵션은 기본값으로 Next)
+
+# 방법 2) winget 패키지 매니저
+winget install Git.Git
+
+# ★ 설치 후 새 PowerShell 창을 열고 확인
+git --version`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS',
+          code: `# 방법 1) Homebrew (권장)
+brew install git
+
+# 방법 2) Xcode 명령줄 도구에 포함된 git 설치
+xcode-select --install
+
+# 확인
+git --version`,
+          codeLanguage: 'bash',
+        },
+        {
+          label: '🐧 Linux',
+          code: `# Debian / Ubuntu
+sudo apt update && sudo apt install git
+
+# Fedora / RHEL
+sudo dnf install git
+
+# 확인
+git --version`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# 최초 1회: 커밋에 기록될 이름·이메일 설정 (전역)
+git config --global user.name "Hong Gildong"
+git config --global user.email "you@example.com"
+
+# 기본 브랜치 이름을 main으로
+git config --global init.defaultBranch main
+
+# 설정 확인
+git config --list`,
+      codeLanguage: 'bash',
+      quiz: {
+        question: 'Git 설치 후 가장 먼저 해야 할 전역 설정은?',
+        questionEn: 'What global setup should you do right after installing Git?',
+        options: ['브랜치 삭제', 'user.name과 user.email 설정', '저장소 푸시', '파일 삭제'],
+        optionsEn: ['Delete a branch', 'Set user.name and user.email', 'Push a repository', 'Delete files'],
+        correctIndex: 1,
+        explanation: 'git config --global로 이름·이메일을 한 번 설정해 두면 이후 모든 커밋에 작성자 정보로 기록됩니다.',
+        explanationEn: 'Setting name/email once with git config --global records them as the author on all future commits.'
+      }
+    },
+    {
       title: 'Git 기초',
       titleEn: 'Git Basics',
       content: 'Git은 분산 버전 관리 시스템으로, 코드의 변경 이력을 추적하고 협업을 돕습니다. git init으로 저장소를 생성하고, add → commit → push 흐름으로 변경사항을 관리합니다. 작업 디렉터리 → 스테이징 영역 → 저장소의 3단계 구조를 이해하는 것이 핵심입니다.',
