@@ -6,6 +6,53 @@ const chapter: TopicChapter = {
   titleKey: 'react01',
   sections: [
     {
+      title: 'React 프로젝트 시작 (Vite)',
+      titleEn: 'Starting a React Project (Vite)',
+      content: 'React는 Node.js 환경에서 Vite 같은 빌드 도구로 프로젝트를 만들어 개발합니다. 먼저 Node.js를 설치해야 하는데, 설치 방법은 운영체제마다 다르니 본인 OS의 창만 따라 하세요(아래). Node가 준비되면 npm 명령(운영체제 공통)으로 Vite React 프로젝트를 생성하고 개발 서버를 띄웁니다.',
+      contentEn: 'React projects are built in a Node.js environment using a build tool like Vite. First install Node.js — the method differs by OS, so follow only your OS panel below. Once Node is ready, create a Vite React project and start the dev server with npm commands (the same on every OS).',
+      codeBlocks: [
+        {
+          label: '🪟 Windows',
+          code: `# Node.js 설치 (LTS) — https://nodejs.org 또는 winget
+winget install OpenJS.NodeJS.LTS
+node -v   # 새 PowerShell 창에서 확인`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS',
+          code: `# Node.js 설치 — Homebrew (또는 nvm)
+brew install node
+node -v`,
+          codeLanguage: 'bash',
+        },
+        {
+          label: '🐧 Linux',
+          code: `# Node.js 설치 — nvm 권장
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
+node -v`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# Node 설치 후 (운영체제 공통) — Vite로 React 프로젝트 생성
+npm create vite@latest my-app -- --template react
+cd my-app
+npm install        # 의존성 설치
+npm run dev        # 개발 서버 → http://localhost:5173
+
+# src/App.jsx 를 열어 아래 컴포넌트부터 작성해 보세요.`,
+      codeLanguage: 'bash',
+      quiz: {
+        question: 'React 프로젝트를 만들 때 흔히 쓰는 빌드 도구는?',
+        questionEn: 'Which build tool is commonly used to scaffold a React project?',
+        options: ['Photoshop', 'Vite', 'Excel', 'Docker'],
+        optionsEn: ['Photoshop', 'Vite', 'Excel', 'Docker'],
+        correctIndex: 1,
+        explanation: 'npm create vite@latest ... --template react 로 Vite 기반 React 프로젝트를 빠르게 생성할 수 있습니다. Node.js가 먼저 설치되어 있어야 합니다.',
+        explanationEn: 'npm create vite@latest ... --template react quickly scaffolds a Vite-based React project. Node.js must be installed first.'
+      }
+    },
+    {
       title: 'React와 JSX',
       titleEn: 'React and JSX',
       content: 'React는 UI를 컴포넌트 단위로 구성하는 JavaScript 라이브러리입니다. JSX는 JavaScript 안에서 HTML과 유사한 문법을 사용할 수 있게 해주는 확장 문법입니다. 중괄호 {}를 사용하여 JavaScript 표현식을 삽입하며, 컴포넌트는 반드시 하나의 부모 요소(또는 <>...</> 프래그먼트)를 반환해야 합니다.',

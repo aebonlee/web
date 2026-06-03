@@ -6,6 +6,57 @@ const chapter: TopicChapter = {
   titleKey: 'ts01',
   sections: [
     {
+      title: 'TypeScript 설치 & 프로젝트 설정',
+      titleEn: 'Installing TypeScript & Project Setup',
+      content: 'TypeScript는 Node.js 환경에서 동작하므로 먼저 Node.js를 설치합니다(설치는 운영체제마다 다르니 본인 OS 창을 따라 하세요). 그다음 방법은 두 가지입니다: ① 새 프로젝트라면 Vite의 react-ts 템플릿으로 바로 시작, ② 기존 프로젝트라면 typescript를 설치하고 tsc --init으로 tsconfig.json을 생성합니다. tsc는 .ts를 .js로 컴파일하는 컴파일러입니다.',
+      contentEn: 'TypeScript runs in a Node.js environment, so install Node.js first (the method differs by OS — follow your OS panel). Then you have two options: ① for a new project, start with Vite\'s react-ts template; ② for an existing project, install typescript and generate tsconfig.json with tsc --init. tsc is the compiler that turns .ts into .js.',
+      codeBlocks: [
+        {
+          label: '🪟 Windows',
+          code: `# Node.js 설치 (LTS)
+winget install OpenJS.NodeJS.LTS
+node -v   # 새 PowerShell 창에서 확인`,
+          codeLanguage: 'powershell',
+        },
+        {
+          label: '🍎 macOS',
+          code: `# Node.js 설치 — Homebrew (또는 nvm)
+brew install node
+node -v`,
+          codeLanguage: 'bash',
+        },
+        {
+          label: '🐧 Linux',
+          code: `# Node.js 설치 — nvm 권장
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
+node -v`,
+          codeLanguage: 'bash',
+        },
+      ],
+      code: `# 방법 ① 새 프로젝트: Vite react-ts 템플릿 (운영체제 공통)
+npm create vite@latest my-app -- --template react-ts
+cd my-app && npm install && npm run dev
+
+# 방법 ② 기존 프로젝트에 TypeScript 추가
+npm install -D typescript
+npx tsc --init           # tsconfig.json 생성
+
+# .ts 파일 컴파일 / 타입 검사
+npx tsc                  # 컴파일
+npx tsc --noEmit         # 타입 검사만 (출력 파일 없이)`,
+      codeLanguage: 'bash',
+      quiz: {
+        question: 'TypeScript 설정 파일을 생성하는 명령은?',
+        questionEn: 'Which command generates the TypeScript config file?',
+        options: ['npm init', 'npx tsc --init', 'node tsconfig', 'vite build'],
+        optionsEn: ['npm init', 'npx tsc --init', 'node tsconfig', 'vite build'],
+        correctIndex: 1,
+        explanation: 'npx tsc --init 은 컴파일러 옵션이 담긴 tsconfig.json을 생성합니다. 새 프로젝트는 Vite react-ts 템플릿이 이를 자동 포함합니다.',
+        explanationEn: 'npx tsc --init creates tsconfig.json with compiler options. A new Vite react-ts project includes it automatically.'
+      }
+    },
+    {
       title: 'TypeScript 기초 타입',
       titleEn: 'TypeScript Basic Types',
       content: 'TypeScript는 JavaScript에 정적 타입을 추가한 언어입니다. 변수, 함수 매개변수, 반환값에 타입을 명시하여 코드의 안정성을 높입니다. 기본 타입: string, number, boolean, array, object, any, void, null, undefined.',

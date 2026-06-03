@@ -428,4 +428,23 @@ Node.js 설치 및 오류 해결 방안을 콘텐츠로 작성.
 
 ## 정리 — OS별 설치/설정 코드 창 적용 현황
 바이브코딩 · Python(django/flask/gradio/streamlit) · Git · Backend · DevOps 전부 OS별 설치 창 적용 완료.
-(HTML/CSS/JS/React/TS는 설치 불필요 또는 브라우저/Node 기반이라 별도 OS 설치 섹션 없음.)
+
+---
+
+# React/TS 설치 섹션 + 🐛 로그인 에러(Supabase env) 수정 (2026-06-03)
+
+## 1) React·TypeScript 설치 섹션 추가
+- `react01` 첫 섹션 **"React 프로젝트 시작 (Vite)"**: OS별 Node 설치 창 + 공통 `npm create vite ... --template react`·`npm run dev`.
+- `ts01` 첫 섹션 **"TypeScript 설치 & 프로젝트 설정"**: OS별 Node 설치 + Vite react-ts 템플릿 / `npm i -D typescript`·`npx tsc --init`.
+
+## 2) 🐛 로그인 에러 — 원인/해결
+- **증상**: 로그인(이메일·OAuth) 동작 안 함.
+- **원인**: `lib/supabase.ts`·`utils/supabase.ts`가 Supabase URL/KEY를 `import.meta.env.VITE_SUPABASE_*`에서만 읽는데,
+  이 clone에는 `.env`가 없어(.env.example만 존재) **빌드 시 Supabase가 비활성(null)** → 배포 번들에 Supabase 설정이 빠짐.
+  (라이브 번들에 supabase URL 부재 확인 / 정상인 rest 번들과 대조.)
+- **해결**: 84개 사이트가 공유하는 동일 Supabase 프로젝트의 공개 anon key를 형제 리포(rest)의 `.env`에서 복사해
+  `web/.env`(gitignore 대상, 커밋 안 함) 생성 → 재빌드 시 번들에 URL/KEY 포함 → 재배포.
+- 참고: anon key는 공개키로 클라이언트 번들 노출이 설계상 정상(RLS로 보호). 향후 web 배포 시 `.env` 필요.
+
+## 검증
+- `npm run build` 후 dist 번들에 supabase URL 포함 확인 → 배포 후 라이브 번들에도 포함 확인.
