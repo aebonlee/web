@@ -3274,7 +3274,8 @@
 }
 
 .topic-hero {
-  padding: 56px 0 44px;
+  /* navbar가 fixed이므로 상단 패딩에 --nav-height 포함 (메뉴 아래에서 시작) */
+  padding: calc(var(--nav-height, 80px) + 40px) 0 44px;
   margin-bottom: 8px;
 }
 
@@ -3521,7 +3522,7 @@
 
 @media (max-width: 768px) {
   .topic-hero {
-    padding: 40px 0 32px;
+    padding: calc(var(--nav-height, 80px) + 24px) 0 32px;
   }
 
   .topic-hero-title {
