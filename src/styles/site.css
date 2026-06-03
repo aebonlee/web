@@ -3263,3 +3263,287 @@
     font-size: 1.5rem;
   }
 }
+
+
+/* ─────────────────────────────────────────────
+   TOPIC OVERVIEW (토픽 첫 진입 페이지)
+   ───────────────────────────────────────────── */
+
+.topic-overview-page {
+  padding-bottom: 40px;
+}
+
+.topic-hero {
+  padding: 56px 0 44px;
+  margin-bottom: 8px;
+}
+
+.topic-hero-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.topic-hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+.topic-hero-tagline {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.topic-hero-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 0 22px;
+}
+
+.topic-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.topic-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.topic-meta-chip strong {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.topic-meta-prereq {
+  background: var(--bg-light-gray);
+}
+
+.topic-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topic-overview-body {
+  padding-top: 8px;
+}
+
+.topic-block {
+  margin: 40px 0;
+}
+
+.topic-block-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.topic-block-sub {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 20px;
+}
+
+/* 이런 걸 배워요 */
+.topic-learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.topic-learn-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.topic-learn-check {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 학습 성과 */
+.topic-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 24px;
+  background: var(--bg-light-gray);
+  border-left: 4px solid var(--primary-blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 32px 0;
+}
+
+.topic-outcome-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topic-outcome-text {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* 학습 로드맵 */
+.topic-roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.roadmap-step {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.roadmap-step:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-medium);
+}
+
+.roadmap-num {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.roadmap-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.roadmap-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.roadmap-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.roadmap-section-chip {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: var(--bg-light-gray);
+  border: 1px solid var(--border-light);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.roadmap-count {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.roadmap-arrow {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--text-light);
+}
+
+.roadmap-step:hover .roadmap-arrow {
+  color: var(--primary-blue);
+}
+
+[data-theme="dark"] .topic-meta-chip,
+[data-theme="dark"] .topic-learn-item,
+[data-theme="dark"] .roadmap-step {
+  background: var(--bg-light-gray);
+  border-color: var(--border-medium);
+}
+
+[data-theme="dark"] .topic-outcome,
+[data-theme="dark"] .roadmap-section-chip {
+  background: var(--bg-medium-gray);
+}
+
+@media (max-width: 768px) {
+  .topic-hero {
+    padding: 40px 0 32px;
+  }
+
+  .topic-hero-title {
+    font-size: 2rem;
+  }
+
+  .topic-hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .roadmap-step {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .roadmap-num {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .roadmap-arrow {
+    display: none;
+  }
+}
