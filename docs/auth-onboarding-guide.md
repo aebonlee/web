@@ -4,13 +4,15 @@
 > 가입 출처(signup_site) 기록·www 총괄 관리, §3.4 재사용 유틸 표준.
 > DB(www_profiles·가입 트리거·RLS)는 이미 운영 중.
 
-## 복사할 파일 3개 (원본: 04-templates/web/src/)
+## 복사할 파일 5개 (원본: 04-templates/web/src/)
 
 | 파일 | 역할 |
 |---|---|
 | `lib/supabaseClient.ts` | 공용 클라이언트 + `SITE_ID` 상수 + `WwwProfile` 타입. env 우선, 누락 시 공용 fallback |
 | `auth/LoginButtons.tsx` | 구글+카카오 로그인 버튼 2종. OAuth 시작 전 `localStorage['signup_site'] = SITE_ID` 기록 |
 | `auth/OnboardingGate.tsx` | `www_profiles.is_complete=false`면 온보딩 폼으로 전 화면 차단. 저장 시 signup_site 채움 |
+| `auth/MemberGate.tsx` | 회원 전용 페이지·섹션 래퍼 — 비로그인은 안내+로그인 버튼, 미완성은 온보딩, 완성만 children |
+| `auth/MemberNotice.tsx` | 전 사이트 공통 안내 레이어 팝업 — 로그인·기본 정보 입력 안내, 오늘 하루 보지 않기 |
 
 ## 적용 절차 (신규 사이트)
 
@@ -41,6 +43,37 @@
   선택 2종: 소속 기관·수강 과정.
 - 행 생성은 가입 트리거 전담(정책상 클라이언트 insert 불가) — 게이트는 update만 한다.
   www_profiles 스키마는 확정본이므로 변경 금지.
+
+## 접근 3등급 체계 (2026-07-18 대표 확정, 전역 CLAUDE.md §3.3)
+
+공개 / **회원(로그인 + is_complete)** / 관리자(www_admins). 로그인만으로 회원 간주 금지.
+회원 콘텐츠는 **화면(MemberGate) + DB(RLS: `www_is_member()`) + Storage(private 버킷) 3겹 잠금** —
+DB·Storage 정책 템플릿은 www 리포 `react-source/sql/www_member_access.sql`.
+
+### MemberNotice — App 최상단에 1회 배치 (안내 담당)
+
+```tsx
+import MemberNotice from './auth/MemberNotice';
+
+<OnboardingGate>
+  <MemberNotice />
+  {/* 기존 Router/Routes 전체 */}
+</OnboardingGate>
+```
+
+- 비로그인: 로그인·정확한 기본 정보 입력 안내 + 로그인 버튼 / 미완성: [정보 입력하기] → 온보딩 폼 / 완성: 렌더 안 함.
+- "오늘 하루 보지 않기"는 localStorage 날짜 키 — **팝업을 닫아도 차단은 MemberGate·RLS가 유지** (팝업=안내, 차단=게이트 역할 분리).
+- 문구는 파일 상단 `MSG` 상수에서 사이트별 수정.
+
+### MemberGate — 회원 전용 페이지만 감싸기 (차단 담당)
+
+```tsx
+import MemberGate from './auth/MemberGate';
+
+<Route path="/materials" element={<MemberGate><Materials /></MemberGate>} />
+```
+
+- 공개 페이지는 감싸지 않는다. 회원 전용 테이블·버킷은 www_member_access.sql 템플릿으로 서버 잠금까지 세트로 적용할 것.
 
 ## 확인 방법
 
