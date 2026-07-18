@@ -12,7 +12,7 @@ export const SITE_ID = '[사이트id]';
 
 // env 우선, 누락 시 공용 프로젝트 fallback 하드코딩.
 // 이유: 클린 빌드(gh-pages)에서 env 누락 시 "Supabase not configured"로
-// 로그인이 통째로 깨진 사고 반복 (전역 CLAUDE.md §3). anon key는 RLS로 보호되는 공개 키.
+// 로그인이 통째로 깨진 사고 반복 (전역 CLAUDE.md §3.2). anon key는 RLS로 보호되는 공개 키.
 const supabaseUrl =
   import.meta.env.VITE_SUPABASE_URL || 'https://hcmgdztsgjvzcyxyayaj.supabase.co';
 const supabaseAnonKey =

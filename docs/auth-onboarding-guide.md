@@ -1,7 +1,8 @@
 # www 회원 총괄 — 사이트 쪽 재사용 컴포넌트 사용법
 
-> 전역 CLAUDE.md §3 규칙 구현체: 구글+카카오 2종 로그인, Supabase fallback 하드코딩,
-> 가입 출처(signup_site) 기록 + www 총괄 관리. DB(www_profiles·가입 트리거·RLS)는 이미 운영 중.
+> 전역 CLAUDE.md 규칙 구현체: §3.2 Supabase fallback 하드코딩, §3.3 구글+카카오 2종 로그인·
+> 가입 출처(signup_site) 기록·www 총괄 관리, §3.4 재사용 유틸 표준.
+> DB(www_profiles·가입 트리거·RLS)는 이미 운영 중.
 
 ## 복사할 파일 3개 (원본: 04-templates/web/src/)
 

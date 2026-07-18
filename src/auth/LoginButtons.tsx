@@ -1,5 +1,5 @@
 /**
- * LoginButtons.tsx — 구글 + 카카오 로그인 버튼 2종 (재사용 표준, 전역 CLAUDE.md §3)
+ * LoginButtons.tsx — 구글 + 카카오 로그인 버튼 2종 (전역 CLAUDE.md §3.3 로그인 기본값, §3.4 재사용 표준)
  *
  * 파일 복사만으로 사용. 사이트 고유 값은 lib/supabaseClient.ts의 SITE_ID 하나뿐.
  * OAuth 시작 전에 가입 출처(signup_site)를 localStorage에 심어 두고,
